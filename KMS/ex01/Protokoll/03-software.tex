@@ -1,0 +1,362 @@
+\section{Software Helfer}
+Kurze Beschreibung der Software Hilfsprogramme
+
+\subsection{Paket Manager}
+Pakete des Raspian Betriebssystems auf neustem Stand halten
+\begin{verbatim}
+  sudo apt update
+  sudo apt upgrade
+  z.B. Firefox für Raspi installieren: sudo apt install firefox-esr
+\end{verbatim}
+
+\subsection{Video Formate der Kamera}
+Vor Auswahl eines Bildformates alle unterstützten Formate abfragen:
+\begin{verbatim}
+  v4l2-ctl --list-formats-ext
+\end{verbatim}
+
+oder über USB Gerätekennung und danach all Höhen und Breiten abfragen.
+\begin{verbatim}
+  lsusb
+  > Bus 001 Device 016: ID 046d:082d Logitech, Inc. HD Pro Webcam C920
+  > ...
+  lsusb -s 001:016 -v | egrep "Width|Height"
+\end{verbatim}
+
+\textbf{Achtung:} Wenn ein nicht unterstütztes Video Format angegeben wird, bricht gstreamer mit nicht definiertem Fehler ab.
+\begin{verbatim}
+  v4l2src0: Internal data stream error.
+\end{verbatim}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\section{Motion Installation \& Test}
+
+Motion ist ein Programm, das in der Lage ist zu erkennen, wenn ein signifikanter Teil des Kamerabildes sich verändert. Es kann also Bewegung erkennen und einen Warnton übertragen. Es ist ein Kamera Streaming Service, welches verwendet werden kann, um den Videostream einer Webcam an eine IP Adresse zu leiten. Motion kann mit vielen Geräten verwendet werden. Unterstützt werden: V4L2 Webcams (closed source), Video Frame Grabber, Network Kameras via HTTP, RTSP, RTMP, PI Kameramodul, Webcam. Die Installationsanleitung für den Motion Streaming Server auf Raspian Betriebssystem folgt dem Tutorial auf \textit{https://pimylifeup.com/raspberry-pi-webcam-server/} und wurde um eigene Anpassungen erweitert.\\
+
+\textbf{Raspian Version pi\_strech\_motion}
+
+\begin{enumerate}
+	\item Installation:
+	\begin{verbatim}
+	sudo apt-get install libmariadbclient18 libpq5 libavcodec57  libavformat57
+	    libavutil55 libswscale4
+	\end{verbatim}
+	Einige Pakete sind veraltet und müssen durch aktuelle ersetzt werden:
+	\begin{verbatim}	
+	sudo apt install libx264-148 libavcodec57 libavformat57 libmariadbclient-dev-compat 	
+	    default-libmysqlclient-dev libswscale
+	\end{verbatim}
+	\item Motion-stretch Debian Paket herunterladen
+	\begin{verbatim}
+	sudo wget https://github.com/Motion-Project/motion/releases/download/ \
+	release-4.0.1/pi_stretch_motion_4.0.1-1_armhf.deb
+	sudo dpkg -i pi_stretch_motion_4.0.1-1_armhf.deb
+	\end{verbatim}
+	\item Motion konfigurieren
+	\begin{verbatim}	
+	sudo vim /etc/motion/motion.conf
+	daemon on
+	stream_localhost off
+	if problems with freezing if motion occures
+	output_pictures off
+	ffmpeg_output_movies off
+	optional
+	stream_maxrate 100
+	framerate 100
+	width 640
+	height 480
+
+	sudo vim /etc/default/motion
+	start_motion_daemon=yes
+	\end{verbatim}
+\end{enumerate}
+
+\textbf{Start \& Stopp Motion und Streaming}
+\begin{verbatim}
+sudo service motion start
+sudo service motion stop
+\end{verbatim}
+Browser zur Anzeige im lokalen Netzwerk (Ip Adresse des Raspberry)\\
+192.168.1.xxx:8081
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ffmpeg, ffserver, ffplay} \label{RefFFmpeg}
+\textbf{ffmpeg mit alsa auf Raspberry}\\
+Die ffmpeg Pakete für (arm-hf), die über den Paketmanager installiert werden können, sind ohne \textbf{alsa} Abhängigkeit kompiliert worden. ffmpeg verwendet zum Audiostreaming jedoch häufig alsa. Bei Verwendung einer RASPI-cam wird alsa nicht benötigt, so dass die alsa Unterstützung bei den meisten Anwendung nicht benötigt wird. Für das Streaming Projekt musste deshalb ffmpeg aus den Quellen kompiliert werden. Die Version von ffmpeg 4 musste auf 3.4 herunter gesetzt werden, da ffplay und ffserver in Version 4 nicht mehr enthalten sind. ffserver und ffplay sind ideal, um im lokalen Netzwerk Streaming Pipelines zu testen. ffserver ermöglicht es eine Status html Webseite zu generieren, die fps, verbundene Klienten und vieles mehr anzeigt.\\ 
+
+\textbf{Installation von FFmpeg aus Source-Code}
+Wichtige Info: ffserver wurde beim Upgrade auf ffmpeg Version 4.0 gelöscht. Letzte Version mit ffserver ist 3.4. Daher git checkout 3.4! Wenn ffplay mitkompiliert werden soll muss zuerst sdl installiert werden:
+\begin{verbatim}
+  sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev \
+  libsdl2-mixer-dev
+\end{verbatim}
+
+Für libmp3lame > 3.88 bitte zusätzlich installieren:
+\begin{verbatim}
+  sudo apt install libmp3lame-dev
+\end{verbatim}
+
+Siehe auch:\\
+http://computingvoyage.com/2114/installing-sdl2-on-raspbian-jessie/
+\begin{verbatim}
+#!/bin/bash
+# ffmpeg install script by Schenk/Omid
+# To make executable: chmod +x install.sh
+# To install ffserver, you have to check out the 3.5 of 3.4 version of ffmepg git 
+# repo to be able to compile ffmpeg with x264, you also have to choose an old 
+# version from git repo tested was the version, before x264_bit_depth was removed 
+# (needed for ffmpeg 3.4, 3.5)
+# x264 hash key checkout: 7839a9e1f03b49e3e0cbfcb3091093af7c6d54ee
+#
+wget http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.3.tar.gz
+tar -xf libvorbis-1.3.3.tar.gz
+cd libvorbis-1.3.3/
+./configure --host=arm-unknown-linux-gnueabi --enable-static
+make
+sudo make install
+cd ..
+# libogg
+wget http://downloads.xiph.org/releases/ogg/libogg-1.3.1.tar.gz
+tar -xf libogg-1.3.1.tar.gz
+cd libogg-1.3.1/
+./configure --host=arm-unknown-linux-gnueabi --enable-static
+make
+sudo make install
+cd ..
+# libtheora
+wget http://downloads.xiph.org/releases/theora/libtheora-1.1.1.tar.bz2
+tar -xf libtheora-1.1.1.tar.bz2
+cd libtheora-1.1.1/
+./configure --host=arm-unknown-linux-gnueabi --enable-static
+make
+sudo make install
+cd ..
+git clone http://git.videolan.org/git/x264.git
+cd x264
+./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl
+echo "Compiling x264"
+make
+sudo make install
+cd ..
+# extra alsa
+wget ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.1.tar.bz2
+tar xjf alsa-lib-1.1.1.tar.bz2
+cd alsa-lib-1.1.1/
+./configure --host=arm-unknown-linux-gnueabi --enable-static
+make -j4
+sudo make install
+cd ..
+# libvpx
+git clone https://chromium.googlesource.com/webm/libvpx
+cd libvpx
+./configure --enable-static
+make -j4
+sudo make install
+cd ..
+# libsdl
+wget http://www.libsdl.org/release/SDL-1.2.15.tar.gz
+tar xzvf SDL-1.2.15.tar.gz
+cd SDL-1.2.15
+./configure --host=arm-unknown-linux-gnueabi --enable-static
+make -j4
+sudo make install
+cd ..
+git clone https://github.com/FFmpeg/FFmpeg.git
+cd ffmpeg
+./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 \
+  --enable-nonfree --enable-libtheora --enable-libvorbis --enable-libvpx \
+  --enable-libmp3lame
+make
+sudo make install
+\end{verbatim}	
+Hinweis: nachdem ./configure ausgeführt wurde, kann im Log kontrolliert werden, ob alle benötigten apps kompiliert werden. Es sollten die Bibliotheken, alsa, libx264, sdl2, libtheora, libxcb, libvpx und die Programme ffmpeg, ffserver und \textbf{ffplay} angezeigt werden.
+
+\begin{verbatim}
+External libraries:
+alsa			libvorbis		libxcb_shape		sndio
+iconv			libvpx			libxcb_xfixes		xlib
+libmp3lame		libx264			sdl2			zlib
+libtheora		libxcb
+
+External libraries providing hardware acceleration:
+v4l2_m2m
+
+Libraries:
+avcodec			avfilter		avutil			swresample
+avdevice		avformat		postproc		swscale
+
+Programs:
+ffmpeg			ffplay			ffprobe			ffserver
+\end{verbatim}
+
+\subsection{ffmepg Optionen \& Flags}
+Auswahl nicht Codec abhängiger Parameter mit moderner Schreibweise. Viele Tutorials enthalten das -an oder -av Flag zum temporären abschalten von Audio oder Video!
+\begin{verbatim}
+-formats   print the list of supported file formats
+-codecs    print the list of supported codecs (E=encode,D=decode)
+-i         set the input file. Multiple -i switchs can be used
+-f         set video format (for the input if before of -i, for output otherwise)
+-an        *** ignore audio
+-vn        *** ignore video
+-ar /-r    set audio rate (in Hz), -r also working
+-ac        set the number of channels
+-b:a /-ab  set audio bitrate
+-b:v /-b   Video bitrate
+-bt        Video bitrate tolerance
+-c:a /-acodec  choose audio codec or use “copy” to bypass audio encoding
+-c:v /-vcodec  choose video codec or use “copy” to bypass video encoding
+-r         video fps. You can also use fractional values like 30000/1001 instead of 29.97
+-s         frame size (w x h, ie: 320x240)
+-aspect    set the aspect ratio i.e: 4:3 or 16:9
+-sameq     ffmpeg tries to keep the visual quality of the input
+-t N       encode only N seconds of video (you can use also the hh:mm:ss.ddd format)
+-croptop, -cropleft, -cropright, -cropbottom   crop input video frame on each side
+-y         automatic overwrite of the output file
+-ss        select the starting time in the source file
+-vol       change the volume of the audio
+-g         Gop size (distance between keyframes)
+-metadata  add a key=value metadata
+\end{verbatim}
+
+\subsection{ffmepg Tests}
+Als erster Test kann ffmpeg dazu verwendet werden Videos mit oder ohne Audio zu speichern.\\
+Dabei traten beim .ogg Format ungewöhnliche Speed-Ups oder Sprünge statt. Mp4 ist von 
+ausgezeichneter Qualität. Der Befehl list\_formats zeigt alle von der Webcam unterstützten 
+Formate an.\\
+
+Die niedrigste Latenz kann mittels Flags für die Anzeige Apps erreicht werden:
+\begin{verbatim}
+  ffplay -fflags nobuffer 
+  mplayer -benchmark
+\end{verbatim}
+
+Test nur Video:
+\begin{verbatim}
+  ffmpeg -f v4l2 -list_formats all -i /dev/video0
+
+  ffmpeg -f v4l2 -r 25 -s 640x480 -i /dev/video0 out.avi
+  ffmpeg -f v4l2 -r 25 -s 640x480 -i /dev/video0 out.mp4
+  ffmpeg -f v4l2 -r 25 -s 640x480 -i /dev/video0 out.ogg
+  ffplay out...
+\end{verbatim}
+
+Test nur Audio:
+\begin{verbatim}
+  arecord -D plughw:1,0 -f cd test.wav
+  mplayer test.wav
+  ffmpeg -f alsa -i hw:1 -t 30 out.wav
+  ffplay out.wav
+\end{verbatim}
+
+Test mit Video und Audio (audio delay 1s):
+\begin{verbatim}
+  ffmpeg -f alsa -ar 24000 -i plughw:1 -f v4l2 -r 20 -i /dev/video0 \
+  -vcodec mpeg4 -acodec aac -strict experimental out.mp4
+  ffplay out.mp4
+  Test mit Video und Audio (audio delay 1s):
+\end{verbatim}
+Test mit Video und Audio (audio delay 0.3s):
+\begin{verbatim}
+  ffmpeg -f alsa -r 48000 -i hw:1 -f v4l2 -s 800x600 -i /dev/video0 \
+  -r 45 -f avi -c:v mpeg4 -vtag xvid -c:a libmp3lame -b:a 96k output.avi
+\end{verbatim}
+
+\subsection{Streaming Audio \& Video}
+Live-Stream to YouTube (YouTube Account nötig):
+\begin{verbatim}
+  ffmpeg -f v4l2 -i /dev/video0 -ar 44100 -ac 2 -acodec pcm_s16le -f alsa -ac 2 \
+  -i plughw:1 -acodec aac -ab 128k -strict experimental -s 640x320 \
+  -vcodec h264 -pix_fmt yuv420p -g 10 -vb 32k -profile:v baseline -r 5 \ 
+  -f flv rtmp://a.rtmp.youtube.com/live2/<stream-key>
+\end{verbatim}
+
+\subsection{Zurückstreamen ffmpeg PC > ffserver > ffplay emb.System} \label{RefBack}
+1) start server
+\begin{verbatim}
+  ffserver -f ffserver.conf
+\end{verbatim}
+
+2) start camera stream to server
+\begin{verbatim}
+  ffmpeg -re -f video4linux2 -i /dev/video0 -fflags nobuffer -f alsa -i pulse \
+  http://serveraddr:8090/yolandi1.ffm
+\end{verbatim}
+
+3) run receiver on laptop or raspi\\
+viel Delay
+\begin{verbatim}
+  mplayer http://serveraddr:8090/test.webm
+\end{verbatim}
+
+ca 1.3 sec
+\begin{verbatim}
+  ffplay -probesize 32 -sync ext http://serveraddr:8090/test.webm
+  ffplay -fflags nobuffer -probesize 32 -sync ext http://serveraddr:8090/test.webm
+\end{verbatim}
+
+4) Status webpage in browser des Servers
+\begin{verbatim}
+  Status page: http://serveraddr:8090/status.html
+\end{verbatim}
+
+ffserver.config
+\begin{verbatim}
+   HTTPPort 8090
+   HTTPBindAddress 0.0.0.0
+   MaxHTTPConnections 2000
+   MaxClients 1000
+   MaxBandwidth 1000
+##################################################################
+# Definition of the live feeds. Each live feed contains one video
+# and/or audio sequence coming from an ffmpeg encoder or another
+# ffserver.
+<Feed yolandi1.ffm>
+   # maximum size of the feed, where zero means unlimited. Default:
+   # File=/tmp/feed_name.ffm FileMaxSize=5M
+   File ./yolandi1.ffm
+   FileMaxSize 200K
+   ACL allow 127.0.0.1
+</Feed>
+##################################################################
+# Example streams
+<Stream test.webm>             # Output stream URL definition
+   Feed yolandi1.ffm              # Feed from which to receive video
+   Format webm
+
+   # Audio settings
+   AudioCodec vorbis
+   AudioBitRate 64             # Audio bitrate
+
+   # Video settings
+   VideoCodec libvpx
+   VideoSize 320x256           # Video resolution
+   VideoFrameRate 15           # Video FPS
+   AVOptionVideo flags +global_header  # Parameters passed to encoder
+                                       # (same as ffmpeg command-line parameters)
+   AVOptionVideo cpu-used 0
+   AVOptionVideo qmin 10
+   AVOptionVideo qmax 42
+   AVOptionVideo quality good
+   AVOptionAudio flags +global_header
+   PreRoll 0
+   StartSendOnKey
+   VideoBitRate 100            # Video bitrate
+</Stream>
+##################################################################
+# Special streams
+# Server status
+<Stream status.html>
+   Format status  
+   # Only allow local people to get the status
+   ACL allow localhost
+   ACL allow 192.168.0.0 192.168.255.255
+   #FaviconURL http://pond1.gladstonefamily.net:8080/favicon.ico
+</Stream>
+
+# Redirect index.html to the appropriate site
+<Redirect index.html>
+  URL http://www.ffmpeg.org/
+</Redirect>                
+\end{verbatim}
