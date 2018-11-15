@@ -23,9 +23,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="../../../AMS/AMS_cpp_hpp/AMS_DriveRandom.cpp" />
-		<Unit filename="../../../AMS/AMS_cpp_hpp/AMS_Robot.cpp" />
-		<Unit filename="../../../AMS/AMS_cpp_hpp/AMS_Robot.hpp" />
+		<Unit filename="AMS_DriveRandom.cpp" />
+		<Unit filename="AMS_Robot.cpp" />
+		<Unit filename="AMS_Robot.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
