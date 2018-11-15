@@ -23,3 +23,8 @@
 *.synctex.gz
 *.pdf
 *.ffm
+*.depend
+*.layout
+*.o
+Release/
+obj/
