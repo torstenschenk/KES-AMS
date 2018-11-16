@@ -30,6 +30,7 @@ void DriveRobot(AMS_Robot* robotp, double L1, double LK, double L2, int turndir)
     tc = (L1+LK+L2 - 2*sb)/vmax;
     tbK = (LK/vmax);
     t0K = (L1 - sb) / vmax;
+    double tmp = 0.0; // helper, no special use
 
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
@@ -55,26 +56,18 @@ void DriveRobot(AMS_Robot* robotp, double L1, double LK, double L2, int turndir)
 
         if ( dt > t0K && dt < t0K+tbK)
         {
-//robotp->set_speed(0, 0);
-            //(dt-t0K) * wmax / tbK;
-        double tmp = (dt-t0K) * wmax / tbK;
-    // cout << "tmp = " << tmp  << endl;
-           robotp->set_speed(vmax,tmp*turndir);
+            tmp = (dt-t0K) * wmax / tbK;
+            // cout << "tmp = " << tmp  << endl;
+            robotp->set_speed(vmax,tmp*turndir);
         }
         else if(dt > t0K +tbK && dt < t0K+2*tbK)
         {
-            double tmp = (  tbK-(dt-t0K - tbK)) * wmax / tbK;
-            cout << "tmp = " << tmp  << endl;
-           robotp->set_speed(vmax,tmp*turndir);
+            tmp = (  tbK-(dt-t0K - tbK)) * wmax / tbK;
+            // cout << "tmp = " << tmp  << endl;
+            robotp->set_speed(vmax,tmp*turndir);
         }
         else
-                  robotp->set_speed(vmax,0);
-#if 0
-#endif
-
-
-
-
+            robotp->set_speed(vmax,0);
 
         /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
     }

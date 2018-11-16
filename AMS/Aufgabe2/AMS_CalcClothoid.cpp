@@ -70,9 +70,9 @@ int main(int argc, char **argv)
     thetaL =  acos( DotProduct(V01, V12) / (L01 * L12) ) /2;
     cout << "DotProduct(V01, V12) = " << DotProduct(V01, V12);
     cout << "thetaL = " << thetaL << endl;
-    if (( V01(1)*V12(2)-V12(1)*V01(2) ) < 0)
+   // thetaL = thetaL * -1;
+   if (( V01(1)*V12(2)-V12(1)*V01(2) ) < 0)
         thetaL =  thetaL * -1;
-
       cout << "thetaL 2 = " << thetaL << endl;
 
     // Parameter für krümmungsstetigen Übergang mit Klothoide berechnen
@@ -101,6 +101,7 @@ int main(int argc, char **argv)
     // Zeichnen des ersten Geradenstücks bis zum Beginn der Klothoide
     L1 = (Pc0-P0).NormFrobenius();
     phi1 = atan2(V01(2),V01(1)); // Orientierung des Geradenstücks, d.h. des Vektors V01 berechnen
+    cout << "phi1 = " << phi1  << endl ;
     for( s=0; s<L1; s+=ds) {
         px = P0(1) + s*cos(phi1);
         py = P0(2) + s*sin(phi1);
@@ -109,21 +110,28 @@ int main(int argc, char **argv)
 
     // Zeichnen der Klothoiden
     k = 0.5/(thetaL*Rmin*Rmin);    // Parameter der Klothoide (Vorzeichen von thetaL bestimmt Krümmungsrichtung)
-  /*  for( s=0; s<=L*2; s+=ds ) {    // Schleife über Punkte auf Klothoide
+   for( s=0; s<=L*2; s+=ds ) {    // Schleife über Punkte auf Klothoide
         if( s<=L )
-            theta =      // 1. Hälfte: Zunahme der Krümmung
+        {
+            theta =    0.5*k*s*s  ;// 1. Hälfte: Zunahme der Krümmung
+          // cout << "theta 1 = " << theta << endl;
+        }
         else
-            theta = // 2. Hälfte: Abnahme der Krümmung
-        xs +=
-        ys += */
+        {
+            theta = 2 *0.5*k*L*L - 0.5*k*(s-L*2)*(s-L*2);// 2. Hälfte: Abnahme der Krümmung
+
+            //cout << "theta 2 = " << theta << endl;
+            }
+        xs +=cos(theta)*ds;
+        ys +=sin(theta)*ds;
         /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
         // Koordinatentransformation mit Berücksichtigung des Startpunktes Pc0 und der Richtung phi1
-   /*     px =
-        py =
+       px = Pc0(1) +(xs*cos(phi1)-ys*sin(phi1)) ;
+       py = Pc0(2) + (xs*sin(phi1)+ys*cos(phi1));
 
         /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
- /*       robot.draw_point(px, py, 255, 0, 255);
-   }*/
+       robot.draw_point(px, py, 255, 0, 255);
+   }
 
     // Zeichnen des zweiten Geradenstücks hinter der Klothoide
     phi2 = atan2(V12(2),V12(1));
