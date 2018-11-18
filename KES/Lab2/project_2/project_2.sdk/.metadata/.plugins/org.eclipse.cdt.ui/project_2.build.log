@@ -1,0 +1,8 @@
+16:02:23 **** Incremental Build of configuration Debug for project project_2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Für das Ziel »main-build« ist nichts zu tun.
+
+16:02:24 Build Finished (took 1s.31ms)
+
