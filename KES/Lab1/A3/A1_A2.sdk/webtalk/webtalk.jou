@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# 
+# Start of session at: Sun Nov 18 22:34:40 2018
+# Process ID: 7336
+# Current directory: C:/Users/Misca/Beuth_Embedded_Design/Master/GITrepo/CES_AMS/KES/Lab1/A3/A1_A2.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/Users/Misca/Beuth_Embedded_Design/Master/GITrepo/CES_AMS/KES/Lab1/A3/A1_A2.sdk/webtalk/webtalk.log
+# Journal file: C:/Users/Misca/Beuth_Embedded_Design/Master/GITrepo/CES_AMS/KES/Lab1/A3/A1_A2.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

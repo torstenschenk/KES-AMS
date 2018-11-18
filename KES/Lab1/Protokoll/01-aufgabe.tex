@@ -6,7 +6,7 @@ Um Codeabschnitte besser von Beschreibungen besser unterscheiden zu können, wur
 \end{verbatim}
 
 \section{Aufgabe 1} \label{ex1}
-In der Laborübung wurde das ZedBoard Zynq-7000 eingesetzt. Es umfasst als \textbf{PL} den Artix-7 FPGA mit 85K Logic Cells (Device Z-7020, Part: XC7Z020) und als \textbf{PS} den Dual-core ARM Cortex-A9 MPCore™ mit 866 MHz.
+In der Laborübung wurde das ZedBoard Zynq-7000 eingesetzt. Es umfasst als \textbf{PL} den Artix-7 FPGA mit 85K Logic Cells (Device Z-7020, Part: XC7Z020) und als \textbf{PS} den Dual-core ARM Cortex-A9 MPCore™ mit 866 MHz.\\
 
 \begin{minipage}{\textwidth}
     \begin{center}        
@@ -19,10 +19,33 @@ ZedBoard mit Xilinx Zynq-7000 SoC
 
 Wichtigste Anschlüsse für Laborübung 1
 \begin{itemize}
-\item b) Power Supply
-\item c) USB-JTAG (programming)
+\item b) Netzanschluss
+\item c) USB-JTAG (Programmierung)
+\item s) USB-UART (serielle Schnittstelle)
+\item i) Jumper (Konfiguration eines Programmierungsanschlusses )
 \end{itemize}
 
+Jumper (i) für JTAG Programmierung wurde für Laborübung 1 verwendet. Über das JTAG Interface kann via USB progammiert werden. Die Beispielprogramme liegen jedoch auf der mitgelieferten SD-Karte.\\
+
+\begin{minipage}{\textwidth}
+    \begin{center}        
+        \includegraphics[scale=0.3]{img/jtag.jpg} 
+    \end{center}
+\end{minipage}
+\begin{center}
+Jumper Konfiguration für JTAG Programmierung
+\end{center}
+
+Jumper (i) die Programmierung von der SD-Karte aus.\\
+
+\begin{minipage}{\textwidth}
+    \begin{center}        
+        \includegraphics[scale=0.4]{img/sd.jpg} 
+    \end{center}
+\end{minipage}
+\begin{center}
+Jumper Konfiguration für SD-Karten Programmierung
+\end{center}
 
 \subsection{Vorbereitung zur Laborübung}
 Memory Mapped I/O und isolated I/O sind zwei Methoden um Input-Output Operationen zwischen CPU und der Peripherie auszuführen.\\

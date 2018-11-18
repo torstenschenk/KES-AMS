@@ -7,7 +7,7 @@ Peripherie als Blockdesign in Vivado 2016.2. Eingebunden in diese wurden zusätz
 3 Checks ob Pointer valide, Status Ready, welcher Channel aktiv ist und ob zwei Kanäle von der Hardware unterstützt werden. Danach werden Basispointer und Adressoffset addiert und an XGPio\_WriteReg übergeben. Kanäle (Registerbänke) liegen im Speicher nacheinander, ein Umschalten erfolgt über einen Adressoffset.\\
 
 \subsection{Woran/Wo sieht man die Antwort von der Vorbereitung im Code?}
-In der Funktion XGPIO\_Initialize wird über die DeviceID ein Instanz-Zeiger (InstancePtr) erzeugt und initalisiert. Dieser Instanz-Zeiger wird später verwendet, um die genaue Adresse zu berechnen. Die Offsets können zum konfigurieren der I/Os als (Ein- oder Ausgang) und zum setzen der einzelnen Bits verwenden werden.\\
+In der Funktion XGPIO\_Initialize wird über die DeviceID ein Instanz-Zeiger (InstancePtr) erzeugt und initialisiert. Dieser Instanz-Zeiger wird später verwendet, um die genauen Speicheradressen zu berechnen. Diese werden zum Konfigurieren der I/Os als (Ein- oder Ausgang) und zum Setzen der einzelnen Bits verwendet.\\
 
 \begin{minipage}{\textwidth}
     \begin{center}        
@@ -17,5 +17,19 @@ In der Funktion XGPIO\_Initialize wird über die DeviceID ein Instanz-Zeiger (In
 \begin{center}
 Vivado: Schemaplan der IP-Cores
 \end{center}
+
+Ausgehend von einer Basisadresse, werden alle weiteren Offsets dazu gezählt.\\
+
+\begin{minipage}{\textwidth}
+    \begin{center}        
+        \includegraphics[scale=0.9]{img/baseaddr.png} 
+    \end{center}
+\end{minipage}
+\begin{center}
+Speicherbereich zum Setzen der Richtung und der Daten
+\end{center}
+
+
+
 
 

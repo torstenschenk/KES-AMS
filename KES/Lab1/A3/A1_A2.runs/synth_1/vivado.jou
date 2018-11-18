@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sun Nov 18 21:49:47 2018
+# Process ID: 7972
+# Current directory: C:/Users/Misca/Beuth_Embedded_Design/Master/GITrepo/CES_AMS/KES/Lab1/A3/A1_A2.runs/synth_1
+# Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: C:/Users/Misca/Beuth_Embedded_Design/Master/GITrepo/CES_AMS/KES/Lab1/A3/A1_A2.runs/synth_1/design_1_wrapper.vds
+# Journal file: C:/Users/Misca/Beuth_Embedded_Design/Master/GITrepo/CES_AMS/KES/Lab1/A3/A1_A2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
