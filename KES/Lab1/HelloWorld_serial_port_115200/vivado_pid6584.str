@@ -1,0 +1,109 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+Process ID: 6584
+
+Current time: 	11/19/18 5:24:04 PM CET
+Time zone: 	Central European Time (Europe/Berlin)
+
+OS: Windows 7
+Version: 6.1
+Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1200
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	C:/Xilinx/Vivado/2016.2/tps/win64/jre
+
+User name: 	Index
+User home directory: C:/Users/Index
+User working directory: H:/KES-181191/Lab1/A3/project_1
+User country: 	DE
+User language: 	de
+User locale: 	de_DE
+
+RDI Base root directory: C:/Xilinx/Vivado
+RDI Data directory: C:/Xilinx/Vivado/2016.2/data
+RDI Bin directory: C:/Xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: C:/Users/Index/AppData/Roaming/Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: C:/Users/Index/AppData/Roaming/Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	205 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 430 MB
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 33 MB (+31901kb) [00:00:03]
+// [Engine Memory]: 397 MB (+265148kb) [00:00:03]
+// bL:g (cv:JFrame):  Open Project : addNotify
+// Opening Vivado Project: H:\KES-181191\Lab1\A3\project_1\project_1.xpr. Version: Vivado v2016.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project H:/KES-181191/Lab1/A3/project_1/project_1.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 41 MB (+6348kb) [00:00:08]
+// [Engine Memory]: 457 MB (+41790kb) [00:00:08]
+// HMemoryUtils.trashcanNow. Engine heap size: 457 MB. GUI used memory: 25 MB. Current time: 11/19/18 5:24:06 PM CET
+// TclEventType: IP_LOCK_CHANGE
+// [Engine Memory]: 494 MB (+14573kb) [00:00:13]
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 568 MB (+51537kb) [00:00:14]
+// [GUI Memory]: 44 MB (+1324kb) [00:00:15]
+// [Engine Memory]: 600 MB (+3964kb) [00:00:16]
+// [GUI Memory]: 47 MB (+1328kb) [00:00:16]
+// [GUI Memory]: 53 MB (+3987kb) [00:00:16]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project H:/KES-181191/Lab1/A3/project_1/project_1.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'H:/KES-181191/Lab1/BH2/project_1' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 57 MB (+421kb) [00:00:18]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: project_1; location: H:/KES-181191/Lab1/A3/project_1; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:15 . Memory (MB): peak = 907.520 ; gain = 230.223 
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// ai:x (cv:JFrame): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ai:x)
+dismissDialog("Launch SDK"); // ai:x (cv:JFrame)
+// Tcl Message: launch_sdk -workspace H:/KES-181191/Lab1/A3/project_1/project_1.sdk -hwspec H:/KES-181191/Lab1/A3/project_1/project_1.sdk/design_1_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace H:/KES-181191/Lab1/A3/project_1/project_1.sdk -hwspec H:/KES-181191/Lab1/A3/project_1/project_1.sdk/design_1_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// [GUI Memory]: 92 MB (+34409kb) [00:00:37]
+// [Engine Memory]: 651 MB (+21601kb) [00:00:37]
+// HMemoryUtils.trashcanNow. Engine heap size: 651 MB. GUI used memory: 37 MB. Current time: 11/19/18 5:24:37 PM CET
+// Elapsed time: 107 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_CLOSE_PROJECT, "Close Project"); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// bL:g (cv:JFrame):  Close Project : addNotify
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 651 MB. GUI used memory: 34 MB. Current time: 11/19/18 5:26:21 PM CET
+// Tcl Message: close_project 
+dismissDialog("Close Project"); // bL:g (cv:JFrame)
