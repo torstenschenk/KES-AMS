@@ -34,3 +34,4 @@ launch_sdk -workspace C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk
 file copy -force C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.runs/impl_1/design_1_wrapper.sysdef C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk/design_1_wrapper.hdf
 
 launch_sdk -workspace C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk -hwspec C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk/design_1_wrapper.hdf
+close_project
