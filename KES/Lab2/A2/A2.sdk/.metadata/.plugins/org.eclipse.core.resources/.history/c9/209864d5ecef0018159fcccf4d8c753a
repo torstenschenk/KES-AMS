@@ -44,50 +44,22 @@
  *   uartlite    Configurable only in HW design
  *   ps7_uart    115200 (configured by bootrom/bsp)
  */
-#include  <stdio.h>
+
+#include <stdio.h>
 #include "platform.h"
-//  Include  Files
-#include "xparameters.h"
-#include "xgpio.h"
-#include "xstatus.h"
 #include "xil_printf.h"
-//  Definitions
-#define  GPIO_DEVICE_ID  XPAR_AXI_GPIO_0_DEVICE_ID
-#define  LED 0x55//0xC3
-#define  LED_DELAY  10000000
-#define  LED_CHANNEL 1
-#define  printf  xil_printf
+#include "kes_lab2_8bit_axi.h"
 
-XGpio  Gpio;
-// void  print( char *str );
+#define BASE_ADDR XPAR_KES_LAB2_8BIT_AXI_0_S00_AXI_BASEADDR // 0x43C00000
 
-int  LEDOutputExample( VOID ) {
-	volatile  int  Delay;
-	int  Status;
-	int  led = LED;
-	// GPIO  driver  initialization
-	Status = XGpio_Initialize( &Gpio , GPIO_DEVICE_ID );
-	if ( Status  !=  XST_SUCCESS ) {
-		return  XST_FAILURE;
-	}
-	// Set  the  direction  for  the  LEDs to  output
-	XGpio_SetDataDirection( &Gpio , LED_CHANNEL , 0x00 );
-	// loop  forever  blinking  the  LED.
-	while( 42 ) {
-		//  write  output  to LEDs
-		XGpio_DiscreteWrite( &Gpio , LED_CHANNEL , led );
-		// flip  LEDs
-		led = ~led;
-		for ( Delay = 0;  Delay  < LED_DELAY; Delay++ );
-	}
-	return  XST_SUCCESS;
-}
-
-int  main()
+int main()
 {
-	init_platform ();
-	print("Hello  meine  LED\n\r");
-	LEDOutputExample ();
-	cleanup_platform ();
-	return  0;
+    init_platform();
+
+    KES_LAB2_8BIT_AXI_mWriteReg ((u32)BASE_ADDR, 0, (int)0xFF);
+
+   // XStatus status = KES_LAB2_8BIT_AXI_Reg_SelfTest( (void *) BASE_ADDR);
+
+    cleanup_platform();
+    return 0;
 }
