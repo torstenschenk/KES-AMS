@@ -25,13 +25,13 @@ C-Code des Aufrufes
 
 Die automatisch generierte Test Funktion in kes\_lab2\_8bit\_axi\_selftest.c.
 \begin{verbatim}
-  /***************************** Include Files *******************************/
+  /***************************** Include Files ***********************/
   #include "kes_lab2_8bit_axi.h"
   #include "xparameters.h"
   #include "stdio.h"
   #include "xil_io.h"
 
-  /************************** Constant Definitions ***************************/
+  /************************** Constant Definitions ********************/
   #define READ_WRITE_MUL_FACTOR 0x10
 
   XStatus KES_LAB2_8BIT_AXI_Reg_SelfTest(void * baseaddr_p) {
@@ -55,7 +55,8 @@ Die automatisch generierte Test Funktion in kes\_lab2\_8bit\_axi\_selftest.c.
        if ( KES_LAB2_8BIT_AXI_mReadReg (baseaddr, read_loop_index*4) !=
             (read_loop_index+1)*READ_WRITE_MUL_FACTOR)
        {     
-            xil_printf ("Error reading register value at address %x\n", (int)baseaddr + read_loop_index*4);
+            xil_printf ("Error reading register value at address %x\n", 
+                  (int)baseaddr + read_loop_index*4);
             return XST_FAILURE;
       }
 
@@ -79,11 +80,13 @@ Oder als Alternative mit Rücklesen der geschriebenen Daten:
     if ( KES_LAB2_8BIT_AXI_mReadReg (baseaddr, read_loop_index*4) !=
       (read_loop_index+1)*READ_WRITE_MUL_FACTOR)
      {
-        xil_printf ("Error reading register value at address %x\n", (int)baseaddr + read_loop_index*4);
+        xil_printf ("Error reading register value at address %x\n", 
+                           (int)baseaddr + read_loop_index*4);
         return XST_FAILURE;
      } else
         xil_printf ("Reading register value at address %x value %x\n\r",
-            (int)baseaddr + read_loop_index*4, (read_loop_index+1)*READ_WRITE_MUL_FACTOR );
+            (int)baseaddr + read_loop_index*4, 
+                  (read_loop_index+1)*READ_WRITE_MUL_FACTOR );
 \end{verbatim}
 
 \begin{minipage}{\textwidth}

@@ -52,18 +52,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_auto_pc_0/design_2_auto_pc_0.xci"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="design_2_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="hw_handoff/design_2_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="hdl/design_2.hwdef"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="hw_handoff/design_2.hwh"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axi_gpio_0_0/design_2_axi_gpio_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_processing_system7_0_0/design_2_processing_system7_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="hdl/design_2.vhd"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_xbar_0/design_2_xbar_0.xci"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_axi_gpio_1_0/design_2_axi_gpio_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_rst_processing_system7_0_100M_0/design_2_rst_processing_system7_0_100M_0.xci"/>
-        <CompFileExtendedInfo CompFileName="design_2.bd" FileRelPathName="ip/design_2_processing_system7_0_axi_periph_0/design_2_processing_system7_0_axi_periph_0.xci"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/design_2/hdl/design_2_wrapper.vhd">
         <FileInfo>
