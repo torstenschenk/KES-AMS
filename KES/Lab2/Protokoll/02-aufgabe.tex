@@ -98,7 +98,7 @@ Oder als Alternative mit Rücklesen der geschriebenen Daten:
 Logausgabe mit gelesenen Daten
 \end{center}
 
-\subsection{Aufgabe 2 Anzeige auf den LEDs über den IP Core}
+\subsection{Anzeige auf den LEDs über den IP Core}
 Implementiert wurde eine laufende LED die schnell von LED 0 jeweils nach sehr kurzer Wartezeit auf die links 
 liegende LED weitergeschaltet wird. Damit entsteht der Eindruck einer wandernden LED. Nach beenden eines 
 Zyklus wird erneut gestartet.
@@ -143,7 +143,7 @@ Zyklus wird erneut gestartet.
 
 => is a port mapping from a pin to a signal. This is not an assignment - the physical analogy might be soldering a pin to a wire.\\
 
-You can only do "soldering" to instantiations, so => mapping only happens inside a port map. And there, "pins" always go on the left (because that's what the language rules say), which is why you can't do x <= port\_a in a port map.\\
+You can only do soldering to instantiations, so => mapping only happens inside a port map. And there, "pins" always go on the left (because that's what the language rules say), which is why you can't do x <= port\_a in a port map.\\
 
 Signal assignments go from right to left using <=. The right side must be an input signal from the entity or a signal declared in a process. The left side can be an output signal (or input/buffer) from the entity, a signal declared in the process or a variable declared in the process.\\
 

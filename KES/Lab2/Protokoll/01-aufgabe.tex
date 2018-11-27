@@ -29,9 +29,9 @@ Ablauf bei eintreten eines Interrupts, führt der Prozessor folgende Schritte du
 \begin{enumerate}
   \item Ein Interrupt wurde aktiviert und muss verarbeitet werden
   \item Der Prozessor stoppt den aktuell laufenden Thread
-  \item Der Prozessor speichert alle Threaddaten auf dem Stack, um diese später wiederherzustellen
-  \item Der Prozessor führt die Interrupt Service Routine, die festlegt, wie der Interrupt zu verarbeiten ist.
-  \item Der Prozessor holt die Daten des gestoppten Threads vom Stack und setzt seine Verarbeitung fort.
+  \item Der Prozessor speichert alle Threaddaten auf dem Stack, um diese später wieder herzustellen
+  \item Der Prozessor führt die Interrupt Service Routine aus, die festlegt, wie der Interrupt zu verarbeiten ist.
+  \item Der Prozessor holt die Daten des angehaltenen Threads vom Stack und setzt seine Verarbeitung fort.
 \end{enumerate}
 
  \subsection{Interrupt-Setup}
@@ -62,9 +62,9 @@ Aufgabe Lab2 A1 Interrupt von GPio
   int main()  {
       XScuGic_Config * IntcConfig;
       // Interrupt controller initialisation
-      IntcConfig = XScuGic_LookupConfig ( DeviceId );
-      // optional check status
-      // status = XScuGic_CfgInitialize (& INTCInst, IntcConfig,
+      IntcConfig = XScuGic_LookupConfig ( INTC_DEVICE_ID );
+      // optional Status prUfen if XST_SUCCESS
+      status = XScuGic_CfgInitialize (& INTCInst, IntcConfig,
                            IntcConfig -> CpuBaseAddress );
       // Call to interrupt setup       
      status = InterruptSystemSetup (& INTCInst );
