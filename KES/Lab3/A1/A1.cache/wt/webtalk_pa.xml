@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Mon Nov 26 00:57:13 2018">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="2ca630046e3e42379ddcd70359730134" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddSources" value="2" type="JavaHandler"/>
+<property name="EditConstraintSets" value="1" type="JavaHandler"/>
+<property name="EditProperties" value="1" type="JavaHandler"/>
+<property name="EditSimulationSets" value="1" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="BACK,  Back" value="4" type="GuiResourceData"/>
+<property name="FINISH, Finish" value="2" type="GuiResourceData"/>
+<property name="NEXT, Next " value="13" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_BLOCK_DESIGN_SUB_DESIGN_UNITS, Add existing block design sources" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_EXISTING_CONFIGURABLE_IP, Add existing IP" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_HDL_AND_NETLIST_FILES_OR_DIRECTORIES, Add or create design sources" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, Add or create constraints" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, Add or create simulation sources" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.ConstraintsChooserPanel_CREATE_FILE, Create File" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, vga_contr" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; in ; false ; 0 ; 0, 0, (String" value="4" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; in ; false ; 0 ; 0, 0, 0, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; in ; false ; 0 ; 0, 0, 0, 4" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; in ; false ; 0 ; 0, 0, false, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; in ; false ; 0 ; 0, 0, in, 1" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; in ; false ; 0 ; 0, 1, (String" value="4" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; in ; false ; 0 ; 0, 1, false, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; in ; false ; 0 ; 0, 2, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; in ; false ; 0 ; 0, 3, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; out ; false ; 0 ; 0, 0, out, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, 1, 0, MSB, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, clk, 0, Port Name, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, ext_data_control, 1, Port Name, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, in, 0, Direction, 1" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, out, 0, Direction, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, vgaclk ; in ; false ; 0 ; 0, 0, false, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, vgaclk ; in ; false ; 1 ; 0, 0, vgaclk, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, vgaclk ; in ; true ; 0 ; 0, 0, 0, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, vgaclk ; in ; true ; 1 ; 0, 0, true, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, vgaclk, 0, Port Name, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Add Sources..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Sources_add_sources" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="3" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_EDIT_CONSTRAINT_SETS, Edit Constraints Sets..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_EDIT_SIMULATION_SETS, Edit Simulation Sets..." value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, vga_contr - Behavioral (vga_contr.vhd" value="5" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, Create New Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_BOARDS, Boards" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PartChooser_BOARD_DISPLAY_NAME_CHOOSER, ZedBoard Zynq Evaluation and Development Kit, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectNameChooser_CHOOSE_PROJECT_LOCATION, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, A1" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserTable_SRC_CHOOSER_TABLE, Location, 4" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserTable_SRC_CHOOSER_TABLE, VHDLSourceFile_small ; 1 ; vga_contr.vhd ; xil_defaultlib ; Local to Project, 0, vga_contr.vhd, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="3" type="GuiResourceData"/>
+<property name="RDIResource.AbstractCombinedPanel_ADD_ELEMENT, Add Definition" value="5" type="GuiResourceData"/>
+<property name="RDIResource.AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS, Remove" value="9" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="5" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="2" type="GuiResourceData"/>
+<property name="RDIResource.HHelpUI_PREVIOUS_PAGE, (String" value="1" type="GuiResourceData"/>
+<property name="RDIResource.HPopupTitle_CLOSE, (String" value="1" type="GuiResourceData"/>
+<property name="RDIResource.QuickHelp_HELP, (String" value="1" type="GuiResourceData"/>
+<property name="RDIResourceCommand.RDICommands_PROPERTIES, Source Node Properties..." value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 11, 271" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 116, 433" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 120, 414" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 125, 435" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 132, 255, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 132, 256" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 133, 413" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 133, 424" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 170, 491" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 180, 160" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 189, 131" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 196, 279" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 197, 312" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 199, 298" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 204, 332" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 204, 332, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 213, 322" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 238, 227" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 272, 475" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 292, 330" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 292, 415" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 333, 281" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 337, 420" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 36, 52" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 370, 228" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 41, 27, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 41, 28" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 416, 216" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 42, 93" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 42, 93, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 44, 28" value="2" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 44, 28, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 46, 25" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 46, 25, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 46, 26" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 46, 26, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 46, 29" value="5" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 68, 426" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 89, 242, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 91, 243" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 97, 263" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 97, 263, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 97, 345" value="1" type="GuiResourceData"/>
+<property name="vga_contr.vhd, 97, 345, false, false, false, false, true" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="14" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="11" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>
