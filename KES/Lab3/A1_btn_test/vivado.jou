@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Fri Nov 30 20:45:58 2018
+# Process ID: 9840
+# Current directory: C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_test
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5000 C:\Users\omid\Documents\GitHub\KES-AMS\KES\Lab3\A1_btn_test\A1_btn_test.xpr
+# Log file: C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_test/vivado.log
+# Journal file: C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_test\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_test/A1_btn_test.xpr
+file copy -force C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_test/A1_btn_test.runs/impl_1/design_1_wrapper.sysdef C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_test/A1_btn_test.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_test/A1_btn_test.sdk -hwspec C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_test/A1_btn_test.sdk/design_1_wrapper.hdf

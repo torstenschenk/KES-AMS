@@ -1,0 +1,351 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Fri Nov 30 19:25:57 2018
+# Process ID: 892
+# Current directory: c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.tmp/lab3_a1_btn_ip_v1_0_project/lab3_a1_btn_ip_v1_0_project.runs/synth_1
+# Command line: vivado.exe -log lab3_a1_btn_ip_v1_0.vds -mode batch -messageDb vivado.pb -notrace -source lab3_a1_btn_ip_v1_0.tcl
+# Log file: c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.tmp/lab3_a1_btn_ip_v1_0_project/lab3_a1_btn_ip_v1_0_project.runs/synth_1/lab3_a1_btn_ip_v1_0.vds
+# Journal file: c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.tmp/lab3_a1_btn_ip_v1_0_project/lab3_a1_btn_ip_v1_0_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source lab3_a1_btn_ip_v1_0.tcl -notrace
+Command: synth_design -top lab3_a1_btn_ip_v1_0 -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4152 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 305.855 ; gain = 98.313
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'lab3_a1_btn_ip_v1_0' [c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0/hdl/lab3_a1_btn_ip_v1_0.vhd:48]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'lab3_a1_btn_ip_v1_0_S00_AXI' declared at 'c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0/hdl/lab3_a1_btn_ip_v1_0_S00_AXI.vhd:5' bound to instance 'lab3_a1_btn_ip_v1_0_S00_AXI_inst' of component 'lab3_a1_btn_ip_v1_0_S00_AXI' [c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0/hdl/lab3_a1_btn_ip_v1_0.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'lab3_a1_btn_ip_v1_0_S00_AXI' [c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0/hdl/lab3_a1_btn_ip_v1_0_S00_AXI.vhd:87]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0/hdl/lab3_a1_btn_ip_v1_0_S00_AXI.vhd:219]
+INFO: [Synth 8-226] default block is never used [c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0/hdl/lab3_a1_btn_ip_v1_0_S00_AXI.vhd:350]
+INFO: [Synth 8-256] done synthesizing module 'lab3_a1_btn_ip_v1_0_S00_AXI' (1#1) [c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0/hdl/lab3_a1_btn_ip_v1_0_S00_AXI.vhd:87]
+INFO: [Synth 8-256] done synthesizing module 'lab3_a1_btn_ip_v1_0' (2#1) [c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0/hdl/lab3_a1_btn_ip_v1_0.vhd:48]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 343.203 ; gain = 135.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 343.203 ; gain = 135.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 343.203 ; gain = 135.660
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 350.344 ; gain = 142.801
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module lab3_a1_btn_ip_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 484.551 ; gain = 277.008
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design lab3_a1_btn_ip_v1_0 has unconnected port s00_axi_arprot[0]
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 484.551 ; gain = 277.008
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 484.551 ; gain = 277.008
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[31] )
+INFO: [Synth 8-3886] merging instance 'lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_bresp_reg[0]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_araddr_reg[1]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_araddr_reg[0]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_awaddr_reg[1]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_awaddr_reg[0]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[31]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[30]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[29]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[28]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[27]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[26]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[25]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[24]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[23]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[22]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[21]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[20]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[19]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[18]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[17]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[16]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[15]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[14]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[13]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[12]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[11]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[10]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[9]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[8]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[7]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[6]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/slv_reg0_reg[5]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+WARNING: [Synth 8-3332] Sequential element (lab3_a1_btn_ip_v1_0_S00_AXI_inst/axi_rresp_reg[0]) is unused and will be removed from module lab3_a1_btn_ip_v1_0.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 505.117 ; gain = 297.574
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 505.117 ; gain = 297.574
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 505.117 ; gain = 297.574
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 505.121 ; gain = 297.578
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 505.121 ; gain = 297.578
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 505.121 ; gain = 297.578
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 505.121 ; gain = 297.578
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 505.121 ; gain = 297.578
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 505.121 ; gain = 297.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 505.121 ; gain = 297.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 505.121 ; gain = 297.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 505.121 ; gain = 297.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     1|
+|3     |LUT2 |     1|
+|4     |LUT3 |    15|
+|5     |LUT4 |     1|
+|6     |LUT5 |    29|
+|7     |LUT6 |     7|
+|8     |FDRE |   140|
+|9     |FDSE |     2|
+|10    |IBUF |    52|
+|11    |OBUF |    41|
++------+-----+------+
+
+Report Instance Areas: 
++------+-----------------------------------+----------------------------+------+
+|      |Instance                           |Module                      |Cells |
++------+-----------------------------------+----------------------------+------+
+|1     |top                                |                            |   290|
+|2     |  lab3_a1_btn_ip_v1_0_S00_AXI_inst |lab3_a1_btn_ip_v1_0_S00_AXI |   196|
++------+-----------------------------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 505.121 ; gain = 297.578
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 47 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 505.121 ; gain = 277.129
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 505.121 ; gain = 297.578
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 52 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+47 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 570.707 ; gain = 344.922
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 570.707 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 30 19:26:15 2018...
