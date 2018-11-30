@@ -1,0 +1,106 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+Process ID: 4208
+
+Current time: 	11/30/18 11:03:20 PM CET
+Time zone: 	Central European Time (Europe/Berlin)
+
+OS: Windows 10
+Version: 10.0
+Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	C:/Xilinx/Vivado/2016.2/tps/win64/jre
+
+User name: 	omid
+User home directory: C:/Users/omid
+User working directory: C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI Base root directory: C:/Xilinx/Vivado
+RDI Data directory: C:/Xilinx/Vivado/2016.2/data
+RDI Bin directory: C:/Xilinx/Vivado/2016.2/bin
+
+Vivado preferences path: C:/Users/omid/AppData/Roaming/Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: C:/Users/omid/AppData/Roaming/Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	225 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 411 MB
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 38 MB (+37718kb) [00:00:14]
+// [Engine Memory]: 366 MB (+231827kb) [00:00:14]
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bL:g (cv:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\omid\Documents\GitHub\KES-AMS\KES\Lab3\A1_btn_read\A1_btn_read.xpr. Version: Vivado v2016.2 
+// [Engine Memory]: 393 MB (+9914kb) [00:00:17]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// HMemoryUtils.trashcanNow. Engine heap size: 428 MB. GUI used memory: 26 MB. Current time: 11/30/18 11:03:22 PM CET
+// [Engine Memory]: 431 MB (+18523kb) [00:00:22]
+// [Engine Memory]: 453 MB (+643kb) [00:00:32]
+// HMemoryUtils.trashcanNow. Engine heap size: 465 MB. GUI used memory: 25 MB. Current time: 11/30/18 11:03:37 PM CET
+// TclEventType: IP_LOCK_CHANGE
+// [Engine Memory]: 477 MB (+1103kb) [00:00:37]
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 49 MB (+9477kb) [00:00:42]
+// [Engine Memory]: 527 MB (+27565kb) [00:00:42]
+// [GUI Memory]: 58 MB (+6167kb) [00:00:46]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 560 MB (+6999kb) [00:00:48]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Project name: A1_btn_read; location: C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read; part: xc7z020clg484-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:32 . Memory (MB): peak = 832.418 ; gain = 171.969 
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 16 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ab:JMenu (JPopupMenu:JComponent, cv:JFrame)
+// [GUI Memory]: 62 MB (+1568kb) [00:01:14]
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // af:JMenuItem (JPopupMenu:JComponent, cv:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // V:JideMenu (CommandMenuBar:CommandBar, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// ai:x (cv:JFrame): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, ai:x)
+dismissDialog("Launch SDK"); // ai:x (cv:JFrame)
+// Tcl Message: launch_sdk -workspace C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk -hwspec C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk/design_1_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk -hwspec C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk/design_1_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// HMemoryUtils.trashcanNow. Engine heap size: 583 MB. GUI used memory: 35 MB. Current time: 11/30/18 11:04:32 PM CET
+// [Engine Memory]: 594 MB (+6234kb) [00:01:35]
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 35 MB. Current time: 11/30/18 11:12:52 PM CET
+// [GUI Memory]: 66 MB (+345kb) [00:27:01]
+// [GUI Memory]: 69 MB (+496kb) [00:37:31]
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 35 MB. Current time: 11/30/18 11:42:53 PM CET
+// [GUI Memory]: 73 MB (+377kb) [00:41:58]
+// [GUI Memory]: 77 MB (+209kb) [00:47:09]

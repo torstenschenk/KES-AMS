@@ -2,66 +2,14 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Fri Nov 30 21:29:36 2018
-# Process ID: 9548
-# Current directory: C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6632 C:\Users\Misca\Documents\KES-AMS\KES\Lab3\A1_btn_read\A1_btn_read.xpr
-# Log file: C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/vivado.log
-# Journal file: C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read\vivado.jou
+# Start of session at: Fri Nov 30 23:02:49 2018
+# Process ID: 4208
+# Current directory: C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1944 C:\Users\omid\Documents\GitHub\KES-AMS\KES\Lab3\A1_btn_read\A1_btn_read.xpr
+# Log file: C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/vivado.log
+# Journal file: C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.xpr
+open_project C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.xpr
 update_compile_order -fileset sources_1
-open_bd_design {C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/design_1.bd}
-ipx::edit_ip_in_project -upgrade true -name lab3_a1_btn_ip_v1_0_project -directory C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.tmp/lab3_a1_btn_ip_v1_0_project c:/Users/Misca/Documents/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0/component.xml
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-launch_runs synth_1
-wait_on_run synth_1
-launch_runs impl_1
-wait_on_run impl_1
-synth_design -rtl -name rtl_1
-set_property supported_families {zynq Pre-Production artix7 Beta zynq Beta} [ipx::current_core]
-set_property supported_families {zynq Pre-Production artix7 Beta zynq Beta} [ipx::current_core]
-set_property core_revision 4 [ipx::current_core]
-ipx::create_xgui_files [ipx::current_core]
-ipx::update_checksums [ipx::current_core]
-ipx::save_core [ipx::current_core]
-close_project -delete
-update_ip_catalog -rebuild -repo_path c:/Users/Misca/Documents/KES-AMS/KES/Lab3/ip_repo/lab3_a1_btn_ip_1.0
-delete_bd_objs [get_bd_intf_nets processing_system7_0_axi_periph_M00_AXI] [get_bd_nets btn_in_1] [get_bd_cells lab3_a1_btn_ip_0]
-regenerate_bd_layout
-validate_bd_design
-delete_bd_objs [get_bd_ports btn_in]
-regenerate_bd_layout
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:user:lab3_a1_btn_ip:1.0 lab3_a1_btn_ip_0
-endgroup
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins lab3_a1_btn_ip_0/S00_AXI]
-regenerate_bd_layout
-validate_bd_design
-startgroup
-create_bd_port -dir I -from 4 -to 0 -type data btn_in
-connect_bd_net [get_bd_pins /lab3_a1_btn_ip_0/btn_in] [get_bd_ports btn_in]
-endgroup
-regenerate_bd_layout
-validate_bd_design
-remove_files C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
-file delete -force C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-make_wrapper -files [get_files C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/design_1.bd] -top
-add_files -norecurse C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-save_bd_design
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
-open_hw
-file copy -force C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.runs/impl_1/design_1_wrapper.sysdef C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk/design_1_wrapper.hdf
-
-launch_sdk -workspace C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk -hwspec C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk/design_1_wrapper.hdf
-file copy -force C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.runs/impl_1/design_1_wrapper.sysdef C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk/design_1_wrapper.hdf
-
-launch_sdk -workspace C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk -hwspec C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk/design_1_wrapper.hdf
+launch_sdk -workspace C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk -hwspec C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.sdk/design_1_wrapper.hdf
