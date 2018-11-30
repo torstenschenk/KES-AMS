@@ -158,7 +158,7 @@ proc create_root_design { parentCell } {
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
 
   # Create ports
-  set btn_in [ create_bd_port -dir I -from 4 -to 0 btn_in ]
+  set btn_in [ create_bd_port -dir I -from 4 -to 0 -type data btn_in ]
 
   # Create instance: lab3_a1_btn_ip_0, and set properties
   set lab3_a1_btn_ip_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:lab3_a1_btn_ip:1.0 lab3_a1_btn_ip_0 ]

@@ -2,36 +2,16 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Mon Nov 19 23:26:58 2018
-# Process ID: 4408
+# Start of session at: Fri Nov 30 21:19:38 2018
+# Process ID: 6184
 # Current directory: C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8668 C:\Users\Misca\Documents\KES-AMS\KES\Lab1\A3\project_1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8972 C:\Users\Misca\Documents\KES-AMS\KES\Lab1\A3\project_1.xpr
 # Log file: C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/vivado.log
 # Journal file: C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.xpr
 update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
 open_bd_design {C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.srcs/sources_1/bd/design_1/design_1.bd}
-remove_files C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
-file delete -force C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-regenerate_bd_layout
-validate_bd_design -force
-make_wrapper -files [get_files C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.srcs/sources_1/bd/design_1/design_1.bd] -top
-add_files -norecurse C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-save_bd_design
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream
-wait_on_run impl_1
-open_run impl_1
-file copy -force C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.runs/impl_1/design_1_wrapper.sysdef C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk/design_1_wrapper.hdf
-
-launch_sdk -workspace C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk -hwspec C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk/design_1_wrapper.hdf
-file copy -force C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.runs/impl_1/design_1_wrapper.sysdef C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk/design_1_wrapper.hdf
-
-launch_sdk -workspace C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk -hwspec C:/Users/Misca/Documents/KES-AMS/KES/Lab1/A3/project_1.sdk/design_1_wrapper.hdf
-close_project
+synth_design -rtl -name rtl_1

@@ -1,0 +1,861 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Fri Nov 30 21:44:36 2018
+# Process ID: 8940
+# Current directory: C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.runs/impl_1
+# Command line: vivado.exe -log design_1_wrapper.vdi -applog -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
+# Log file: C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.runs/impl_1/design_1_wrapper.vdi
+# Journal file: C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst'
+Parsing XDC File [c:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_board.xdc] for cell 'design_1_i/rst_processing_system7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0_board.xdc] for cell 'design_1_i/rst_processing_system7_0_100M/U0'
+Parsing XDC File [c:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xdc] for cell 'design_1_i/rst_processing_system7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_100M_0/design_1_rst_processing_system7_0_100M_0.xdc] for cell 'design_1_i/rst_processing_system7_0_100M/U0'
+Parsing XDC File [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc]
+WARNING: [Vivado 12-584] No ports matched 'AC_ADR0'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_ADR1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO0'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO2'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_GPIO3'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_MCLK'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_SCK'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AC_SDA'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:77]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:77]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'GCLK'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA10'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA2'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:89]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA3'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:90]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA4'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:91]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA7'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA8'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:93]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JA9'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:94]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:100]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB10'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:101]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB2'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:102]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB3'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB4'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB7'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:105]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:105]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB8'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:106]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:106]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JB9'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:107]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:107]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC1_N'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:112]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:112]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC1_P'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:113]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:113]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC2_N'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:114]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:114]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC2_P'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC3_N'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:116]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:116]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC3_P'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:117]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:117]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC4_N'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:118]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:118]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JC4_P'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:119]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD1_N'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:124]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:124]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD1_P'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:125]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:125]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD2_N'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:126]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:126]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD2_P'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:127]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:127]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD3_N'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:128]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:128]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD3_P'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:129]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:129]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD4_N'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:130]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:130]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'JD4_P'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:131]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:131]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_DC'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:136]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:136]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_RES'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:137]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:137]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_SCLK'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:138]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:138]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_SDIN'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:139]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:139]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_VBAT'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:140]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:140]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OLED_VDD'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:141]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:141]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_CLK'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:146]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:146]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D0'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:147]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:147]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:148]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:148]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D10'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:149]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:149]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D11'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:150]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:150]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D12'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:151]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:151]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D13'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:152]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:152]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D14'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:153]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:153]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HS_D15'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:154]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:154]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D2'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:155]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:155]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D3'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:156]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:156]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D4'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:157]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:157]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D5'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:158]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:158]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D6'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:159]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:159]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D7'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:160]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:160]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D8'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:161]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:161]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_D9'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:162]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:162]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_DE'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:163]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:163]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_HSYNC'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:164]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:164]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_INT'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:165]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:165]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_SCL'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:166]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:166]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_SDA'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:167]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:167]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_SPDIF'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:168]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:168]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_SPDIFO'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:169]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:169]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'HD_VSYNC'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:170]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:170]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD0'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:175]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:175]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:176]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:176]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD2'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:177]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:177]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD3'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:178]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:178]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD4'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:179]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:179]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD5'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:180]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:180]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD6'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:181]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:181]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LD7'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:182]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:182]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_B1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:186]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:186]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_B2'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:187]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:187]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_B3'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:188]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:188]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_B4'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:189]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:189]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_G1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:190]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:190]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_G2'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:191]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:191]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_G3'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:192]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:192]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_G4'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:193]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:193]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_HS'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:194]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:194]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_R1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:195]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:195]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_R2'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:196]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:196]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_R3'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:197]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:197]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_R4'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:198]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:198]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'VGA_VS'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:199]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:199]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'OTG_VBUSOC'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:213]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:213]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO0'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:218]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:218]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO1'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:219]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:219]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO2'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:220]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:220]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'XADC_GIO3'. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:221]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:221]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:221]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc:221]
+Finished Parsing XDC File [C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/zedboard_master_XDC_RevC_D_v3.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+link_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 481.289 ; gain = 274.738
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.157 . Memory (MB): peak = 486.797 ; gain = 5.508
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+Implement Debug Cores | Checksum: 23fc0b389
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1d0cc90ef
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.437 . Memory (MB): peak = 940.910 ; gain = 0.004
+
+Phase 2 Constant Propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-10] Eliminated 12 cells.
+Phase 2 Constant Propagation | Checksum: 20741d409
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.703 . Memory (MB): peak = 940.910 ; gain = 0.004
+
+Phase 3 Sweep
+INFO: [Opt 31-12] Eliminated 518 unconnected nets.
+INFO: [Opt 31-11] Eliminated 621 unconnected cells.
+Phase 3 Sweep | Checksum: 11ca111fc
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 940.910 ; gain = 0.004
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 940.910 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 11ca111fc
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 940.910 ; gain = 0.004
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 11ca111fc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 940.910 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+22 Infos, 100 Warnings, 100 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 940.910 ; gain = 459.621
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.157 . Memory (MB): peak = 940.910 ; gain = 0.000
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.runs/impl_1/design_1_wrapper_drc_opted.rpt.
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 940.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 1.1.1 ParallelPlaceIOClockAndInitTop
+
+Phase 1.1.1.1 Pre-Place Cells
+Phase 1.1.1.1 Pre-Place Cells | Checksum: b94f830c
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 1.1.1.2 Constructing HAPIClkRuleMgr
+Phase 1.1.1.2 Constructing HAPIClkRuleMgr | Checksum: b94f830c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 940.910 ; gain = 0.000
+WARNING: [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.
+WARNING: [Place 30-12] An IO Bus FIXED_IO_mio with more than one IO standard is found. Components associated with this bus are: 
+	FIXED_IO_mio[53] of IOStandard LVCMOS18
+	FIXED_IO_mio[52] of IOStandard LVCMOS18
+	FIXED_IO_mio[51] of IOStandard LVCMOS18
+	FIXED_IO_mio[50] of IOStandard LVCMOS18
+	FIXED_IO_mio[49] of IOStandard LVCMOS18
+	FIXED_IO_mio[48] of IOStandard LVCMOS18
+	FIXED_IO_mio[47] of IOStandard LVCMOS18
+	FIXED_IO_mio[46] of IOStandard LVCMOS18
+	FIXED_IO_mio[45] of IOStandard LVCMOS18
+	FIXED_IO_mio[44] of IOStandard LVCMOS18
+	FIXED_IO_mio[43] of IOStandard LVCMOS18
+	FIXED_IO_mio[42] of IOStandard LVCMOS18
+	FIXED_IO_mio[41] of IOStandard LVCMOS18
+	FIXED_IO_mio[40] of IOStandard LVCMOS18
+	FIXED_IO_mio[39] of IOStandard LVCMOS18
+	FIXED_IO_mio[38] of IOStandard LVCMOS18
+	FIXED_IO_mio[37] of IOStandard LVCMOS18
+	FIXED_IO_mio[36] of IOStandard LVCMOS18
+	FIXED_IO_mio[35] of IOStandard LVCMOS18
+	FIXED_IO_mio[34] of IOStandard LVCMOS18
+	FIXED_IO_mio[33] of IOStandard LVCMOS18
+	FIXED_IO_mio[32] of IOStandard LVCMOS18
+	FIXED_IO_mio[31] of IOStandard LVCMOS18
+	FIXED_IO_mio[30] of IOStandard LVCMOS18
+	FIXED_IO_mio[29] of IOStandard LVCMOS18
+	FIXED_IO_mio[28] of IOStandard LVCMOS18
+	FIXED_IO_mio[27] of IOStandard LVCMOS18
+	FIXED_IO_mio[26] of IOStandard LVCMOS18
+	FIXED_IO_mio[25] of IOStandard LVCMOS18
+	FIXED_IO_mio[24] of IOStandard LVCMOS18
+	FIXED_IO_mio[23] of IOStandard LVCMOS18
+	FIXED_IO_mio[22] of IOStandard LVCMOS18
+	FIXED_IO_mio[21] of IOStandard LVCMOS18
+	FIXED_IO_mio[20] of IOStandard LVCMOS18
+	FIXED_IO_mio[19] of IOStandard LVCMOS18
+	FIXED_IO_mio[18] of IOStandard LVCMOS18
+	FIXED_IO_mio[17] of IOStandard LVCMOS18
+	FIXED_IO_mio[16] of IOStandard LVCMOS18
+	FIXED_IO_mio[15] of IOStandard LVCMOS33
+	FIXED_IO_mio[14] of IOStandard LVCMOS33
+	FIXED_IO_mio[13] of IOStandard LVCMOS33
+	FIXED_IO_mio[12] of IOStandard LVCMOS33
+	FIXED_IO_mio[11] of IOStandard LVCMOS33
+	FIXED_IO_mio[10] of IOStandard LVCMOS33
+	FIXED_IO_mio[9] of IOStandard LVCMOS33
+	FIXED_IO_mio[8] of IOStandard LVCMOS33
+	FIXED_IO_mio[7] of IOStandard LVCMOS33
+	FIXED_IO_mio[6] of IOStandard LVCMOS33
+	FIXED_IO_mio[5] of IOStandard LVCMOS33
+	FIXED_IO_mio[4] of IOStandard LVCMOS33
+	FIXED_IO_mio[3] of IOStandard LVCMOS33
+	FIXED_IO_mio[2] of IOStandard LVCMOS33
+	FIXED_IO_mio[1] of IOStandard LVCMOS33
+	FIXED_IO_mio[0] of IOStandard LVCMOS33
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1.1.1.3 IO and Clk Clean Up
+
+Phase 1.1.1.3.1 Constructing HAPIClkRuleMgr
+Phase 1.1.1.3.1 Constructing HAPIClkRuleMgr | Checksum: b94f830c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 940.910 ; gain = 0.000
+Phase 1.1.1.3 IO and Clk Clean Up | Checksum: b94f830c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 1.1.1.4 Implementation Feasibility check On IDelay
+Phase 1.1.1.4 Implementation Feasibility check On IDelay | Checksum: b94f830c
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 1.1.1.5 Commit IO Placement
+Phase 1.1.1.5 Commit IO Placement | Checksum: 49f88222
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 940.910 ; gain = 0.000
+Phase 1.1.1 ParallelPlaceIOClockAndInitTop | Checksum: 49f88222
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 940.910 ; gain = 0.000
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 13f351856
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 1.2 Build Placer Netlist Model
+
+Phase 1.2.1 Place Init Design
+
+Phase 1.2.1.1 Make Others
+Phase 1.2.1.1 Make Others | Checksum: f1f67bce
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 1.2.1.2 Init Lut Pin Assignment
+Phase 1.2.1.2 Init Lut Pin Assignment | Checksum: f1f67bce
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 940.910 ; gain = 0.000
+Phase 1.2.1 Place Init Design | Checksum: dc4770a4
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 940.910 ; gain = 0.000
+Phase 1.2 Build Placer Netlist Model | Checksum: dc4770a4
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 1.3 Constrain Clocks/Macros
+Phase 1.3 Constrain Clocks/Macros | Checksum: dc4770a4
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 940.910 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: dc4770a4
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 13d3c48e7
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 13d3c48e7
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 17f91d73a
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 14b22c473
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3.4 updateClock Trees: DP
+Phase 3.4 updateClock Trees: DP | Checksum: 14b22c473
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 1aa811a68
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 1aa811a68
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3.7 Small Shape Detail Placement
+Phase 3.7 Small Shape Detail Placement | Checksum: 107b29a9e
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: 165d7f244
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: 165d7f244
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 3.10 Fast Optimization
+Phase 3.10 Fast Optimization | Checksum: 165d7f244
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 940.910 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 165d7f244
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 updateClock Trees: PCOPT
+Phase 4.1.1 updateClock Trees: PCOPT | Checksum: 12284fd76
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 4.1.2 Post Placement Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=3.255. For the most accurate timing information please run report_timing.
+Phase 4.1.2 Post Placement Optimization | Checksum: 12106d1d9
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 940.910 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 12106d1d9
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 4.2 Sweep Clock Roots: Post-Placement
+Phase 4.2 Sweep Clock Roots: Post-Placement | Checksum: 12106d1d9
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 4.3 Uram Pipeline Register Optimization
+Phase 4.3 Uram Pipeline Register Optimization | Checksum: 12106d1d9
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 4.4 Post Placement Cleanup
+Phase 4.4 Post Placement Cleanup | Checksum: 12106d1d9
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 4.5 Placer Reporting
+Phase 4.5 Placer Reporting | Checksum: 12106d1d9
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 940.910 ; gain = 0.000
+
+Phase 4.6 Final Placement Cleanup
+Phase 4.6 Final Placement Cleanup | Checksum: 14ac5c217
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 940.910 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 14ac5c217
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 940.910 ; gain = 0.000
+Ending Placer Task | Checksum: fb06f66f
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 940.910 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+37 Infos, 102 Warnings, 100 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 940.910 ; gain = 0.000
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.266 . Memory (MB): peak = 940.910 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.125 . Memory (MB): peak = 940.910 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 940.910 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 940.910 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-20] Rule violation (PLIO-7) Placement Constraints Check for IO constraints - An IO Bus FIXED_IO_mio[53:0] with more than one IO standard is found. Components associated with this bus are: LVCMOS18 (FIXED_IO_mio[53], FIXED_IO_mio[52], FIXED_IO_mio[51], FIXED_IO_mio[50], FIXED_IO_mio[49], FIXED_IO_mio[48], FIXED_IO_mio[47], FIXED_IO_mio[46], FIXED_IO_mio[45], FIXED_IO_mio[44], FIXED_IO_mio[43], FIXED_IO_mio[42], FIXED_IO_mio[41], FIXED_IO_mio[40], FIXED_IO_mio[39] (the first 15 of 38 listed)); LVCMOS33 (FIXED_IO_mio[15], FIXED_IO_mio[14], FIXED_IO_mio[13], FIXED_IO_mio[12], FIXED_IO_mio[11], FIXED_IO_mio[10], FIXED_IO_mio[9], FIXED_IO_mio[8], FIXED_IO_mio[7], FIXED_IO_mio[6], FIXED_IO_mio[5], FIXED_IO_mio[4], FIXED_IO_mio[3], FIXED_IO_mio[2], FIXED_IO_mio[1] (the first 15 of 16 listed)); 
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: b2e528da ConstDB: 0 ShapeSum: 4821cd95 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 12eb26cf3
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:53 . Memory (MB): peak = 1087.414 ; gain = 146.504
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 12eb26cf3
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:54 . Memory (MB): peak = 1087.414 ; gain = 146.504
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 12eb26cf3
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:54 . Memory (MB): peak = 1087.414 ; gain = 146.504
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 12eb26cf3
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:54 . Memory (MB): peak = 1087.414 ; gain = 146.504
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: fd83c3ef
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:54 . Memory (MB): peak = 1101.949 ; gain = 161.039
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.264  | TNS=0.000  | WHS=-0.188 | THS=-9.735 |
+
+Phase 2 Router Initialization | Checksum: 11a840429
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: a679a537
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 24
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: 19e3cf72a
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.857  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: a6aee7f0
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.2.1 Update Timing
+Phase 4.2.1 Update Timing | Checksum: 1f02d2ecc
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.857  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 18bf3707d
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+Phase 4 Rip-up And Reroute | Checksum: 18bf3707d
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 11181ab8f
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.972  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: 11181ab8f
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 11181ab8f
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+Phase 5 Delay and Skew Optimization | Checksum: 11181ab8f
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 19bff9402
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=3.972  | TNS=0.000  | WHS=0.054  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 15a54c73e
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+Phase 6 Post Hold Fix | Checksum: 15a54c73e
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.0821684 %
+  Global Horizontal Routing Utilization  = 0.0962644 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 153de3de8
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 153de3de8
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:55 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: bc2ae95e
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:56 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=3.972  | TNS=0.000  | WHS=0.054  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: bc2ae95e
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:56 . Memory (MB): peak = 1101.949 ; gain = 161.039
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:56 . Memory (MB): peak = 1101.949 ; gain = 161.039
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+51 Infos, 103 Warnings, 100 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:05 ; elapsed = 00:00:57 . Memory (MB): peak = 1101.949 ; gain = 161.039
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.297 . Memory (MB): peak = 1101.949 ; gain = 0.000
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.runs/impl_1/design_1_wrapper_drc_routed.rpt.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./design_1_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-186] 'C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A1_btn_read/A1_btn_read.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Fri Nov 30 21:47:10 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2016.2/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+write_bitstream: Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1453.969 ; gain = 352.020
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 30 21:47:11 2018...

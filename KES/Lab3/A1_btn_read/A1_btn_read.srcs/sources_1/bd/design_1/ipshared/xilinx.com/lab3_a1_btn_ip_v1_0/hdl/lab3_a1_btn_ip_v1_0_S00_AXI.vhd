@@ -222,8 +222,7 @@ begin
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
 	                -- Respective byte enables are asserted as per write strobes                   
 	                -- slave registor 0
-	               slv_reg0(4 downto 0)<= S_btn_in(4 downto 0);
-	             --   slv_reg0(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+	                slv_reg0(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 	              end if;
 	            end loop;
 	          when b"01" =>
@@ -373,7 +372,7 @@ begin
 	        -- acceptance of read address by the slave (axi_arready), 
 	        -- output the read dada 
 	        -- Read address mux
-	          axi_rdata <= reg_data_out;     -- register read data
+	          axi_rdata (4 downto 0) <= S_btn_in(4 downto 0);     -- register read data
 	      end if;   
 	    end if;
 	  end if;

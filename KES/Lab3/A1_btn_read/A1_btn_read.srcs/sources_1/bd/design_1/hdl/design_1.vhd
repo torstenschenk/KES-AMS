@@ -1,8 +1,8 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
---Date        : Fri Nov 30 20:06:50 2018
---Host        : DESKTOP-G32S92J running 64-bit major release  (build 9200)
+--Date        : Fri Nov 30 21:42:04 2018
+--Host        : alienware running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
 --Purpose     : IP block netlist
@@ -614,7 +614,7 @@ entity design_1 is
     btn_in : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -706,7 +706,7 @@ architecture STRUCTURE of design_1 is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_rst_processing_system7_0_100M_0;
-  component design_1_lab3_a1_btn_ip_0_1 is
+  component design_1_lab3_a1_btn_ip_0_0 is
   port (
     btn_in : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -731,7 +731,7 @@ architecture STRUCTURE of design_1 is
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC
   );
-  end component design_1_lab3_a1_btn_ip_0_1;
+  end component design_1_lab3_a1_btn_ip_0_0;
   signal btn_in_1 : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -825,7 +825,7 @@ architecture STRUCTURE of design_1 is
   signal NLW_rst_processing_system7_0_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
 begin
   btn_in_1(4 downto 0) <= btn_in(4 downto 0);
-lab3_a1_btn_ip_0: component design_1_lab3_a1_btn_ip_0_1
+lab3_a1_btn_ip_0: component design_1_lab3_a1_btn_ip_0_0
      port map (
       btn_in(4 downto 0) => btn_in_1(4 downto 0),
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
