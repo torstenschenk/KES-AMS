@@ -1,12 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use ieee.std_logic_unsigned.all;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use ieee.NUMERIC_STD.all;
+use ieee.numeric_std.all;
 
-entity VGA_IP_v1_0_S00_AXI is
+entity vga_vorlage_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
 
@@ -20,11 +16,13 @@ entity VGA_IP_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-
--------------------------------------------------------------------------------
-------- hier VGA Ports einfügen -----------------------------------------------
--------------------------------------------------------------------------------
-
+		vga_clk: in std_logic;
+        reset       : in std_logic;
+        vSync         : out std_logic;
+        hSync         : out std_logic;
+        red : out std_logic_vector( 3 downto 0 );
+        green : out std_logic_vector( 3 downto 0 );
+        blue : out std_logic_vector( 3 downto 0 );
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -89,9 +87,9 @@ entity VGA_IP_v1_0_S00_AXI is
     		-- accept the read data and response information.
 		S_AXI_RREADY	: in std_logic
 	);
-end VGA_IP_v1_0_S00_AXI;
+end vga_vorlage_v1_0_S00_AXI;
 
-architecture arch_imp of VGA_IP_v1_0_S00_AXI is
+architecture arch_imp of vga_vorlage_v1_0_S00_AXI is
 
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -124,37 +122,46 @@ architecture arch_imp of VGA_IP_v1_0_S00_AXI is
 	signal slv_reg_wren	: std_logic;
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
-	
-    --
-    -- VGA-Controller VHDL-Code Fragment
-    --
-    constant low_address: natural := 0;
-    constant high_address: natural := ((640 * 480) - 1); -- 640 * 480 =  307200 --> Starten bei 0 --> 307199
-    TYPE ram_type is array (high_address downto low_address) of std_logic_vector (1 downto 0);
-    SIGNAL RAM: ram_type;
+---------------------- VGA-Controller RAM und Signale Anfang  --------------------------
+        
+        -- RAM
+        constant low_address: natural := 0;
+        constant high_address: natural := ((640 * 480) - 1); -- 640 * 480 =  307200 --> Starten bei 0 --> 307199
+        TYPE ram_type is array (high_address downto low_address) of std_logic_vector (1 downto 0);
+        SIGNAL RAM: ram_type;
     
+        signal RAM_address    : integer RANGE low_address TO high_address := low_address; -- The current Ram Adress
+        signal ram_Data : std_logic_vector(1 downto 0) := "00"; -- The current Ram Data  
     
-    SIGNAL blank, hblk, vblk: STD_LOGIC;                  -- blanking signals
-    SIGNAL hcnt:            INTEGER RANGE 0 TO 1024 := 0; -- zaehlt tatsaechlich nicht so weit
-    SIGNAL vcnt:            INTEGER RANGE 0 TO 1024 := 0; -- zaehlt tatsaechlich nicht so weit
-  
-   
-    CONSTANT hcnt_a: INTEGER := 639; -- blanking start
-    CONSTANT hcnt_b: INTEGER := 670; -- h-sync start
-    CONSTANT hcnt_c: INTEGER := 759; -- h-sync end
-    CONSTANT hcnt_d: INTEGER := 792; -- h length
---    
-    CONSTANT hcnt_v: INTEGER := 699; -- next line
-  
-    CONSTANT vcnt_e: INTEGER := 479; -- v blanking
-    CONSTANT vcnt_f: INTEGER := 490; -- v-sync start
-    CONSTANT vcnt_g: INTEGER := 492; -- v-sync end
-    CONSTANT vcnt_h: INTEGER := 524; -- v length
+        SIGNAL vsynct, hsynct: STD_LOGIC := '1'; -- intermediate sync-signals
+        SIGNAL pixel_x_sig, pixel_y_sig: std_logic_vector( 9 downto 0 );
+        SIGNAL pixel_x_int, pixel_y_int : INTEGER RANGE 0 TO 1023;
+        SIGNAL video_on: STD_LOGIC;
+        
+        CONSTANT h_active_video: INTEGER := 640; -- horizontal active video
+        CONSTANT h_front_porch: INTEGER := 16; -- horizontal front porch
+        CONSTANT h_retrace: INTEGER := 96; -- horizontal retrace / sync pulse length
+        CONSTANT h_back_porch: INTEGER := 48; -- horizontal back porch
     
-    SIGNAL vsynct, hsynct: STD_LOGIC := '1'; -- intermediate sync-signals
-
-    signal RAM_address	: integer RANGE low_address TO high_address := low_address; -- The current Ram Adress
-    signal ram_Data : std_logic_vector(1 downto 0) := "00"; -- The current Ram Data
+        CONSTANT v_active_video: INTEGER := 480; -- vertical active video
+        CONSTANT v_front_porch: INTEGER := 10; -- vertical front porch
+        CONSTANT v_retrace: INTEGER := 2; -- vertical retrace / sync pulse length
+        CONSTANT v_back_porch: INTEGER := 33; -- vertical back porch
+    
+        component vga_sync
+            port (
+                vga_clk        : in std_logic;
+                reset       : in std_logic;
+                pixel_x     : out std_logic_vector( 9 downto 0 );
+                pixel_y      : out std_logic_vector( 9 downto 0 );
+                video_on    : out std_logic;
+                hSync         : out std_logic;
+                vSync         : out std_logic
+            ) ;
+        end component;
+    
+    ---------------------- VGA-Controller RAM und Signale Ende --------------------------
+    
 begin
 	-- I/O Connections assignments
 
@@ -244,8 +251,7 @@ begin
 	process (S_AXI_ACLK)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0); 
 	begin
-	  if rising_edge(S_AXI_ACLK) then
-	    writeEnableAXI <= '0';  
+	  if rising_edge(S_AXI_ACLK) then 
 	    if S_AXI_ARESETN = '0' then
 	      slv_reg0 <= (others => '0');
 	      slv_reg1 <= (others => '0');
@@ -256,7 +262,6 @@ begin
 	      if (slv_reg_wren = '1') then
 	        case loc_addr is
 	          when b"00" =>
-	            writeEnableAXI <= '1'; 
 	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
 	                -- Respective byte enables are asserted as per write strobes                   
@@ -383,9 +388,6 @@ begin
 	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
-	  if S_AXI_ARESETN = '0' then
-	    reg_data_out  <= (others => '1');
-	  else
 	    -- Address decoding for reading registers
 	    loc_addr := axi_araddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
 	    case loc_addr is
@@ -400,7 +402,6 @@ begin
 	      when others =>
 	        reg_data_out  <= (others => '0');
 	    end case;
-	  end if;
 	end process; 
 
 	-- Output register or memory read data
@@ -437,42 +438,48 @@ process (S_AXI_ACLK)
     variable RAM_position : integer;
     begin
         IF rising_edge(S_AXI_ACLK) THEN    
-            IF (writeEnable = '1') THEN                
                 x_position := TO_INTEGER(ieee.NUMERIC_STD.unsigned(  slv_reg0(20 downto 11) ) );
                 y_position := TO_INTEGER(ieee.NUMERIC_STD.unsigned(  slv_reg0(10 downto 2 ) ) );
                       
                 RAM_position :=  (x_position + (y_position * 640 ));
                        
-                RAM(RAM_position) <= slv_reg0(1 downto 0); 
-                                            
-            end IF;                
+                RAM(RAM_position) <= slv_reg0(1 downto 0);                             
         end IF;
 end PROCESS;	
- -----------------------------------------------------------------------------
+ ----------------------------------------------------------------------------- 
 
--------------------------------------------------------------------------------
-------- hier VGA Code einfügen ------------------------------------------------
--------------------------------------------------------------------------------      
+vga_sync_comp: vga_sync port map (
+	vga_clk	=> vga_clk ,
+	reset => reset ,
+	pixel_x => pixel_x_sig,
+	pixel_y => pixel_y_sig,
+	video_on => video_on,
+	hSync => hsynct,
+	vSync => vsynct
+) ;
 
+pixel_x_int <= to_integer( unsigned( pixel_x_sig ) );
+pixel_y_int <= to_integer( unsigned( pixel_y_sig ) );
 
 -----------------------------------------------------------------------------
  -- calculate the current RAM address.
- PROCESS(hcnt, vcnt)
+ PROCESS(pixel_x_int, pixel_y_int)
     BEGIN
-    IF (hcnt <= hcnt_a) AND (vcnt <= vcnt_e) THEN
+    IF video_on = '1' THEN
         -- calculate the current RAM address.
-        RAM_address <= (hcnt + (vcnt * 640));
+        RAM_address <= (pixel_x_int + (pixel_y_int * 640));
+        --RAM_address <= ( pixel_x + pixel_y );
     END IF;
 END PROCESS;
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
 -- Set the vga_colour_out from the RAM
-process (vgaclk)
+process (vga_clk)
         -- variable RAM_position : integer;
         BEGIN
         -- erst bei der fallenden Flanke wird vga_colour_out benoetigt, deswegen koennen wir das hier machen.
-        IF rising_edge(vgaclk) THEN
+        IF rising_edge(vga_clk) THEN
             -- Get the RAM Adress from the STD Logic Vector
             ram_Data <= RAM(RAM_address);
         END IF;
@@ -480,16 +487,12 @@ END PROCESS;
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------                
-PROCESS(vgaclk)
+
+PROCESS(vga_clk)
     variable  vga_colour_out : std_logic_vector(11 downto 0);
     BEGIN
-    IF falling_edge(vgaclk) THEN
-        IF(blank='1') THEN
-            --negative clock edge and blanking is on: display black
-             red   <= (OTHERS => '0');
-             green   <= (OTHERS => '0');
-             blue   <= (OTHERS => '0');
-        ELSE
+    IF falling_edge(vga_clk) THEN
+        IF(video_on='1') THEN
             case ram_Data is     
                 when "00" =>    vga_colour_out := "111111111111" ; -- Weiss initial
                 when "01" =>    vga_colour_out := "111100000000" ; -- ROT 
@@ -501,13 +504,23 @@ PROCESS(vgaclk)
             red    <=  vga_colour_out(11 downto 8);
             green   <= vga_colour_out(7 downto 4);
             blue    <= vga_colour_out(3 downto 0);
-           END IF;
-           hSync <= hsynct;
-           vSync <= vsynct;
-         END IF;
+        ELSE
+            red   <= (OTHERS => '0');
+            green   <= (OTHERS => '0');
+            blue   <= (OTHERS => '0');
+        END IF;
+        hSync <= hsynct;
+        vSync <= vsynct;
+    END IF;
 END PROCESS;
 -----------------------------------------------------------------------------
        
+
+
+------------------------------------------------------------------------------------------------------
+
+
+
 	-- User logic ends
 
 end arch_imp;
