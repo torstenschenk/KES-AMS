@@ -56,11 +56,10 @@
 //#define  LEDS_DEVICE_ID  XPAR_AXI_GPIO_0_DEVICE_ID
 #define  SW_DEVICE_ID  XPAR_AXI_GPIO_0_DEVICE_ID
 
-#define  LED_DELAY  1000000
+#define  LED_DELAY  10000000
 #define  LED_CHANNEL 1
 #define  printf  xil_printf
 
-XGpio  Gpio;
 XGpio  SWInst; // LEDInst
 static int sw_value ;
 
@@ -89,8 +88,8 @@ int SWReadExample () {
 		// read buttons
 		sw_value = XGpio_DiscreteRead (&SWInst , 1);
 		xil_printf ("Switch: %x\n\r",sw_value);
-
-		for ( Delay = 0;  Delay  < LED_DELAY; Delay++ );
+		sleep(1);
+		//for ( Delay = 0;  Delay  < LED_DELAY; Delay++ );
 	}
 	return  XST_SUCCESS;
 }
@@ -118,7 +117,7 @@ int  main()
 	// Set all switches direction to inputs
 	XGpio_SetDataDirection (&SWInst,1,0xFF);
 
-	print("Hello  meine  LED\n\r");
+	print("Hello world\n\r");
 
 	SWReadExample ();
 
@@ -126,3 +125,28 @@ int  main()
 	cleanup_platform ();
 	return  0;
 }
+
+// how to write to ram
+#if 0
+   -- Write RAM-Data from AXI-Stream
+   -- Get  from AXI-Stream slv_reg0, with the information:
+   -- X Position
+   -- Y Position
+   -- Colour
+   -- and write it into the RAM.
+   process(S_AXI_ACLK)
+       variable x_position   : integer;
+       variable y_position   : integer;
+       variable RAM_position : integer;
+
+       begin
+           if rising_edge(S_AXI_ACLK) then
+                   x_position := to_integer(ieee.NUMERIC_STD.unsigned(  slv_reg0(20 downto 11) ) );
+                   y_position := to_integer(ieee.NUMERIC_STD.unsigned(  slv_reg0(10 downto 2 ) ) );
+
+                   RAM_position :=  (x_position + (y_position * 640 ));
+
+                   RAM(RAM_position) <= slv_reg0(1 downto 0);
+           end if;
+   end process;
+#endif

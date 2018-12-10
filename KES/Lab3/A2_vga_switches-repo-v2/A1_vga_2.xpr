@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="C:/Users/Misca/Beuth_Embedded_Design/Master/GITrepo/CES_AMS/KES/Lab3/A2_vga_switches-repo-v2/A1_vga_2.xpr">
+<Project Version="7" Minor="14" Path="C:/Users/Misca/Documents/KES-AMS/KES/Lab3/A2_vga_switches-repo-v2/A1_vga_2.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="7ddad19a0d114ff1b05a328328775d57"/>
