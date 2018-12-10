@@ -1,0 +1,42 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -y 40 -defaultsOSRD
+preplace port s00_vSync -pg 1 -y 240 -defaultsOSRD
+preplace port s00_hSync -pg 1 -y 260 -defaultsOSRD
+preplace port sys_clock -pg 1 -y 480 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 60 -defaultsOSRD
+preplace portBus s00_blue -pg 1 -y 320 -defaultsOSRD
+preplace portBus s00_red -pg 1 -y 280 -defaultsOSRD
+preplace portBus s00_green -pg 1 -y 300 -defaultsOSRD
+preplace inst lab3_a1_vga_v2_0 -pg 1 -lvl 3 -y 280 -defaultsOSRD
+preplace inst rst_processing_system7_0_100M -pg 1 -lvl 1 -y 350 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -y 360 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 480 -defaultsOSRD
+preplace inst processing_system7_0_axi_periph -pg 1 -lvl 2 -y 180 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 120 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 3 NJ 40 NJ 40 NJ
+preplace netloc clk_wiz_0_locked 1 1 1 450
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 2 1 750
+preplace netloc lab3_a1_vga_v2_0_s00_red 1 3 1 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 410
+preplace netloc util_vector_logic_0_Res 1 2 1 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 260 410
+preplace netloc sys_clock_1 1 0 1 N
+preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 1 2 440 410 NJ
+preplace netloc lab3_a1_vga_v2_0_s00_green 1 3 1 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 60 NJ 60 NJ
+preplace netloc clk_wiz_0_clk_out1 1 1 2 430 310 NJ
+preplace netloc lab3_a1_vga_v2_0_s00_vSync 1 3 1 NJ
+preplace netloc rst_processing_system7_0_100M_interconnect_aresetn 1 1 1 420
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 250 430 300 N
+preplace netloc lab3_a1_vga_v2_0_s00_blue 1 3 1 NJ
+preplace netloc lab3_a1_vga_v2_0_s00_hSync 1 3 1 NJ
+levelinfo -pg 1 0 220 600 890 1030 -top 0 -bot 540
+",
+}
+{
+   da_axi4_cnt: "1",
+   da_board_cnt: "1",
+   da_ps7_cnt: "1",
+}
