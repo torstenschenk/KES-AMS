@@ -44,18 +44,85 @@
  *   uartlite    Configurable only in HW design
  *   ps7_uart    115200 (configured by bootrom/bsp)
  */
-
-#include <stdio.h>
+#include  <stdio.h>
 #include "platform.h"
+//  Include  Files
+#include "xparameters.h"
+#include "xgpio.h"
+#include "xstatus.h"
 #include "xil_printf.h"
 
+//  Definitions
+//#define  LEDS_DEVICE_ID  XPAR_AXI_GPIO_0_DEVICE_ID
+#define  SW_DEVICE_ID  XPAR_AXI_GPIO_0_DEVICE_ID
 
-int main()
+#define  LED_DELAY  1000000
+#define  LED_CHANNEL 1
+#define  printf  xil_printf
+
+XGpio  Gpio;
+XGpio  SWInst; // LEDInst
+static int sw_value ;
+
+/*
+int  LEDOutputExample( VOID ) {
+	volatile  int  Delay;
+
+	// loop  forever  blinking  the  LED.
+	while( 42 ) {
+		// read buttons
+		btn_value = XGpio_DiscreteRead (&BTNInst , 1);
+		//  write  button value  to LEDs
+		XGpio_DiscreteWrite( &LEDInst , LED_CHANNEL , btn_value );
+
+		for ( Delay = 0;  Delay  < LED_DELAY; Delay++ );
+	}
+	return  XST_SUCCESS;
+}
+*/
+
+int SWReadExample () {
+	volatile  int  Delay;
+
+	// loop  forever  blinking  the  LED.
+	while( 1 ) {
+		// read buttons
+		sw_value = XGpio_DiscreteRead (&SWInst , 1);
+		xil_printf ("Switch: %x\n\r",sw_value);
+
+		for ( Delay = 0;  Delay  < LED_DELAY; Delay++ );
+	}
+	return  XST_SUCCESS;
+}
+
+int  main()
 {
-    init_platform();
+	init_platform ();
 
-    print("Hello World\n\r");
+	int status ;
+	// ----------------------------------------------------
+	// INITIALIZE THE PERIPHERALS & SET DIRECTIONS OF GPIO
+	// ----------------------------------------------------
+	// Initialise LEDs
+	//status = XGpio_Initialize (&LEDInst , LEDS_DEVICE_ID );
+	//if ( status != XST_SUCCESS )
+	//	return XST_FAILURE ;
 
-    cleanup_platform();
-    return 0;
+	// Initialise Push Buttons
+	status = XGpio_Initialize (&SWInst , SW_DEVICE_ID );
+	if ( status != XST_SUCCESS )
+		return XST_FAILURE ;
+
+	// Set LEDs direction to outputs
+	//XGpio_SetDataDirection (&LEDInst,1,0x00);
+	// Set all switches direction to inputs
+	XGpio_SetDataDirection (&SWInst,1,0xFF);
+
+	print("Hello  meine  LED\n\r");
+
+	SWReadExample ();
+
+	//LEDOutputExample ();
+	cleanup_platform ();
+	return  0;
 }
