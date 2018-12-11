@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Mon Dec 10 20:36:19 2018">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="f5c5a8aba57e41d9b0bf22f23f75e011" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="CloseProject" value="1" type="JavaHandler"/>
+<property name="EditInIPPackagerHandler" value="1" type="JavaHandler"/>
+<property name="IPPackagerHandler" value="1" type="JavaHandler"/>
+<property name="NewExportHardware" value="1" type="JavaHandler"/>
+<property name="NewLaunchHardware" value="1" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER, Edit in IP Packager" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_EXPORT_HARDWARE, Export Hardware..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, Launch SDK" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, lab3_a1_vga_v2_v1_0 - arch_imp (lab3_a1_vga_v2_v1_0.vhd" value="3" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_EXPORT, Export" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="4" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, Open Recent File" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewExportHardwareDialog_INCLUDE_BITSTREAM, Include bitstream, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, IP Documentation" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, Expand/Collapse" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderView_ORIENTATION, Orientation" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="3" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 121, 519" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 130, 312" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 130, 312, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 183, 311" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 192, 382" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 192, 382, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 227, 414" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 227, 414, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 229, 522" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 229, 522, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 266, 668" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 275, 111" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 286, 270" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 286, 643" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 289, 228" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 290, 245" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 315, 143" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 315, 143, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 322, 570" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 359, 456" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 411, 194" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 440, 333" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 446, 273" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 465, 431" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 469, 290" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 475, 326" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 525, 399" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 534, 223" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 565, 127" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 617, 70" value="1" type="GuiResourceData"/>
+<property name="lab3_a1_vga_v2_v1_0_S00_AXI.vhd, 626, 432" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="15" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="14" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

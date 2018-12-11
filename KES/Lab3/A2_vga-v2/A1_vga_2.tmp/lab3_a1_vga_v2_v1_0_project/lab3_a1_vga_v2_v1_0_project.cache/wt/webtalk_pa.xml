@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Mon Dec 10 19:47:56 2018">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="fe90b34051d04abb8510b1a726bb09ea" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="CloseProject" value="1" type="JavaHandler"/>
+<property name="CustomizeRSBBlock" value="2" type="JavaHandler"/>
+<property name="EditConstraintSets" value="11" type="JavaHandler"/>
+<property name="EditDelete" value="3" type="JavaHandler"/>
+<property name="EditInIPPackagerHandler" value="2" type="JavaHandler"/>
+<property name="EditProperties" value="4" type="JavaHandler"/>
+<property name="IPPackagerHandler" value="1" type="JavaHandler"/>
+<property name="OpenBlockDesign" value="1" type="JavaHandler"/>
+<property name="UpdateSourceFiles" value="3" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="PAResourceAtoD.ConstraintsChooserPanel_ADD_EXISTING_OR_CREATE_NEW_CONSTRAINTS, Add" value="3" type="GuiResourceData"/>
+<property name="PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, Add Files..." value="3" type="GuiResourceData"/>
+<property name="PAResourceAtoD.ConstraintsChooserPanel_FILE_TABLE, vga_sync.vhd ; H:\\KES-181191\\Lab3\\ip_repo-v3\\lab3_a1_vga_v2_1.0\\src, 0, H:\\KES-181191\\Lab3\\ip_repo-v3\\lab3_a1_vga_v2_1.0\\src, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.ConstraintsChooserPanel_FILE_TABLE, zedboard_master_XDC_RevC_D_v3.xdc ; H:\\KES-181191\\Lab3\\A3_vga-v3\\A1_vga_2.srcs\\constrs_1\\imports\\A1_vga_2, 0, H:\\KES-181191\\Lab3\\A3_vga-v3\\A1_vga_2.srcs\\constrs_1\\imports\\A1_vga_2, 1" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.ConstraintsChooserPanel_FILE_TABLE, zedboard_master_XDC_RevC_D_v3.xdc ; H:\\KES-181191\\Lab3\\A3_vga-v3\\A1_vga_2.srcs\\constrs_1\\imports\\A1_vga_2, 0, zedboard_master_XDC_RevC_D_v3.xdc, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CustomizeCoreDialog_CHOOSE_IP_LOCATION, (String" value="3" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CustomizeCoreDialog_IP_LOCATION, IP Location" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="14" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_CLOSE_PROJECT, Close Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_EDIT_CONSTRAINT_SETS, Edit Constraints Sets..." value="11" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER, Edit in IP Packager" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SRC_REPLACE_FILE, Replace File..." value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Block Designs, design_1, Synthesis], 2" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Block Designs, design_1], 1" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints, constrs_1], 4" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints], 11" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints], 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Constraints], 6" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Block Designs, design_1, design_1_lab3_a1_vga_v2_0_0], 7, true, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Block Designs, design_1], 5" value="4" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Block Designs, design_1], 5, true, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Block Designs], 2" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Block Designs], 4, true, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, IP-XACT], 1" value="4" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, IP-XACT], 4" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, VHDL, xil_defaultlib], 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, VHDL], 1" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, design_1_wrapper - STRUCTURE (design_1_wrapper.vhd" value="9" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, lab3_a1_vga_v2_v1_0 - arch_imp (lab3_a1_vga_v2_v1_0.vhd" value="13" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, lab3_a1_vga_v2_v1_0_S00_AXI - arch_imp (lab3_a1_vga_v2_v1_0_S00_AXI.vhd" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0" value="5" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, true, false, false, false, true, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources], 12" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation-Only Sources], 5" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, null, -1, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, IP Integrator, Open Block Design], 7, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, Merge changes from File Groups Wizard" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MessageBanner_SEE_LIST_OF_WARNING_MESSAGES, 4 warnings" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Addressing and Memory, 5" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Compatibility, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Customization GUI, 6" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Customization Parameters, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, File Groups, 2" value="2" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Ports and Interfaces, 4" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Review and Package, 7" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SaveProjectUtils_SAVE, Save" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight" value="8" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_DOCUMENTATION, IP Documentation" value="4" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="10" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, IP Documentation" value="10" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, Expand/Collapse" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderView_ORIENTATION, Orientation" value="9" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemTreeView_SYSTEM_TREE, [design_1, External Interfaces], 1" value="2" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemTreeView_SYSTEM_TREE, [design_1, lab3_a1_vga_v2_0], 10" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemTreeView_SYSTEM_TREE, [design_1, lab3_a1_vga_v2_0], 10, true, false, false, false, true, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceTtoZ.TclObjectTreeTable_TREETABLE, PATH ; /lab3_a1_vga_v2_0, 4" value="1" type="GuiResourceData"/>
+<property name="PAResourceTtoZ.TclObjectTreeTable_TREETABLE, PATH ; /lab3_a1_vga_v2_0, 4, /lab3_a1_vga_v2_0, 1, false" value="3" type="GuiResourceData"/>
+<property name="PAResourceTtoZ.TclObjectTreeTable_TREETABLE, PATH ; /lab3_a1_vga_v2_0, 4, /lab3_a1_vga_v2_0, 1, false, false, false, false, false, true" value="2" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="7" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="7" type="GuiResourceData"/>
+<property name="RDIResourceCommand.RDICommands_DELETE, Remove File from Project..." value="3" type="GuiResourceData"/>
+<property name="RDIResourceCommand.RDICommands_PROPERTIES, Block Properties..." value="3" type="GuiResourceData"/>
+<property name="RDIResourceCommand.RDICommands_PROPERTIES, Source Node Properties..." value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="13" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="12" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

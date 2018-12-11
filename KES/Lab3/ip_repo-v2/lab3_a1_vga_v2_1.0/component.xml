@@ -773,11 +773,11 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/vga_sync.vhd</spirit:name>
+        <spirit:name>H:/KES-181191/Lab3/ip_repo-v3/lab3_a1_vga_v2_1.0/hdl/lab3_a1_vga_v2_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/lab3_a1_vga_v2_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>H:/KES-181191/Lab3/ip_repo-v3/lab3_a1_vga_v2_1.0/hdl/lab3_a1_vga_v2_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -789,11 +789,11 @@
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/vga_sync.vhd</spirit:name>
+        <spirit:name>H:/KES-181191/Lab3/ip_repo-v3/lab3_a1_vga_v2_1.0/hdl/lab3_a1_vga_v2_v1_0.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/lab3_a1_vga_v2_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>H:/KES-181191/Lab3/ip_repo-v3/lab3_a1_vga_v2_1.0/hdl/lab3_a1_vga_v2_v1_0_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -918,9 +918,9 @@
       </xilinx:taxonomies>
       <xilinx:displayName>lab3_a1_vga_v2_v1.0</xilinx:displayName>
       <xilinx:coreRevision>4</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-12-10T08:56:48Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2018-12-10T18:47:56Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="xilinx.com:user:lab3_a1_vga_v2:1.0_ARCHIVE_LOCATION">C:/Users/Misca/Documents/KES-AMS/KES/Lab3/ip_repo-v2/lab3_a1_vga_v2_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="xilinx.com:user:lab3_a1_vga_v2:1.0_ARCHIVE_LOCATION">h:/KES-181191/Lab3/ip_repo-v2/lab3_a1_vga_v2_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
