@@ -2,6 +2,7 @@
 /// Autonome Mobile Systeme
 /// Prof. Dr.-Ing. Volker Sommer
 
+#include <vector>
 #include "AMS_Robot.hpp"
 #include "newmat/newmatio.h" // Input/output für Newmat
 
@@ -35,8 +36,8 @@ int main(int argc, char **argv)
     double x, y, theta;             // Roboterkoordinaten
     int Phi;                        // globaler Winkel der gefundenen Wand
     double d;                       // globaler Abstand der gefundenen Wand
-    double xi[360];                      // x-Koordinate des aktuellen Messpunktes
-    double yi[360];                      // y-Koordinate des aktuellen Messpunktes
+    double xi=0;                    // x-Koordinate des aktuellen Messpunktes
+    double yi=0;                    // y-Koordinate des aktuellen Messpunktes
     double m_x=0;                   // Mittelwert der x-Koordinaten der Messpunkte
     double m_y=0;                   // Mittelwert der y-Koordinaten der Messpunkte
     double var_x=0;                 // Varianz der x-Koordinaten der Messpunkte
@@ -57,12 +58,14 @@ int main(int argc, char **argv)
     /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
 
     // Bestimmug der Anzahl der relevanten Messwerte und Besetzen der Look-Up-Table
-    for ( i = 0; i < 360; ++i)
-        LUT[i] = -1;
+ //   for ( i = 0; i < 360; ++i)
+ //       LUT[i] = -1;
 
     for ( i = 0; i < 360; ++i) {
         if ( *(scan+i) > 0)
             LUT[N++] = i;
+
+//            cout << "scan: " << *(scan+i) << " LUT[i]: " << i << endl;
     }
 
     // Rücksprung, falls keine Messwerte vorhanden sind
@@ -73,35 +76,45 @@ int main(int argc, char **argv)
 
     // Berechnung des Normalenwinkels der Regressionsgeraden
     for ( i = 0; i < N; ++i) {
-        double ri = *(scan+LUT[i]);
-        double tmp = degtorad(LUT[i]);
-        double cosi = cos(tmp);
-        double xit = ri * cosi;
-        xi[i] = ri * cos(tmp);
-        yi[i] = ri * sin(degtorad(LUT[i]));
-    }
-
-    for ( i = 0; i < N; ++i) {
-        m_x += xi[i];
-        m_y += yi[i];
+        xi = *(scan+LUT[i]) * cos(degtorad(LUT[i]));
+        yi = *(scan+LUT[i]) * sin(degtorad(LUT[i]));
+        m_x += xi;
+        m_y += yi;
+        //cout << "scanndata: " << *(scan+LUT[i]) <<  " deg: " <<LUT[i] << " degtorad: " << degtorad(LUT[i]) << " cos: " << cos(degtorad(LUT[i])) << endl;
+        cout << " xi: " << xi << " yi: " << yi << endl;
     }
 
     m_x /= N;
     m_y /= N;
 
     for ( i = 0; i < N; ++i) {
-        var_x  += xi[i]*xi[i];
-        var_y  += yi[i]*yi[i];
-        cov_xy =+ xi[i]*yi[i];
+        xi = *(scan+LUT[i]) * cos(degtorad(LUT[i]));
+        yi = *(scan+LUT[i]) * sin(degtorad(LUT[i]));
+        var_x  += (xi*xi);
+        var_y  += (yi*yi);
+        cov_xy += (xi*yi);
     }
-    var_x  = var_x  / N - m_x;
-    var_y  = var_y  / N - m_y;
-    cov_xy = cov_xy / N - m_x*m_y;
+    //var_x  = var_x  / N - m_x*m_x;
+    //var_y  = var_y  / N - m_y*m_y;
+    //cov_xy = cov_xy / N - m_x*m_y;
+    var_x  /= N;
+    var_y  /= N;
+    cov_xy /= N;
 
-    PhiR = atan2( -2*cov_xy, var_y - var_x);
+    var_x  -= m_x*m_x;
+    var_y  -= m_y*m_y;
+    cov_xy -= m_x*m_y;
+
+    cout << "m_x: " << m_x << " m_y: " << m_y << endl;
+    cout << "var_x: " << var_x << " var_y: " << var_y << endl;
+    cout << "cov_xy: " << cov_xy << endl;
+
+    PhiR = 0.5 * atan2( -2*cov_xy, var_y - var_x );
 
     // Berechnung des Normalenabstands der Regressionsgeraden
     dR = m_x* cos(PhiR) + m_y * sin(PhiR);
+
+    cout << "PhiR: " << PhiR << " PhiR deg: " << radtodeg(PhiR) << " dR: " << dR << endl;
 
     // Korrektur bei negativem Normalenabstand
     if ( dR < 0 ) {
@@ -111,9 +124,14 @@ int main(int argc, char **argv)
             PhiR -= PI;
     }
 
+    cout << "Korr. PhiR: " << PhiR << " PhiR deg: " << radtodeg(PhiR) << " dR: " << dR << endl;
+
     // Berechnung des mittleren quadratischen Fehlers mit Rücksprung bei zu großem Fehler
+
     for ( i = 0; i < N; ++i) {
-        var_rho += pow( (xi[i]*cos(PhiR) + yi[i]*sin(PhiR)) - dR , 2);
+        xi = *(scan+LUT[i]) * cos(degtorad(LUT[i]));
+        yi = *(scan+LUT[i]) * sin(degtorad(LUT[i]));
+        var_rho += pow( (xi*cos(PhiR) + yi*sin(PhiR)) - dR , 2);
     }
     var_rho /= N;
 
