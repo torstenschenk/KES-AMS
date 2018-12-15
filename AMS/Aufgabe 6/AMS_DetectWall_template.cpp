@@ -12,7 +12,7 @@ namespace po = boost::program_options;
 
 AMS_Robot robot;
 
-#define PI 3.1415927
+double PI = 3.1415927;
 
 static double degtorad(double deg) {
     return deg*PI/180.0;
@@ -74,8 +74,11 @@ int main(int argc, char **argv)
     // Berechnung des Normalenwinkels der Regressionsgeraden
     for ( i = 0; i < N; ++i) {
         double ri = *(scan+LUT[i]);
-        xi[i] = ri * cos(degtorad(i));
-        yi[i] = ri * sin(degtorad(i));
+        double tmp = degtorad(LUT[i]);
+        double cosi = cos(tmp);
+        double xit = ri * cosi;
+        xi[i] = ri * cos(tmp);
+        yi[i] = ri * sin(degtorad(LUT[i]));
     }
 
     for ( i = 0; i < N; ++i) {
@@ -117,7 +120,18 @@ int main(int argc, char **argv)
     // Schwelle: var_rho < 0.002
 
     // Globale Koordinaten der gefundenen linearen Kontur bestimmen
+    x = robot.get_x();
+    y = robot.get_y();
+    theta = robot.get_theta();
+    double phi_rad = theta + PhiR;
+    d = abs(dR + x*cos(PhiR)+ y*sin(PhiR));
+    Phi = radtodeg(phi_rad);
 
+    if ( var_rho > 0.002)
+        //nothing valid
+        cout << "Noisy, d = " << d << " Phi = " << Phi << " <rho = " << var_rho << ">" << endl;
+    else
+        cout << "Wall detected, d = " << d << " Phi = " << Phi << " <rho = " << var_rho << ">" << endl;
 
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
