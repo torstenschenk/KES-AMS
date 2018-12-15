@@ -81,7 +81,7 @@ int main(int argc, char **argv)
         m_x += xi;
         m_y += yi;
         //cout << "scanndata: " << *(scan+LUT[i]) <<  " deg: " <<LUT[i] << " degtorad: " << degtorad(LUT[i]) << " cos: " << cos(degtorad(LUT[i])) << endl;
-        cout << " xi: " << xi << " yi: " << yi << endl;
+        cout << "scan LUT[i]: " << LUT[i] << " xi: " << xi << " yi: " << yi << endl;
     }
 
     m_x /= N;
@@ -123,6 +123,7 @@ int main(int argc, char **argv)
         else
             PhiR -= PI;
     }
+    dR = abs(dR);
 
     cout << "Korr. PhiR: " << PhiR << " PhiR deg: " << radtodeg(PhiR) << " dR: " << dR << endl;
 
@@ -145,11 +146,30 @@ int main(int argc, char **argv)
     d = abs(dR + x*cos(PhiR)+ y*sin(PhiR));
     Phi = radtodeg(phi_rad);
 
-    if ( var_rho > 0.002)
-        //nothing valid
-        cout << "Noisy, d = " << d << " Phi = " << Phi << " <rho = " << var_rho << ">" << endl;
-    else
+    if ( var_rho < 0.002) {
         cout << "Wall detected, d = " << d << " Phi = " << Phi << " <rho = " << var_rho << ">" << endl;
+    } else {
+        /** nothing valid */
+        cout << "Noisy, d = " << d << " Phi = " << Phi << " <rho = " << var_rho << ">" << endl;
+
+        /** Check for large diviation from line to split at that point  */
+        double dev, dev_max = 0;
+        int i_devmax = 0;
+
+
+        for ( i = 0; i < N; ++i) {
+            xi = *(scan+LUT[i]) * cos(degtorad(LUT[i]));
+            yi = *(scan+LUT[i]) * sin(degtorad(LUT[i]));
+            dev = abs(xi*cos(PhiR) + yi*sin(PhiR) - dR);
+            cout << "deviation: i: " << i << " dev: " << dev << endl;
+            if (dev > dev_max) {
+                 dev_max = dev;
+                 i_devmax = i;
+            }
+        }
+        cout << "Dev max: " << dev_max << " at deg LUT[i]: " << LUT[i_devmax] << endl;
+    }
+
 
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
