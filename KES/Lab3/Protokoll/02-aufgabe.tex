@@ -1,153 +1,184 @@
 \section{Aufgabe 2} \label{ex2}
-Die Aufgabe 2 wurde in zwei Unteraufgaben geteilt. Zuerst wurde mittels einer automatisch generierten 
-Testfunktion im SDK und auf dem Zedboard geprüft, ob der selbst erstellte IP Core voll funktionsfähig ist. 
-Erst danach wurde ein eigenes LED Muster geschrieben.
+In der Aufgabe 2 wurde eine Funktion zum zeichnen eines Quadrates variabler Position und Größe (size) geschrieben. Diese kann 
+dann direkt verwendet werden um komplexere Muster mit übergeordnetem Koordinatensystem zu zeichnen, wie z.B. Arcade Figuren.
 
-\subsection{Test des IP Cores}
-Nach Konfiguration eines eigenen AXI GPIO IP Cores wurde zuerst die automatisch generierte Funktion: KES\_LAB2\_8BIT\_AXI\_Reg\_SelfTest ausgeführt.\\
-
-C-Code des Aufrufes
-\begin{verbatim}
-  #include <stdio.h>
-  #include "platform.h"
-  #include "xil_printf.h"
-  #include "kes_lab2_8bit_axi.h"
-
-  #define BASE_ADDR XPAR_KES_LAB2_8BIT_AXI_0_S00_AXI_BASEADDR // 0x43C00000
-
-  int main()  {
-      init_platform();
-      XStatus status = KES_LAB2_8BIT_AXI_Reg_SelfTest( (void *) BASE_ADDR);
-      cleanup_platform();
-      return 0;
-  }
-\end{verbatim}
-
-Die automatisch generierte Test Funktion in kes\_lab2\_8bit\_axi\_selftest.c.
-\begin{verbatim}
-  /***************************** Include Files ***********************/
-  #include "kes_lab2_8bit_axi.h"
-  #include "xparameters.h"
-  #include "stdio.h"
-  #include "xil_io.h"
-
-  /************************** Constant Definitions ********************/
-  #define READ_WRITE_MUL_FACTOR 0x10
-
-  XStatus KES_LAB2_8BIT_AXI_Reg_SelfTest(void * baseaddr_p) {
-    u32 baseaddr;
-    int write_loop_index;
-    int read_loop_index;
-    int Index;
-    baseaddr = (u32) baseaddr_p;
-    xil_printf("******************************\n\r");
-    xil_printf("* User Peripheral Self Test\n\r");
-    xil_printf("******************************\n\n\r");
-    /*
-     * Write to user logic slave module register(s) and read back
-     */
-    xil_printf("User logic slave module test...\n\r");
-
-    for (write_loop_index = 0 ; write_loop_index < 4; write_loop_index++)
-      KES_LAB2_8BIT_AXI_mWriteReg (baseaddr, write_loop_index*4,
-            (write_loop_index+1)*READ_WRITE_MUL_FACTOR);
-    for (read_loop_index = 0 ; read_loop_index < 4; read_loop_index++)
-       if ( KES_LAB2_8BIT_AXI_mReadReg (baseaddr, read_loop_index*4) !=
-            (read_loop_index+1)*READ_WRITE_MUL_FACTOR)
-       {     
-            xil_printf ("Error reading register value at address %x\n", 
-                  (int)baseaddr + read_loop_index*4);
-            return XST_FAILURE;
-      }
-
-    xil_printf("   - slave register write/read passed\n\n\r");
-    return XST_SUCCESS;
-  }
-\end{verbatim}
-
-\begin{minipage}{\textwidth}
-    \begin{center}        
-        \includegraphics[scale=0.5]{img/debugselftest.png} 
-    \end{center}
-\end{minipage}
-\begin{center}
-Standard Debug Ausgabe
-\end{center}
-
-Oder als Alternative mit Rücklesen der geschriebenen Daten:
-\begin{verbatim}
-  for (read_loop_index = 0 ; read_loop_index < 4; read_loop_index++)
-    if ( KES_LAB2_8BIT_AXI_mReadReg (baseaddr, read_loop_index*4) !=
-      (read_loop_index+1)*READ_WRITE_MUL_FACTOR)
-     {
-        xil_printf ("Error reading register value at address %x\n", 
-                           (int)baseaddr + read_loop_index*4);
-        return XST_FAILURE;
-     } else
-        xil_printf ("Reading register value at address %x value %x\n\r",
-            (int)baseaddr + read_loop_index*4, 
-                  (read_loop_index+1)*READ_WRITE_MUL_FACTOR );
-\end{verbatim}
-
-\begin{minipage}{\textwidth}
-    \begin{center}        
-        \includegraphics[scale=0.5]{img/debugselftest2.png} 
-    \end{center}
-\end{minipage}
-\begin{center}
-Logausgabe mit gelesenen Daten
-\end{center}
-
-\subsection{Anzeige auf den LEDs über den IP Core}
-Implementiert wurde eine laufende LED die schnell von LED 0 jeweils nach sehr kurzer Wartezeit auf die links 
-liegende LED weitergeschaltet wird. Damit entsteht der Eindruck einer wandernden LED. Nach beenden eines 
-Zyklus wird erneut gestartet.
+\subsection{C-Code}
+C-Code zur Generierung von geometrischen Figuren. Es wurden Quadrate und darauf aufbauend eine Space-Invaders 
+Figure kreiert. Zusätzlich können über die Hardware-Switches drei verschiedene Modi umgeschaltet werden:\\
+BTN0: Toggle Augenfarbe zwischen rot und blau\\
+BTN1: Hintergrundfarbe umschalten zwsichen blau/weiss\\
 
 \begin{verbatim}
-  #include <stdio.h>
-  #include "platform.h"
-  //#include "xil_printf.h" 
-  #include "kes_lab2_8bit_axi.h"
-  //#include "xparameters.h"
-  #include "xil_io.h"
+/* ------------------------------------------------
+ * | UART TYPE   BAUD RATE                      |
+ * ------------------------------------------------
+ *   uartns550   9600
+ *   uartlite    Configurable only in HW design
+ *   ps7_uart    115200 (configured by bootrom/bsp)
+ */
+#include  <stdio.h>
+#include  <stdlib.h>
+#include  <time.h>
 
-  #define BASE_ADDR XPAR_KES_LAB2_8BIT_AXI_0_S00_AXI_BASEADDR // 0x43C00000
-  #define LED_DELAY  40000000
+#include "platform.h"
+//  Include  Files
+#include "xparameters.h"
+#include "xgpio.h"
+#include "xstatus.h"
+#include "xil_printf.h"
+#include "lab3_a1_vga_v2.h"
 
-  int main()
-  {
-    init_platform();
+//  Definitions
+#define BASE_ADDR 0x43C00000
+#define  SW_DEVICE_ID  XPAR_AXI_GPIO_0_DEVICE_ID
 
-    int i, delay;
-    uint pattern = 1;
+#define  LED_DELAY  10000000
+#define  LED_CHANNEL 1
+#define  printf  xil_printf
 
-    while (1) {
-      for ( i = 0; i <= 8; i++ ) {
-        KES_LAB2_8BIT_AXI_mWriteReg ((u32)BASE_ADDR, 0, pattern);
-        pattern <<= 1;
-        for ( delay = 0;  delay  < LED_DELAY; delay++ );
-    }
-    pattern = 1;
-  }
-  cleanup_platform();
-  return 0;
+XGpio  SWInst; // LEDInst
+static int sw_value ;
+
+#define BTN0 1
+#define BTN1 2
+#define BTN2 4
+#define BTN3 8
+#define BTN4 16
+#define BTN5 32
+#define BTN6 64
+#define BTN7 128
+
+#define EYE 2
+#define BODY 46
+
+typedef enum _color {
+	eW = 0,
+	eR  = 1,
+	eG  = 2,
+	eB  = 3
+} ecolor;
+
+typedef struct _coord {
+	int x;
+	int y;
+} coord;
+
+// Arcade Figur
+uint eyex[EYE] = {3,7};
+uint eyey[EYE] = {3,3};
+uint spx[BODY] = {2,8,3,7, 2,3,4,5,6,7,8, 1,2,4,5,6,8,9, 
+                     0,1,2,3,4,5,6,7,8,9,10, 0,2,3,4,5,6,7,8,10, 0,2,8,10, 3,4,6,7};
+uint spy[BODY] = {0,0,1,1, 2,2,2,2,2,2,2, 3,3,3,3,3,3,3, 
+                    4,4,4,4,4,4,4,4,4,4, 4, 5,5,5,5,5,5,5,5, 5, 6,6,6, 6, 7,7,7,7};
+
+void paintsquare(uint x, uint y, uint size, ecolor color) {
+	if (x < 0 || x > 630)
+		return;
+	if (y < 0 || y > 470)
+		return;
+		
+	uint i,j;
+	for (i = x; i < x+size; ++i)
+		for (j = y; j < y+size; ++j)
+			LAB3_A1_VGA_V2_mWriteReg((u32)BASE_ADDR, 0, (i << 11 | j << 2 | color));
+} 
+
+void resetbg (ecolor color) {
+	int i,j;
+	for (i = 0; i < 680; ++i)
+		for (j = 0; j < 480; ++j)
+			LAB3_A1_VGA_V2_mWriteReg((u32)BASE_ADDR, 0, (i << 11 | j << 2 | color));
+}
+
+int  main()
+{
+	double DELAY = 10000000,z;
+	init_platform ();
+	int status ;
+
+	// Initialise Push Buttons
+	status = XGpio_Initialize (&SWInst , SW_DEVICE_ID );
+	if ( status != XST_SUCCESS )
+		return XST_FAILURE ;
+	XGpio_SetDataDirection (&SWInst,1,0xFF);
+
+	print("Hello world\n\r");
+
+	//SWReadExample ();
+	uint i,j;
+	coord pos = {100,100};
+	coord pos_new = {100,100};
+	
+	uint write_new = 1;
+	uint delete = 0;
+	uint background_repaint = 0;
+	ecolor bgcolor = eW;
+
+	uint size = 10;
+	ecolor color = eR;
+	uint btn0_on = 0, btn1_on = 0;
+
+	resetbg(bgcolor);
+
+	while (1) {
+
+		sw_value = XGpio_DiscreteRead (&SWInst , 1);
+		/* toggle eye color */
+		if (btn0_on != (sw_value & BTN0) ) {
+			write_new = 1;
+			btn0_on = sw_value & BTN0;
+
+			if (btn0_on == BTN0)
+				color = eB;
+			else
+				color = eR;
+		}
+
+		/* toggle bg color */
+		if (btn1_on != (sw_value & BTN1) ) {
+			write_new = 1;
+			btn1_on = sw_value & BTN1;
+
+			xil_printf ("Switch 2: %x\n\r",(sw_value & BTN2));
+			if (btn1_on == BTN1) {
+				xil_printf ("Switch 2 = 1: %d\n\r",1);
+				bgcolor = eB;
+				resetbg(bgcolor);
+			}
+			else {
+				bgcolor = eW;
+				resetbg(bgcolor);
+			}
+		}
+
+		if (write_new) {
+			  // do we need wait statements to not write too fast to the FPGA
+			  for (i = 0; i < EYE; ++i)
+			  	paintsquare(pos.x + size*eyex[i], pos.y + size*eyey[i], size, color);
+			  for (i = 0; i < BODY; ++i)
+			  	paintsquare(pos.x + size*spx[i], pos.y + size*spy[i], size, eG);
+			
+			  write_new--;
+		}
+		
+		sleep(1);
+
+	}; // while
+
+	cleanup_platform ();
+	return  0;
 }
 \end{verbatim}
 
+\begin{minipage}{\textwidth}
+    \begin{center}        
+        \includegraphics[scale=0.5]{img/blue.png} 
+    \end{center}
+\end{minipage}
+\begin{center}
+Arcade-SpaceInvader mit blauem Hintergrund
+\end{center}
 
-
-\subsection{VHDL}
-
-\textbf{Funktion der Pfeile in Zuweisungen  <=, =>}\\
-<= is an assignment - specifically a signal assignment, driving a signal with a value from somewhere else. For a physical analogy, the thing on the right hand side drives a value onto the left hand side.\\
-
-=> is a port mapping from a pin to a signal. This is not an assignment - the physical analogy might be soldering a pin to a wire.\\
-
-You can only do soldering to instantiations, so => mapping only happens inside a port map. And there, "pins" always go on the left (because that's what the language rules say), which is why you can't do x <= port\_a in a port map.\\
-
-Signal assignments go from right to left using <=. The right side must be an input signal from the entity or a signal declared in a process. The left side can be an output signal (or input/buffer) from the entity, a signal declared in the process or a variable declared in the process.\\
-
-Beside port mapping mentioned in other answers, the => arrow is also used for a totally different thing - to construct vectors. For example, if v is a 4 bit vector, then v <= (others => '0') will assign "0000" to v. The ``=>` within the parentheses is a shortcut for assigning different values in different places inside the vector.\\
 
 
 

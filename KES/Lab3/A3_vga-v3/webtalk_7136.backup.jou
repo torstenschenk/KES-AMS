@@ -2,11 +2,11 @@
 # Webtalk v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Mon Dec 10 20:36:20 2018
-# Process ID: 964
+# Start of session at: Mon Dec 10 20:56:27 2018
+# Process ID: 7136
 # Current directory: h:/KES-181191/Lab3/A3_vga-v3
-# Command line: wbtcv.exe -mode batch -source h:/kes-181191/lab3/a3_vga-v3/a1_vga_2.tmp/lab3_a1_vga_v2_v1_0_project/lab3_a1_vga_v2_v1_0_project.hw/webtalk/labtool_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source H:/KES-181191/Lab3/A3_vga-v3/A1_vga_2.hw/webtalk/labtool_webtalk.tcl -notrace
 # Log file: h:/KES-181191/Lab3/A3_vga-v3/webtalk.log
 # Journal file: h:/KES-181191/Lab3/A3_vga-v3\webtalk.jou
 #-----------------------------------------------------------
-source h:/kes-181191/lab3/a3_vga-v3/a1_vga_2.tmp/lab3_a1_vga_v2_v1_0_project/lab3_a1_vga_v2_v1_0_project.hw/webtalk/labtool_webtalk.tcl -notrace
+source H:/KES-181191/Lab3/A3_vga-v3/A1_vga_2.hw/webtalk/labtool_webtalk.tcl -notrace
