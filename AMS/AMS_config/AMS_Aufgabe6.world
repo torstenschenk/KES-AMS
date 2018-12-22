@@ -54,7 +54,7 @@ define Lasersensor ranger # Definition des Lasersensors
 (
   sensor
   (
-    range [0 2.2]
+    range [0 1.2]
     fov 360
     samples 360
   )
@@ -132,11 +132,21 @@ Roboter  # Instanzierung des Roboters
 (
   name "r0"			# Name des Robotermodells
  # default  pose [ -2.000 1.000 0.000 0.000 ] # Roboterstartposition in der Karte (x/m y/m z/m phi/°)
- # pose [ 1.000 -2.000 0.000 0.000 ] # Wall detected, d = 1.82995 Phi = 0 <rho = 0.0014605>
+
+## pose [ 1.000 -2.000 0.000 0.000 ] # (Scan 1.2) Wall detected, d = 1.82995 Phi = 0 <rho = 0.0014605>
+ # pose [ -7.50 -2.000 0.000 0.000 ] # (Scan 2.2) Wall detected, d = 4.99591 Phi = 0 <rho = 0.00115565> stabiler ekannt
+   pose [ -2.500 3.500 0.000 0.000 ]
+
  # pose [ 0.000 -3.000 0.000 -88.0 ] # Wall detected, d = 0.950268 Phi = -90 <rho = 0.00114579>
  # pose [ 2.770 -3.000 0.000 4.000 ] # Wall detected, d = 2.0982 Phi = 180 <rho = 0.00119769>
  # pose [ 2.30 0.500 0.000 -130.00 ] # Noisy, d = 3.13686 Phi = -120 <rho = 0.018591>
-  pose [ 2.30 0.500 0.000 -130.00 ]
+ 
+ # pose [ 2.30 0.500 0.000 -130.00 ] # Wall detected, d = 1.02809 Phi = -2 
+ # <rho = 0.00154919> (Abstand 2) <rho = 0.00139822> (Abstand 1)
+ 
+ # pose [ 1.000 1.000 0.000 0.000 ]
+ # pose [ 1.0 1.000 0.000 -80.00 ]
+
 
   origin [0.000 0.000 0.000 0.000] # Drehpunkt vom Mittelpunkt aus
   gui_move 1			# Verschiebbarkeit durch Maus im Simulationsfenster

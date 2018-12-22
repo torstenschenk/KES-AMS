@@ -143,8 +143,18 @@ int main(int argc, char **argv)
     y = robot.get_y();
     theta = robot.get_theta();
     double phi_rad = theta + PhiR;
-    d = abs(dR + x*cos(PhiR)+ y*sin(PhiR));
+    d = dR + x*cos(phi_rad)+ y*sin(phi_rad);
+
+     if ( d < 0 ) {
+        if ( phi_rad < 0 )
+           phi_rad += PI;
+       else
+           phi_rad -= PI;
+    }
+    d = abs(d);
     Phi = radtodeg(phi_rad);
+
+    cout << "rob x: " << x << " rob y: " << y << endl;
 
     if ( var_rho < 0.002) {
         cout << "Wall detected, d = " << d << " Phi = " << Phi << " <rho = " << var_rho << ">" << endl;
