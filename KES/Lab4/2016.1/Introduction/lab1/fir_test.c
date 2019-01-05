@@ -74,7 +74,7 @@ int main () {
     	ramp_up = 1;
     	
 	// Save the results.
-    fprintf(fp,"%i %d %d\n",i,signal, );
+    fprintf(fp,"%i %d %d\n",i,signal, output );
   }
   fclose(fp);
   
