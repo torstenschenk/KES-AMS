@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2015.3 (64-bit)
+# SW Build 1330473 on Tue Aug 25 17:36:12 MDT 2015
+# IP Build 1329628 on Tue Aug 25 11:21:41 MDT 2015
+# Start of session at: Wed Sep 02 06:54:30 2015
+# Process ID: 2392
+# Current directory: C:/Vivado_HLS_Tutorial/Introduction/lab1/test/solution1/sim/vhdl
+# Command line: xsim.exe -mode tcl -source {xsim.dir/fir/xsim_script.tcl}
+# Log file: C:/Vivado_HLS_Tutorial/Introduction/lab1/test/solution1/sim/vhdl/xsim.log
+# Journal file: C:/Vivado_HLS_Tutorial/Introduction/lab1/test/solution1/sim/vhdl\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/fir/xsim_script.tcl
+source fir.tcl

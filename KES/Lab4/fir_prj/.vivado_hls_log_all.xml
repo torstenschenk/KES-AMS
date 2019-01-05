@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="CRITICAL WARNING: [SIM 211-1] 'csim_design' failed: compilation error(s).&#xD;&#xA;4&#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/csim.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/csim.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="fir_prj" solutionName="solution1" date="2019-01-05T15:54:20.719+0100" type="Warning"/>
+        <logs message="CRITICAL WARNING: [HLS 200-101] Message ID '1-1' value invalid for uint argument.&#xD;&#xA;   Generating csim.exe&#xD;&#xA;&#xD;&#xA;FORMAT&#xD;&#xA;  ap_puts_err [OPTIONS] [ Message namespace] [ Message ID] [ Message string]&#xD;&#xA;      &lt;string>&#xD;&#xA;      &lt;uint>&#xD;&#xA;      &lt;string>&#xD;&#xA;&#xD;&#xA;g++.exe: error: obj/fir_test.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="fir_prj" solutionName="solution1" date="2019-01-05T15:54:20.578+0100" type="Warning"/>
+      </csimLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1546700046060">
+  <ports id="1" name="y" type="PortType" originalName="y" bitwidth="32" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <ports id="2" name="c" type="PortType" originalName="c" coreName="RAM" bitwidth="32" iftype="IfTypeRegister" arraysize="11">
+    <dataOutputObjs>load</dataOutputObjs>
+  </ports>
+  <ports id="3" name="x" type="PortType" originalName="x" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <edges id="49" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="50" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="53" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="54" source_obj="//@blocks.5/@node_objs.3" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="55" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="58" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="59" source_obj="//@blocks.5/@node_objs.4" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="60" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="68" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="69" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="70" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="73" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="74" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="75" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="76" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.4/@node_objs.0"/>
+  <edges id="80" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.4/@node_objs.1"/>
+  <edges id="81" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="94" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="96" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.3/@node_objs.3"/>
+  <edges id="97" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.5/@node_objs.0"/>
+  <edges id="98" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.0"/>
+  <edges id="99" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.5/@node_objs.0"/>
+  <edges id="100" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.5/@node_objs.0"/>
+  <edges id="106" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.5/@node_objs.2"/>
+  <edges id="107" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.2"/>
+  <edges id="108" source_obj="//@blocks.5/@node_objs.2" sink_obj="//@blocks.5/@node_objs.3"/>
+  <edges id="109" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.5/@node_objs.3"/>
+  <edges id="110" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.5/@node_objs.4"/>
+  <edges id="112" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.5/@node_objs.5"/>
+  <edges id="115" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@ports.0"/>
+  <edges id="116" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="138" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="139" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.6"/>
+  <edges id="140" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="141" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.4"/>
+  <edges id="142" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3"/>
+  <edges id="143" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.5"/>
+  <edges id="144" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5"/>
+  <edges id="145" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.1"/>
+  <edges id="-1" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="-1" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.5/@node_objs.1"/>
+  <edges id="-1" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="-1" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="-1" source_obj="//@ports.1" sink_obj="//@blocks.5/@node_objs.1"/>
+  <blocks id="11" name="block_11" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_18</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="9" name="x_read" originalName="x" bitwidth="32" opcode="read">
+      <dataInputObjs>x</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="10" name="node_10" lineNumber="60" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" opcode="br">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="60" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <controlInputObjs>block_18</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="2016.1/Introduction/lab1/fir.c">
+      <validLinenumbers>60</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="18" name="block_18" type="BlockType">
+    <controlInputObjs>block_11</controlInputObjs>
+    <controlInputObjs>block_43</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>block_46</controlOutputObjs>
+    <controlOutputObjs>block_22</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="12" name="acc" originalName="acc" bitwidth="32" opcode="phi" nodeLabel="1">
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+      <controlInputObjs>block_11</controlInputObjs>
+      <controlInputObjs>block_43</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="13" name="i" originalName="i" bitwidth="5" opcode="phi" nodeLabel="1">
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <controlInputObjs>block_11</controlInputObjs>
+      <controlInputObjs>block_43</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="17" name="node_17" lineNumber="60" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" opcode="br" nodeLabel="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="60" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <controlInputObjs>block_22</controlInputObjs>
+      <controlInputObjs>block_46</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="2016.1/Introduction/lab1/fir.c">
+      <validLinenumbers>60</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="22" name="block_22" type="BlockType">
+    <controlInputObjs>block_18</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>block_34</controlOutputObjs>
+    <controlOutputObjs>block_31</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="tmp_1" lineNumber="61" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." rtlName="tmp_1_fu_143_p2" contextFuncName="fir" bitwidth="1" opcode="icmp" nodeLabel="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="61" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="21" name="node_21" lineNumber="61" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" opcode="br" nodeLabel="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="61" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>block_31</controlInputObjs>
+      <controlInputObjs>block_34</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="2016.1/Introduction/lab1/fir.c">
+      <validLinenumbers>61</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="31" name="block_31" type="BlockType">
+    <controlInputObjs>block_22</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_43</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="23" name="tmp_2" lineNumber="65" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." rtlName="grp_fu_124_p2" contextFuncName="fir" bitwidth="5" opcode="add" nodeLabel="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="65" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="data" lineNumber="65" originalName="data" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" bitwidth="32" opcode="load" nodeLabel="1" nodeLatency="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="65" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="node_29" lineNumber="65" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" opcode="store" nodeLabel="2">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="65" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="node_30" opcode="br" nodeLabel="2">
+      <controlInputObjs>block_43</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="2016.1/Introduction/lab1/fir.c">
+      <validLinenumbers>65</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="34" name="block_34" type="BlockType">
+    <controlInputObjs>block_22</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_43</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="node_32" lineNumber="62" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" opcode="store" nodeLabel="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="62" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>read</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="node_33" lineNumber="64" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" opcode="br" nodeLabel="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="64" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <controlInputObjs>block_43</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="2016.1/Introduction/lab1/fir.c">
+      <validLinenumbers>62</validLinenumbers>
+      <validLinenumbers>64</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="43" name="block_43" type="BlockType">
+    <controlInputObjs>block_31</controlInputObjs>
+    <controlInputObjs>block_34</controlInputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>block_18</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="data1" originalName="data" bitwidth="32" opcode="phi" nodeLabel="3">
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+      <controlInputObjs>block_34</controlInputObjs>
+      <controlInputObjs>block_31</controlInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="c_load" lineNumber="68" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" bitwidth="32" opcode="load" nodeLabel="2" nodeLatency="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="68" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataInputObjs>c</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="tmp_6" lineNumber="68" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." rtlName="fir_mul_32s_32s_32_6_U0" contextFuncName="fir" bitwidth="32" opcode="mul" nodeLabel="3" nodeLatency="5">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="68" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="acc_1" lineNumber="68" originalName="acc" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." rtlName="acc_1_fu_168_p2" contextFuncName="fir" bitwidth="32" opcode="add" nodeLabel="8">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="68" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="i_1" lineNumber="60" originalName="i" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." rtlName="grp_fu_124_p2" contextFuncName="fir" bitwidth="5" opcode="add" nodeLabel="2">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="60" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="node_42" lineNumber="60" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" opcode="br" nodeLabel="8">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="60" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <controlInputObjs>block_18</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="2016.1/Introduction/lab1/fir.c">
+      <validLinenumbers>68</validLinenumbers>
+      <validLinenumbers>60</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="46" name="block_46" type="BlockType">
+    <controlInputObjs>block_18</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="node_44" lineNumber="70" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" opcode="write" nodeLabel="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="70" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>y</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="node_45" lineNumber="71" fileName="2016.1/Introduction/lab1/fir.c" fileDirectory=".." contextFuncName="fir" opcode="ret" nodeLabel="1">
+      <inlineStackInfo fileName="2016.1/Introduction/lab1/fir.c" linenumber="71" fileDirectory="C:\Users\Misca\Documents\KES-AMS\KES\Lab4" functionName="fir"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="2016.1/Introduction/lab1/fir.c">
+      <validLinenumbers>70</validLinenumbers>
+      <validLinenumbers>71</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <regnodes realName="tmp_1_reg_189">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <regnodes realName="c_addr_reg_203">
+    <nodeIds>37</nodeIds>
+  </regnodes>
+  <regnodes realName="data1_reg_114">
+    <nodeIds>35</nodeIds>
+  </regnodes>
+  <regnodes realName="x_read_reg_174">
+    <nodeIds>9</nodeIds>
+  </regnodes>
+  <regnodes realName="i_1_reg_208">
+    <nodeIds>41</nodeIds>
+  </regnodes>
+  <regnodes realName="acc_1_reg_218">
+    <nodeIds>40</nodeIds>
+  </regnodes>
+  <regnodes realName="data_reg_198">
+    <nodeIds>26</nodeIds>
+  </regnodes>
+  <regnodes realName="c_load_reg_213">
+    <nodeIds>38</nodeIds>
+  </regnodes>
+  <regnodes realName="i_reg_102">
+    <nodeIds>13</nodeIds>
+  </regnodes>
+  <regnodes realName="i_cast_reg_180">
+    <nodeIds>14</nodeIds>
+  </regnodes>
+  <regnodes realName="acc_reg_89">
+    <nodeIds>12</nodeIds>
+  </regnodes>
+  <regnodes realName="shift_reg_addr_reg_193">
+    <nodeIds>25</nodeIds>
+  </regnodes>
+  <expressionNodes realName="c_addr_gep_fu_77">
+    <nodeIds>37</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_135">
+    <nodeIds>15</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_3_fu_149">
+    <nodeIds>24</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_5_fu_158">
+    <nodeIds>36</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="data1_phi_fu_117">
+    <nodeIds>35</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_phi_fu_106">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="shift_reg_addr_1_gep_fu_68">
+    <nodeIds>28</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_1_fu_143">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="acc_phi_fu_93">
+    <nodeIds>12</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="acc_1_fu_168">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_4_fu_154">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="shift_reg_addr_gep_fu_55">
+    <nodeIds>25</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="grp_fu_124">
+    <nodeIds>23</nodeIds>
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_cast_fu_131">
+    <nodeIds>14</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_fu_162">
+    <nodeIds>39</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="x_read_read_fu_42">
+    <nodeIds>9</nodeIds>
+  </ioNodes>
+  <ioNodes realName="stg_31_write_fu_48">
+    <nodeIds>44</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="c">
+    <nodeIds>38</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="shift_reg">
+    <nodeIds>26</nodeIds>
+    <nodeIds>32</nodeIds>
+    <nodeIds>29</nodeIds>
+  </memoryPorts>
+  <ioPorts name="c(p0)">
+    <contents name="load">
+      <nodeIds>38</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="x">
+    <contents name="read">
+      <nodeIds>9</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="y">
+    <contents name="write">
+      <nodeIds>44</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="6" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="2" latency="2"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="26" stage="1" latency="2"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="2" latency="2"/>
+      <operations id="41" stage="1" latency="1"/>
+    </states>
+    <states id="4">
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="2"/>
+      <operations id="39" stage="6" latency="6"/>
+    </states>
+    <states id="5">
+      <operations id="39" stage="5" latency="6"/>
+    </states>
+    <states id="6">
+      <operations id="39" stage="4" latency="6"/>
+    </states>
+    <states id="7">
+      <operations id="39" stage="3" latency="6"/>
+    </states>
+    <states id="8">
+      <operations id="39" stage="2" latency="6"/>
+    </states>
+    <states id="9">
+      <operations id="39" stage="1" latency="6"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="21"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="22"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="24"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="27"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="28"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="29"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="30"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="31"/>
+    </transitions>
+    <transitions inState="9" outState="2">
+      <condition id="33"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="fir" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="89" mMaxLatency="-1">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMaxLatency="-1">
+      <basicBlocks>11</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="Shift_Accum_Loop" mII="-1" mDepth="-1" mMinTripCount="11" mMaxTripCount="11" mMinLatency="88" mMaxLatency="-1" mType="1">
+      <basicBlocks>18</basicBlocks>
+      <basicBlocks>22</basicBlocks>
+      <basicBlocks>31</basicBlocks>
+      <basicBlocks>34</basicBlocks>
+      <basicBlocks>43</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMaxLatency="-1">
+      <basicBlocks>46</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

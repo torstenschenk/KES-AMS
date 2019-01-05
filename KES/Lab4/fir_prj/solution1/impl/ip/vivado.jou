@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Sun Dec 16 22:58:37 2018
+# Process ID: 6568
+# Current directory: C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/impl/ip
+# Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file: C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/impl/ip/vivado.log
+# Journal file: C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/impl/ip\vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
