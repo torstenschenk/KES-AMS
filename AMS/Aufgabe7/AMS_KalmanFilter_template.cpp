@@ -24,7 +24,7 @@ KalmanFilter::KalmanFilter(AMS_Robot* robotpointer)
     // Zeiger auf Roboterobjekt als Attribut speichern
     this->robotp = robotpointer;
     b = 0.27;     // Abstand der Räder vom kinematischen Zentrum des Roboters [m]
-    ks = 0.001;   // Schlupfkonstante zur Berechnung der Varianz der Roboterbewegung in [m]
+    ks = 0.002;   // Schlupfkonstante zur Berechnung der Varianz der Roboterbewegung in [m]
     red = 0;
     green = 255;
     blue = 0;
@@ -71,24 +71,21 @@ void KalmanFilter::PlotEllipse(double xm, double ym)
     temp(1) = xm;
     temp(2) = ym;
 
-    sigx = sqrt(abs(L(1)));
-    sigy = sqrt(abs(L(2)));
-
-   // cout << "tmpsigx: " << tmpsigx << " sigx: " << sigx << endl;
-   // cout << "tmpsigy: " << tmpsigy << " sigy: " << sigy << endl;
+    sigx = sqrt(fabs(L(1)));
+    sigy = sqrt(fabs(L(2)));
 
     for( count_d = 0 ; count_d <= pt_count; count_d++){
-        xys(1) = sigx* cos(count_d);
-        xys(2) = sigy* sin(count_d);
+        xys(1) = sigx* cos(count_d*M_PI/180.0);
+        xys(2) = sigy* sin(count_d*M_PI/180.0);
      //   cout << "L = " <<L << endl;
         xy = T * xys + temp ;
         ellipse[count_d].px = xy(1);
         ellipse[count_d].py = xy(2);
     }
-    tmpsigx = sigx;
-    tmpsigy = sigy;
+    //tmpsigx = sigx;
+    //tmpsigy = sigy;
 
-cout << "ellipse3" << endl;
+//cout << "ellipse3" << endl;
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
     robotp->graphmap->Color(red,green,blue,0);  // Farben im Roboterobjekt setzen
@@ -126,17 +123,10 @@ void KalmanFilter::PredictCov(double theta, double delta, double phi)
       <<0  <<1  << delta * tmpcos
       <<0  <<0  << 1;
 
-    if (tmpsin == 0)
-        tmp1 = 0;
-    else
-        tmp1 = -delta / (2*tmpsin);
+        tmp1 = -delta/2 *tmpsin;
+        tmp2 = delta/2 *tmpcos;
 
-    if(tmpcos == 0)
-        tmp2 = 0;
-    else
-        tmp2 = delta / (2*tmpcos);
-
-cout << A << endl;
+//cout << A << endl;
 
   B  << tmpcos << tmp1
      << tmpsin <<tmp2

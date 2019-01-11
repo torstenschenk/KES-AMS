@@ -37,14 +37,14 @@ int main(int argc, char **argv)
     double dt;             // Zeitdauer für das Durchlaufen der aktuellen Schleife
     int count = 0;
     ptime tref;            // Objekt der Klasse ptime zur Messung von dt
-    KalmanFilter kf(&robot);
+
 
     // Roboter initialisieren
 	if( !(robot.read_config(argc, argv) && robot.connect()) ) {
 		robot.log.notice("Call with -h to see the available options.");
 		return -1;
 	}
-
+    KalmanFilter kf(&robot);
 	// Pfad zu Datei mit vorgegebener Trajektorie
 	file = "AMS_Trajekt.txt";
 
