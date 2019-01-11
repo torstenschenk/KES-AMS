@@ -10,6 +10,12 @@ using namespace AMS;
 using namespace PlayerCc;
 using namespace std;
 
+struct point_x_y{
+    int x;
+    int y;
+};
+
+
 KalmanFilter::KalmanFilter(AMS_Robot* robotpointer)
 {
     // Dimension von P festlegen und P initialisieren
@@ -34,19 +40,55 @@ KalmanFilter::KalmanFilter(AMS_Robot* robotpointer)
     ellipse = new player_point_2d_t[pt_count+1]; // Feld zum Speichern der Fehlerellipse reservieren
 }
 
+double sigx, sigy, tmpsigx=0, tmpsigy=0;
+
 void KalmanFilter::PlotEllipse(double xm, double ym)
 {
+ //cout << "ellipse" << endl;
+
+    int count_d = 0;
     double alpha;              // Parameter zum Zeichnen der Ellipse
     SymmetricMatrix P1(2);     // Kopie von P als symmetrische Matrix für Eigenwertberechnung
     Matrix T(2,2);             // Matrix mit den othogonalen Eigenvektoren von P
     DiagonalMatrix L(2);       // Diagonalmatrix mit den Eigenwerten von P
     ColumnVector xys(2);       // Vektor mit jeweils aktuellem Ellipsenpunkt (xs,ys) in Hauptachsenform (lokale Koordinaten)
     ColumnVector xy(2);        // Vektor mit jeweils aktuellem Ellipsenpunkt (x,y) in globalen Koordinaten
+ //   point_x_y* elipse = new point_x_y(count_d+1);
+    ColumnVector temp(2);
 
     /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
+//cout << "ellipse0" << endl;
+ //   cout << setw(12) << setprecision(5) << P << endl;
+    P1(1,1) = P(1,1);
+    P1(1,2) = P(1,2);
+    P1(2,1) = P(2,1);
+    P1(2,2) = P(2,2);
+//    P1 = P.SubMatrix(1,2,1,2);
+
+    EigenValues(P1,L,T);
 
     // Schleife zur Berechnung der Ellipse in Parameterform und zum Speichern im Array "ellipse"
+    temp(1) = xm;
+    temp(2) = ym;
 
+    sigx = sqrt(abs(L(1)));
+    sigy = sqrt(abs(L(2)));
+
+   // cout << "tmpsigx: " << tmpsigx << " sigx: " << sigx << endl;
+   // cout << "tmpsigy: " << tmpsigy << " sigy: " << sigy << endl;
+
+    for( count_d = 0 ; count_d <= pt_count; count_d++){
+        xys(1) = sigx* cos(count_d);
+        xys(2) = sigy* sin(count_d);
+     //   cout << "L = " <<L << endl;
+        xy = T * xys + temp ;
+        ellipse[count_d].px = xy(1);
+        ellipse[count_d].py = xy(2);
+    }
+    tmpsigx = sigx;
+    tmpsigy = sigy;
+
+cout << "ellipse3" << endl;
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
     robotp->graphmap->Color(red,green,blue,0);  // Farben im Roboterobjekt setzen
@@ -77,26 +119,37 @@ void KalmanFilter::PredictCov(double theta, double delta, double phi)
     Q = D * Q_rl * D.i();
     // System- und Eingangsmatrix für aktuellen Schritt bestimmen
     double tmpsin, tmpcos, tmp1 , tmp2;
-    tmpsin =  sin(theta+phi/2);
+    tmpsin =  sin(theta+ phi/2);
     tmpcos = cos(theta + phi/2);
 
     A << 1 << 0 << -delta * tmpsin
       <<0  <<1  << delta * tmpcos
       <<0  <<0  << 1;
-         tmp1 = -delta / (2*tmpsin);
-         tmp2 = delta / (2*tmpcos);
+
+    if (tmpsin == 0)
+        tmp1 = 0;
+    else
+        tmp1 = -delta / (2*tmpsin);
+
+    if(tmpcos == 0)
+        tmp2 = 0;
+    else
+        tmp2 = delta / (2*tmpcos);
+
 cout << A << endl;
 
   B  << tmpcos << tmp1
      << tmpsin <<tmp2
      << 0 << 1 ;
-
+     cout << tmpcos<< "  " << tmp1   <<endl   << tmpsin << "  "<<tmp2    <<endl << 0 << " "<< 1 <<endl;
+cout <<"B:  "<<endl<<B << endl;
     // Prädiktion der Kovarianzmatrix
     P = A * P * A.t() + B * Q * B.t();
 
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
     // Ausgabe der Kovarianzmatrix
+ //   cout << "strig P : "<<endl;
     cout << setw(12) << setprecision(5) << P << endl;
 }
 

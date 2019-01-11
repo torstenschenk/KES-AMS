@@ -46,26 +46,14 @@ ALL TIMES.
 #include "fir.h"
 
 void fir (
-  data_t *y,
-  coef_t c[N],
-  data_t x
+  data_t result[20],
+  data_t n
   ) {
 
-  static data_t shift_reg[N];
-  acc_t acc;
-  data_t data;
   int i;
-  
-  acc=0;
-  Shift_Accum_Loop: for (i=N-1;i>=0;i--) {
-	if (i==0) {
-		shift_reg[0]=x;
-     	data = x;
-    } else {
-		shift_reg[i]=shift_reg[i-1];
-		data = shift_reg[i];
-    }
-    acc+=data*c[i];;       
+  *result = 1;
+  *(result+1) = 1;
+  Shift_Accum_Loop: for (i=2;i<20;i++) {
+	  *(result+i) =  *(result+i-1) +  *(result+i-2);
   }
-  *y=acc;
 }

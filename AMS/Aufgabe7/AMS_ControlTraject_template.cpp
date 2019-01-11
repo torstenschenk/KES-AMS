@@ -34,8 +34,8 @@ int main(int argc, char **argv)
     const double kI=6.0;   // Regelparameter für Geschwindigkeitsfehler (entspricht P-Anteil)
     const double kII=3.5;  // Regelparameter für Positionsfehler (entspricht I-Anteil)
     string file;           // Datei mit Punkten der zu befahrenden Trajektorie
-    double dt;
-              // Zeitdauer für das Durchlaufen der aktuellen Schleife
+    double dt;             // Zeitdauer für das Durchlaufen der aktuellen Schleife
+    int count = 0;
     ptime tref;            // Objekt der Klasse ptime zur Messung von dt
     KalmanFilter kf(&robot);
 
@@ -132,10 +132,16 @@ int main(int argc, char **argv)
         vy_s1 = vy_s;
 
         kf.PredictCov(theta,delta,phi);
+
+        if(count == 5)
+
+        {
+            kf.PlotEllipse(x,y);
+            count = 0;
+        }
+        count++;
     }
 
     robot.stop(); // stoppen
 
-    while(1); // Endlosschleife
-    return 0;
 }

@@ -32,7 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="AMS_ControlTraject.cpp" />
+		<Unit filename="AMS_ControlTraject_template.cpp" />
 		<Unit filename="AMS_KalmanFilter.hpp" />
 		<Unit filename="AMS_KalmanFilter_template.cpp" />
 		<Unit filename="AMS_Robot.cpp" />

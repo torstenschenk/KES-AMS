@@ -41,10 +41,10 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
-set SourceFiles {sc {} c ../../2016.1/Introduction/lab1/fir.c}
+set SourceFiles {sc {} c ../../2016.1/Introduction/lab2/fir.c}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/solution1.directive}
-set TBFiles {verilog {../../2016.1/Introduction/lab1/out.gold.dat ../../2016.1/Introduction/lab1/fir_test.c} bc {../../2016.1/Introduction/lab1/out.gold.dat ../../2016.1/Introduction/lab1/fir_test.c} sc {../../2016.1/Introduction/lab1/out.gold.dat ../../2016.1/Introduction/lab1/fir_test.c} vhdl {../../2016.1/Introduction/lab1/out.gold.dat ../../2016.1/Introduction/lab1/fir_test.c} c {} cas {../../2016.1/Introduction/lab1/out.gold.dat ../../2016.1/Introduction/lab1/fir_test.c}}
+set DirectiveFile {C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/fir_prj/solution1/solution1.directive}
+set TBFiles {verilog {../../2016.1/Introduction/lab2/out.gold.dat ../../2016.1/Introduction/lab2/fir_test.c} bc {../../2016.1/Introduction/lab2/out.gold.dat ../../2016.1/Introduction/lab2/fir_test.c} sc {../../2016.1/Introduction/lab2/out.gold.dat ../../2016.1/Introduction/lab2/fir_test.c} vhdl {../../2016.1/Introduction/lab2/out.gold.dat ../../2016.1/Introduction/lab2/fir_test.c} c {} cas {../../2016.1/Introduction/lab2/out.gold.dat ../../2016.1/Introduction/lab2/fir_test.c}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

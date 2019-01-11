@@ -19,7 +19,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../2016.1/Introduction/lab1/fir_test.c ../../../../2016.1/Introduction/lab1/fir.c
+HLS_SOURCES = ../../../../2016.1/Introduction/lab2/fir_test.c ../../../../2016.1/Introduction/lab2/fir.c
 
 TARGET := csim.exe
 
@@ -73,14 +73,14 @@ all: $(TARGET)
 
 AUTOCC := cmd //c apcc.bat  
 
-$(ObjDir)/fir_test.o: ../../../../2016.1/Introduction/lab1/fir_test.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../2016.1/Introduction/lab1/fir_test.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/fir_test.o: ../../../../2016.1/Introduction/lab2/fir_test.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../2016.1/Introduction/lab2/fir_test.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/fir_test.d
 
-$(ObjDir)/fir.o: ../../../../2016.1/Introduction/lab1/fir.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../2016.1/Introduction/lab1/fir.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/fir.o: ../../../../2016.1/Introduction/lab2/fir.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../2016.1/Introduction/lab2/fir.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/fir.d

@@ -1,5 +1,5 @@
-# 1 "C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/fir.pragma.1.c"
-# 1 "C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/fir.pragma.1.c" 1
+# 1 "C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/fir.pragma.1.c"
+# 1 "C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/fir.pragma.1.c" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 147 "<built-in>" 3
@@ -193,9 +193,9 @@
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 # 7 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/fir.pragma.1.c" 2
-# 1 "2016.1/Introduction/lab1/fir.c"
-# 1 "2016.1/Introduction/lab1/fir.c" 1
+# 1 "C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/fir.pragma.1.c" 2
+# 1 "2016.1/Introduction/lab2/fir.c"
+# 1 "2016.1/Introduction/lab2/fir.c" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 147 "<built-in>" 3
@@ -389,7 +389,7 @@
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 # 7 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "2016.1/Introduction/lab1/fir.c" 2
+# 1 "2016.1/Introduction/lab2/fir.c" 2
 /*******************************************************************************
 Vendor: Xilinx 
 Associated Filename: fir.c
@@ -437,7 +437,7 @@ ALL TIMES.
 *******************************************************************************/
 
 
-# 1 "2016.1/Introduction/lab1/fir.h" 1
+# 1 "2016.1/Introduction/lab2/fir.h" 1
 /*******************************************************************************
 Vendor: Xilinx 
 Associated Filename: fir.h
@@ -496,7 +496,8 @@ void fir (
   coef_t c[11 +1],
   data_t x
   );
-# 47 "2016.1/Introduction/lab1/fir.c" 2
+# 46 "2016.1/Introduction/lab2/fir.c" 2
+
 
 void fir (
   data_t *y,
@@ -511,12 +512,12 @@ void fir (
 
   acc=0;
   Shift_Accum_Loop: for (i=11 -1;i>=0;i--) {
- if (i==0) {
-  shift_reg[0]=x;
+  if (i==0) {
+   shift_reg[0]=x;
       data = x;
     } else {
-  shift_reg[i]=shift_reg[i-1];
-  data = shift_reg[i];
+   shift_reg[i]=shift_reg[i-1];
+   data = shift_reg[i];
     }
     acc+=data*c[i];;
   }

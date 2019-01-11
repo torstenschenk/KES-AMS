@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'fir'" level="0">
-<item name = "Date">Sat Jan 05 15:54:05 2019
+<item name = "Date">Mon Jan 07 16:08:32 2019
 </item>
 <item name = "Version">2016.2 (Build 1577090 on Thu Jun 02 16:59:10 MDT 2016)</item>
 <item name = "Project">fir_prj</item>
@@ -132,8 +132,8 @@
 <item name = "Max Delay">8.52</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'tmp_6', 2016.1/Introduction/lab1/fir.c:68">mul, 6.08, 6.08, -, -, -, -, -, -, -, -, -, -, -</column>
-<column name="'acc', 2016.1/Introduction/lab1/fir.c:68">add, 2.44, 8.52, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'tmp_6', 2016.1/Introduction/lab2/fir.c:68">mul, 6.08, 6.08, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'acc', 2016.1/Introduction/lab2/fir.c:68">add, 2.44, 8.52, -, -, -, -, -, -, -, -, -, -, -</column>
 </table>
 </item>
 </section>

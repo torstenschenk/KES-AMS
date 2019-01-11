@@ -1,4 +1,4 @@
-; ModuleID = 'C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/a.o.2.bc'
+; ModuleID = 'C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/a.o.2.bc'
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
 target triple = "x86_64-w64-mingw32"
 
@@ -30,23 +30,23 @@ define void @fir(i32* %y, [11 x i32]* %c, i32 %x) nounwind uwtable {
 
 ; <label>:3                                       ; preds = %1
   call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @.str) nounwind, !dbg !46 ; [debug line = 60:45]
-  %tmp.1 = icmp eq i5 %i, 0, !dbg !48             ; [#uses=1 type=i1] [debug line = 61:2]
-  br i1 %tmp.1, label %4, label %5, !dbg !48      ; [debug line = 61:2]
+  %tmp.1 = icmp eq i5 %i, 0, !dbg !48             ; [#uses=1 type=i1] [debug line = 61:3]
+  br i1 %tmp.1, label %4, label %5, !dbg !48      ; [debug line = 61:3]
 
 ; <label>:4                                       ; preds = %3
-  store i32 %x, i32* getelementptr inbounds ([11 x i32]* @shift_reg, i64 0, i64 0), align 16, !dbg !49 ; [debug line = 62:3]
+  store i32 %x, i32* getelementptr inbounds ([11 x i32]* @shift_reg, i64 0, i64 0), align 16, !dbg !49 ; [debug line = 62:4]
   call void @llvm.dbg.value(metadata !{i32 %x}, i64 0, metadata !51), !dbg !52 ; [debug line = 63:7] [debug variable = data]
   br label %6, !dbg !53                           ; [debug line = 64:5]
 
 ; <label>:5                                       ; preds = %3
-  %tmp.2 = add i5 %i, -1, !dbg !54                ; [#uses=1 type=i5] [debug line = 65:3]
-  %tmp.3 = zext i5 %tmp.2 to i64, !dbg !54        ; [#uses=1 type=i64] [debug line = 65:3]
-  %shift_reg.addr = getelementptr inbounds [11 x i32]* @shift_reg, i64 0, i64 %tmp.3, !dbg !54 ; [#uses=1 type=i32*] [debug line = 65:3]
-  %data = load i32* %shift_reg.addr, align 4, !dbg !54 ; [#uses=2 type=i32] [debug line = 65:3]
-  %tmp.4 = zext i32 %i.cast to i64, !dbg !54      ; [#uses=1 type=i64] [debug line = 65:3]
-  %shift_reg.addr.1 = getelementptr inbounds [11 x i32]* @shift_reg, i64 0, i64 %tmp.4, !dbg !54 ; [#uses=1 type=i32*] [debug line = 65:3]
-  store i32 %data, i32* %shift_reg.addr.1, align 4, !dbg !54 ; [debug line = 65:3]
-  call void @llvm.dbg.value(metadata !{i32 %data}, i64 0, metadata !51), !dbg !56 ; [debug line = 66:3] [debug variable = data]
+  %tmp.2 = add i5 %i, -1, !dbg !54                ; [#uses=1 type=i5] [debug line = 65:4]
+  %tmp.3 = zext i5 %tmp.2 to i64, !dbg !54        ; [#uses=1 type=i64] [debug line = 65:4]
+  %shift_reg.addr = getelementptr inbounds [11 x i32]* @shift_reg, i64 0, i64 %tmp.3, !dbg !54 ; [#uses=1 type=i32*] [debug line = 65:4]
+  %data = load i32* %shift_reg.addr, align 4, !dbg !54 ; [#uses=2 type=i32] [debug line = 65:4]
+  %tmp.4 = zext i32 %i.cast to i64, !dbg !54      ; [#uses=1 type=i64] [debug line = 65:4]
+  %shift_reg.addr.1 = getelementptr inbounds [11 x i32]* @shift_reg, i64 0, i64 %tmp.4, !dbg !54 ; [#uses=1 type=i32*] [debug line = 65:4]
+  store i32 %data, i32* %shift_reg.addr.1, align 4, !dbg !54 ; [debug line = 65:4]
+  call void @llvm.dbg.value(metadata !{i32 %data}, i64 0, metadata !51), !dbg !56 ; [debug line = 66:4] [debug variable = data]
   br label %6
 
 ; <label>:6                                       ; preds = %5, %4
@@ -83,12 +83,12 @@ declare void @_ssdm_op_SpecBitsMap(...)
 !llvm.map.gv = !{}
 !llvm.dbg.cu = !{!0}
 
-!0 = metadata !{i32 786449, i32 0, i32 1, metadata !"C:/Users/Misca/Documents/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/fir.pragma.2.c", metadata !"C:\5CUsers\5CMisca\5CDocuments\5CKES-AMS\5CKES\5CLab4", metadata !"clang version 3.1 ", i1 true, i1 false, metadata !"", i32 0, null, null, null, metadata !1} ; [ DW_TAG_compile_unit ]
+!0 = metadata !{i32 786449, i32 0, i32 1, metadata !"C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/fir_prj/solution1/.autopilot/db/fir.pragma.2.c", metadata !"C:\5CUsers\5Comid\5CDocuments\5CGitHub\5CKES-AMS\5CKES\5CLab4", metadata !"clang version 3.1 ", i1 true, i1 false, metadata !"", i32 0, null, null, null, metadata !1} ; [ DW_TAG_compile_unit ]
 !1 = metadata !{metadata !2}
 !2 = metadata !{metadata !3}
 !3 = metadata !{i32 786484, i32 0, metadata !4, metadata !"shift_reg", metadata !"shift_reg", metadata !"", metadata !5, i32 54, metadata !15, i32 1, i32 1, [11 x i32]* @shift_reg} ; [ DW_TAG_variable ]
 !4 = metadata !{i32 786478, i32 0, metadata !5, metadata !"fir", metadata !"fir", metadata !"", metadata !5, i32 48, metadata !6, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, null, metadata !13, i32 52} ; [ DW_TAG_subprogram ]
-!5 = metadata !{i32 786473, metadata !"2016.1/Introduction/lab1/fir.c", metadata !"C:\5CUsers\5CMisca\5CDocuments\5CKES-AMS\5CKES\5CLab4", null} ; [ DW_TAG_file_type ]
+!5 = metadata !{i32 786473, metadata !"2016.1/Introduction/lab2/fir.c", metadata !"C:\5CUsers\5Comid\5CDocuments\5CGitHub\5CKES-AMS\5CKES\5CLab4", null} ; [ DW_TAG_file_type ]
 !6 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !7, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !7 = metadata !{null, metadata !8, metadata !11, metadata !9}
 !8 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !9} ; [ DW_TAG_pointer_type ]
@@ -131,15 +131,15 @@ declare void @_ssdm_op_SpecBitsMap(...)
 !45 = metadata !{i32 786443, metadata !4, i32 52, i32 5, metadata !5, i32 0} ; [ DW_TAG_lexical_block ]
 !46 = metadata !{i32 60, i32 45, metadata !47, null}
 !47 = metadata !{i32 786443, metadata !44, i32 60, i32 44, metadata !5, i32 2} ; [ DW_TAG_lexical_block ]
-!48 = metadata !{i32 61, i32 2, metadata !47, null}
-!49 = metadata !{i32 62, i32 3, metadata !50, null}
-!50 = metadata !{i32 786443, metadata !47, i32 61, i32 12, metadata !5, i32 3} ; [ DW_TAG_lexical_block ]
+!48 = metadata !{i32 61, i32 3, metadata !47, null}
+!49 = metadata !{i32 62, i32 4, metadata !50, null}
+!50 = metadata !{i32 786443, metadata !47, i32 61, i32 13, metadata !5, i32 3} ; [ DW_TAG_lexical_block ]
 !51 = metadata !{i32 786688, metadata !45, metadata !"data", metadata !5, i32 56, metadata !9, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
 !52 = metadata !{i32 63, i32 7, metadata !50, null}
 !53 = metadata !{i32 64, i32 5, metadata !50, null}
-!54 = metadata !{i32 65, i32 3, metadata !55, null}
+!54 = metadata !{i32 65, i32 4, metadata !55, null}
 !55 = metadata !{i32 786443, metadata !47, i32 64, i32 12, metadata !5, i32 4} ; [ DW_TAG_lexical_block ]
-!56 = metadata !{i32 66, i32 3, metadata !55, null}
+!56 = metadata !{i32 66, i32 4, metadata !55, null}
 !57 = metadata !{i32 68, i32 5, metadata !47, null}
 !58 = metadata !{i32 786688, metadata !45, metadata !"acc", metadata !5, i32 55, metadata !59, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
 !59 = metadata !{i32 786454, null, metadata !"acc_t", metadata !5, i32 52, i64 0, i64 0, i64 0, i32 0, metadata !10} ; [ DW_TAG_typedef ]

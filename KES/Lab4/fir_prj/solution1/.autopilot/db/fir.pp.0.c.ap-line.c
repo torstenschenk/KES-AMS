@@ -1,5 +1,5 @@
-#pragma line 1 "2016.1/Introduction/lab1/fir.c"
-#pragma line 1 "2016.1/Introduction/lab1/fir.c" 1
+#pragma line 1 "2016.1/Introduction/lab2/fir.c"
+#pragma line 1 "2016.1/Introduction/lab2/fir.c" 1
 #pragma line 1 "<built-in>" 1
 #pragma line 1 "<built-in>" 3
 #pragma line 147 "<built-in>" 3
@@ -193,7 +193,7 @@
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 #pragma line 7 "<command line>" 2
 #pragma line 1 "<built-in>" 2
-#pragma line 1 "2016.1/Introduction/lab1/fir.c" 2
+#pragma line 1 "2016.1/Introduction/lab2/fir.c" 2
 /*******************************************************************************
 Vendor: Xilinx 
 Associated Filename: fir.c
@@ -240,7 +240,7 @@ ALL TIMES.
 #pragma empty_line
 *******************************************************************************/
 #pragma empty_line
-#pragma line 1 "2016.1/Introduction/lab1/fir.h" 1
+#pragma line 1 "2016.1/Introduction/lab2/fir.h" 1
 /*******************************************************************************
 Vendor: Xilinx 
 Associated Filename: fir.h
@@ -299,7 +299,8 @@ void fir (
   coef_t c[11 +1],
   data_t x
   );
-#pragma line 47 "2016.1/Introduction/lab1/fir.c" 2
+#pragma line 46 "2016.1/Introduction/lab2/fir.c" 2
+#pragma empty_line
 #pragma empty_line
 void fir (
   data_t *y,
@@ -314,12 +315,12 @@ void fir (
 #pragma empty_line
   acc=0;
   Shift_Accum_Loop: for (i=11 -1;i>=0;i--) {
- if (i==0) {
-  shift_reg[0]=x;
+  if (i==0) {
+   shift_reg[0]=x;
       data = x;
     } else {
-  shift_reg[i]=shift_reg[i-1];
-  data = shift_reg[i];
+   shift_reg[i]=shift_reg[i-1];
+   data = shift_reg[i];
     }
     acc+=data*c[i];;
   }
