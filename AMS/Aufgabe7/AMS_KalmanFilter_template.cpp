@@ -10,12 +10,6 @@ using namespace AMS;
 using namespace PlayerCc;
 using namespace std;
 
-struct point_x_y{
-    int x;
-    int y;
-};
-
-
 KalmanFilter::KalmanFilter(AMS_Robot* robotpointer)
 {
     // Dimension von P festlegen und P initialisieren
@@ -24,10 +18,10 @@ KalmanFilter::KalmanFilter(AMS_Robot* robotpointer)
     // Zeiger auf Roboterobjekt als Attribut speichern
     this->robotp = robotpointer;
     b = 0.27;     // Abstand der Räder vom kinematischen Zentrum des Roboters [m]
-    ks = 0.002;   // Schlupfkonstante zur Berechnung der Varianz der Roboterbewegung in [m]
-    red = 0;
-    green = 255;
-    blue = 0;
+    ks = 0.001;   // Schlupfkonstante zur Berechnung der Varianz der Roboterbewegung in [m]
+    red = 255;
+    green = 0;
+    blue = 255;
     // Kinematik initialisieren
     D.ReSize(2,2);  // Dimension festlegen
     D << 0.5   <<  0.5
@@ -40,52 +34,49 @@ KalmanFilter::KalmanFilter(AMS_Robot* robotpointer)
     ellipse = new player_point_2d_t[pt_count+1]; // Feld zum Speichern der Fehlerellipse reservieren
 }
 
-double sigx, sigy, tmpsigx=0, tmpsigy=0;
-
 void KalmanFilter::PlotEllipse(double xm, double ym)
 {
- //cout << "ellipse" << endl;
-
-    int count_d = 0;
     double alpha;              // Parameter zum Zeichnen der Ellipse
     SymmetricMatrix P1(2);     // Kopie von P als symmetrische Matrix für Eigenwertberechnung
     Matrix T(2,2);             // Matrix mit den othogonalen Eigenvektoren von P
     DiagonalMatrix L(2);       // Diagonalmatrix mit den Eigenwerten von P
     ColumnVector xys(2);       // Vektor mit jeweils aktuellem Ellipsenpunkt (xs,ys) in Hauptachsenform (lokale Koordinaten)
     ColumnVector xy(2);        // Vektor mit jeweils aktuellem Ellipsenpunkt (x,y) in globalen Koordinaten
- //   point_x_y* elipse = new point_x_y(count_d+1);
-    ColumnVector temp(2);
 
     /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
-//cout << "ellipse0" << endl;
- //   cout << setw(12) << setprecision(5) << P << endl;
-    P1(1,1) = P(1,1);
-    P1(1,2) = P(1,2);
-    P1(2,1) = P(2,1);
-    P1(2,2) = P(2,2);
-//    P1 = P.SubMatrix(1,2,1,2);
-
-    EigenValues(P1,L,T);
-
     // Schleife zur Berechnung der Ellipse in Parameterform und zum Speichern im Array "ellipse"
-    temp(1) = xm;
-    temp(2) = ym;
 
-    sigx = sqrt(fabs(L(1)));
-    sigy = sqrt(fabs(L(2)));
+    /* ppt 6 last page */
 
-    for( count_d = 0 ; count_d <= pt_count; count_d++){
-        xys(1) = sigx* cos(count_d*M_PI/180.0);
-        xys(2) = sigy* sin(count_d*M_PI/180.0);
-     //   cout << "L = " <<L << endl;
-        xy = T * xys + temp ;
-        ellipse[count_d].px = xy(1);
-        ellipse[count_d].py = xy(2);
+    P1 << P(1, 1) << P(1, 2) << P(2, 2);
+
+    //cout << "P: " << endl;
+    //cout << P << endl;
+    //cout << "P1: " << endl;
+    //cout << P1 << endl;
+
+    EigenValues(P1, L, T);
+
+    /* ppslides 6 page 17 */
+    double sigma_x = sqrt(L(1));
+    double sigma_y = sqrt(L(2));
+    //cout << "L:" << endl;
+    //cout << L << endl;
+    ColumnVector Exy(2);
+    Exy << xm << ym;
+
+    for (alpha = 0; alpha < pt_count + 1; alpha++) {
+        //cout << "alpha: " << alpha << endl;
+        xys << sigma_x * cos(alpha * M_PI / 180)
+            << sigma_y * sin(alpha * M_PI / 180);
+        //cout << "T: " << T << endl;
+        //cout << "xys: " << xys << endl;
+        //cout << "Exy: " << Exy << endl;
+        xy = T * xys + Exy;
+
+        ellipse[(int)alpha] = {xy(1), xy(2)};
     }
-    //tmpsigx = sigx;
-    //tmpsigy = sigy;
 
-//cout << "ellipse3" << endl;
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
     robotp->graphmap->Color(red,green,blue,0);  // Farben im Roboterobjekt setzen
@@ -102,7 +93,16 @@ void KalmanFilter::PredictCov(double theta, double delta, double phi)
     Matrix Q(2,2);              // Kovarianzmatrix für Eingangsdaten delta und phi
 
     /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
+
     // Eingangsgrößen in Vektor speichern
+    /*
+    Speichern	Sie	die	übergebenen	Werte	für	δ	und	φ	im	Vektor	u	und	ermitteln	Sie	dar-
+    aus	mit	der	Inversen	von	D	die	Weginkremente	der	beiden	Räder	im	Vektor	u rl .	Be-
+    setzen	Sie	damit	die	Kovarianzmatrix	Q rl 	und	bestimmen	Sie	daraus	mit	D	die	Kova-
+    rianzmatrix	der	Eingangsgrößen	Q. */
+
+    /* ppt 7 page 25 */
+
     u(1) = delta;
     u(2) = phi;
 
@@ -110,41 +110,32 @@ void KalmanFilter::PredictCov(double theta, double delta, double phi)
     u_rl = D.i() * u;
 
     // Varianzinkrement der Räder proportional zu Radwegen und abhängig von ks vorgeben
-    Q_rl(1) = u_rl(1)*ks;
-    Q_rl(2) = u_rl(2)*ks;
+    Q_rl << u_rl(1) * ks << u_rl(2) * ks;
+
     // Varianzinkrement für delta und phi berechnen
-    Q = D * Q_rl * D.i();
+    Q = D * Q_rl * D.t();
+
     // System- und Eingangsmatrix für aktuellen Schritt bestimmen
-    double tmpsin, tmpcos, tmp1 , tmp2;
-    tmpsin =  sin(theta+ phi/2);
-    tmpcos = cos(theta + phi/2);
+    /* slice page 23*/
 
-    A << 1 << 0 << -delta * tmpsin
-      <<0  <<1  << delta * tmpcos
-      <<0  <<0  << 1;
-
-        tmp1 = -delta/2 *tmpsin;
-        tmp2 = delta/2 *tmpcos;
-
-//cout << A << endl;
-
-  B  << tmpcos << tmp1
-     << tmpsin <<tmp2
-     << 0 << 1 ;
-     cout << tmpcos<< "  " << tmp1   <<endl   << tmpsin << "  "<<tmp2    <<endl << 0 << " "<< 1 <<endl;
-cout <<"B:  "<<endl<<B << endl;
+    A << 1 << 0 << -delta * sin(theta + (phi/2))
+      << 0 << 1 << delta * cos(theta + (phi/2))
+      << 0 << 0 << 1;
+    B << cos(theta + (phi/2)) << -delta / 2 * sin(theta + (phi/2))
+      << sin(theta + (phi/2)) << delta / 2 * cos(theta + (phi/2))
+      << 0 << 1;
     // Prädiktion der Kovarianzmatrix
+
     P = A * P * A.t() + B * Q * B.t();
 
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
     // Ausgabe der Kovarianzmatrix
- //   cout << "strig P : "<<endl;
-    cout << setw(12) << setprecision(5) << P << endl;
+    // cout << setw(12) << setprecision(5) << P << endl;
 }
 
 /// Die folgende Methode ist erst für Übungsaufgabe 8 relevant
-/*
+#if 0
 bool KalmanFilter::Correction(double& x, double& y, double& theta)
 {
     double PhiR;                // Normalenwinkel einer erkannten Wand relativ zum Roboter
@@ -165,7 +156,7 @@ bool KalmanFilter::Correction(double& x, double& y, double& theta)
         return false;
     }
 
-    //********************* Fügen Sie ab hier eigenen Quellcode ein **********************
+    /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
 
     // Globale Koordinaten der gefundenen Kontur bestimmen für Suche in Karte
     Phi = ;
@@ -192,8 +183,8 @@ bool KalmanFilter::Correction(double& x, double& y, double& theta)
     // Kovarianzmatrix korrigieren
     P =;
 
-    //******************** Ende des zusätzlich eingefügten Quellcodes ********************
+    /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
     return true;
 }
-*/
+#endif
