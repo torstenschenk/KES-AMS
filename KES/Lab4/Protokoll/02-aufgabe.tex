@@ -4,6 +4,7 @@ In der Aufgabe 2 wurde eine Fibonacci-Algorithm in c mitgebracht. Der Code wurde
 \subsection{C-Code}
 C-Code zur Berechnung des n-ten Wertes F(n) der  Fibonacci-Folge aus den Startwerten F0 = 0 und F1 = 1\\
 
+Fibonacci für Hardware Implementation
 \begin{verbatim}
 #include "fir.h"
 
@@ -20,6 +21,8 @@ void fir (
   }
 }
 \end{verbatim}
+
+Testbench
 \begin{verbatim}
 #include <stdio.h>
 #include <math.h>
@@ -39,11 +42,7 @@ int main () {
   for (i=0;i<N;i++) {
 	// Execute the function with latest input
 	// Save the results.
-<<<<<<< HEAD
-    fprintf(fp,"%i %d %d\n",i,signal, output );
-=======
     fprintf(fp," the %d-Fibonatchi is =  %d\n",i+1,output[i]);
->>>>>>> AMS-A6
   }
   fclose(fp);
 
@@ -64,7 +63,7 @@ int main () {
 \end{verbatim}
 
 \subsection{C-Code Analyse}
-Das bild zeigt den Ressourcenverbrauch und das Timing\\
+Das Bild zeigt den Ressourcenverbrauch und das Timing\\
 
 \begin{minipage}{\textwidth}
     \begin{center}        
@@ -72,10 +71,26 @@ Das bild zeigt den Ressourcenverbrauch und das Timing\\
     \end{center}
 \end{minipage}
 \begin{center}
-Performanze
+Perfomance in Zyklen
 \end{center}
 
+\begin{minipage}{\textwidth}
+    \begin{center}        
+        \includegraphics[scale=0.6]{img/fibo1.png} 
+    \end{center}
+\end{minipage}
+\begin{center}
+Ressourcenverbrauch 1
+\end{center}
 
+\begin{minipage}{\textwidth}
+    \begin{center}        
+        \includegraphics[scale=1.0]{img/fibo2.png} 
+    \end{center}
+\end{minipage}
+\begin{center}
+Ressourcenverbrauch 2
+\end{center}
 
 
 

@@ -6,8 +6,8 @@
 open_project Selbst_fir_prj
 set_top fir
 add_files 2016.1/Introduction/lab1/fir.c
-add_files -tb 2016.1/Introduction/lab1/out.gold.dat
 add_files -tb 2016.1/Introduction/lab1/fir_test.c
+add_files -tb 2016.1/Introduction/lab1/out.gold.dat
 open_solution "solution1"
 set_part {xc7z020clg484-1}
 create_clock -period 10 -name default

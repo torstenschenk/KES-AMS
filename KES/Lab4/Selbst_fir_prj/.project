@@ -29,52 +29,47 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/Selbst_fir_prj/.apc/.src</location>
+			<location>C:/Users/Misca/Documents/KES-AMS/KES/Lab4/Selbst_fir_prj/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/Selbst_fir_prj/.apc/.tb</location>
-		</link>
-		<link>
-			<name>.reference/fir.h</name>
-			<type>1</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/2016.1/Introduction/lab1/fir.h</location>
+			<location>C:/Users/Misca/Documents/KES-AMS/KES/Lab4/Selbst_fir_prj/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/Selbst_fir_prj/solution1/.tcls</location>
+			<location>C:/Users/Misca/Documents/KES-AMS/KES/Lab4/Selbst_fir_prj/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/fir.c</name>
 			<type>1</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/2016.1/Introduction/lab1/fir.c</location>
+			<location>C:/Users/Misca/Documents/KES-AMS/KES/Lab4/2016.1/Introduction/lab1/fir.c</location>
 		</link>
 		<link>
 			<name>testbench/fir_test.c</name>
 			<type>1</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/2016.1/Introduction/lab1/fir_test.c</location>
+			<location>C:/Users/Misca/Documents/KES-AMS/KES/Lab4/2016.1/Introduction/lab1/fir_test.c</location>
 		</link>
 		<link>
 			<name>testbench/out.gold.dat</name>
 			<type>1</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/2016.1/Introduction/lab1/out.gold.dat</location>
+			<location>C:/Users/Misca/Documents/KES-AMS/KES/Lab4/2016.1/Introduction/lab1/out.gold.dat</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/Selbst_fir_prj/solution1/solution1.directive</location>
+			<location>C:/Users/Misca/Documents/KES-AMS/KES/Lab4/Selbst_fir_prj/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/Selbst_fir_prj/solution1/directives.tcl</location>
+			<location>C:/Users/Misca/Documents/KES-AMS/KES/Lab4/Selbst_fir_prj/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>C:/Users/omid/Documents/GitHub/KES-AMS/KES/Lab4/Selbst_fir_prj/solution1/script.tcl</location>
+			<location>C:/Users/Misca/Documents/KES-AMS/KES/Lab4/Selbst_fir_prj/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

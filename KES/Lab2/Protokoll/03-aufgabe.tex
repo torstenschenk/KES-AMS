@@ -159,3 +159,67 @@ int main()
   return 0;
 }
 \end{verbatim}
+
+PWM zum Blinken einer LED in VHDL\\
+frei nach FPGA für Maker, dpunkt.verlag
+
+\begin{verbatim}
+library ieee;
+use ieee.std_logic_1164.all
+use ieee.numeric_std.all;
+
+entity pulsewm is
+   port
+    (
+     clk : in std_logic;
+     dc: in std_logic_vector( 5 down to 0 ); 
+     pwm : out std_logic
+     );
+end pulsewm;
+
+architecture impl of pulsewm is
+signal pwm_reg : std_logic := '0';
+signal pwm_next : std_logic;
+signal cntr_reg : unsigned (7 downto 0) := X''00'';
+signal cntr_next : unsigned (7 downto 0);
+
+begin
+  
+  process (clk)
+    begin
+     if rising_edge(clk) then
+     	pwm_reg <= pwm_next;
+        cntr_reg <= cntr_next;
+     end if;
+  end process;
+  
+  cntr_next <= cntr_reg + 1;
+  pwm_next <= '1' when ((cntr_reg(7) = '0') and (
+     cntr_reg(6 downto 0) < unsigned(dc))) else '0';
+   pwm <= pwm_reg;
+
+end impl;     
+\end{verbatim}
+
+Multiplikations Test VHDL
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity multi_VHDL is
+   port
+   (
+      z1, z2: in std_logic_vector(31 downto 0);
+
+      res: out std_logic_vector(63 downto 0)
+   );
+end multi_VHDL;
+
+architecture behav of multi_VHDL is
+begin
+
+   Result <= std_logic_vector(unsigned(z1) * unsigned(z2));
+
+end behav;
+\end{verbatim}
