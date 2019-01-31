@@ -108,7 +108,7 @@ void KalmanFilter::PredictCov(double theta, double delta, double phi)
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
     // Ausgabe der Kovarianzmatrix
-    cout << setw(12) << setprecision(5) << P << endl;
+    // cout << setw(12) << setprecision(5) << P << endl;
 }
 
 /// Die folgende Methode ist erst für Übungsaufgabe 8 relevant
