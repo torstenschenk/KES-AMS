@@ -18,7 +18,7 @@ KalmanFilter::KalmanFilter(AMS_Robot* robotpointer)
     // Zeiger auf Roboterobjekt als Attribut speichern
     this->robotp = robotpointer;
     b = 0.27;     // Abstand der Räder vom kinematischen Zentrum des Roboters [m]
-    ks = 0.001;   // Schlupfkonstante zur Berechnung der Varianz der Roboterbewegung in [m]
+    ks = 0.002;   // Schlupfkonstante zur Berechnung der Varianz der Roboterbewegung in [m]
     red = 255;
     green = 0;
     blue = 255;
@@ -44,38 +44,24 @@ void KalmanFilter::PlotEllipse(double xm, double ym)
     ColumnVector xy(2);        // Vektor mit jeweils aktuellem Ellipsenpunkt (x,y) in globalen Koordinaten
 
     /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
+
     // Schleife zur Berechnung der Ellipse in Parameterform und zum Speichern im Array "ellipse"
+    P1 << P(1,1) << P(1,2) << P(2,2);
 
-    /* ppt 6 last page */
+    EigenValues(P1, L, T); //T -> othogonalen Eigenvektoren von P, L -> Diagonalmatrix mit den Eigenwerten von P
 
-    P1 << P(1, 1) << P(1, 2) << P(2, 2);
+    for(int i = 0; i < pt_count; i++){
+        xys << sqrt(L(1,1)) * cos((double)i*M_PI/180.) << sqrt(L(2,2)) * sin(((double)i*M_PI)/180.);
 
-    //cout << "P: " << endl;
-    //cout << P << endl;
-    //cout << "P1: " << endl;
-    //cout << P1 << endl;
+        xy = T * xys;
+        xy(1) += xm;
+        xy(2) += ym;
+        player_point_2d point = {xy(1), xy(2)};
 
-    EigenValues(P1, L, T);
-
-    /* ppslides 6 page 17 */
-    double sigma_x = sqrt(L(1));
-    double sigma_y = sqrt(L(2));
-    //cout << "L:" << endl;
-    //cout << L << endl;
-    ColumnVector Exy(2);
-    Exy << xm << ym;
-
-    for (alpha = 0; alpha < pt_count + 1; alpha++) {
-        //cout << "alpha: " << alpha << endl;
-        xys << sigma_x * cos(alpha * M_PI / 180)
-            << sigma_y * sin(alpha * M_PI / 180);
-        //cout << "T: " << T << endl;
-        //cout << "xys: " << xys << endl;
-        //cout << "Exy: " << Exy << endl;
-        xy = T * xys + Exy;
-
-        ellipse[(int)alpha] = {xy(1), xy(2)};
+        ellipse[i] = point;
     }
+
+    ellipse[pt_count] = ellipse[0];
 
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
@@ -95,47 +81,38 @@ void KalmanFilter::PredictCov(double theta, double delta, double phi)
     /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
 
     // Eingangsgrößen in Vektor speichern
-    /*
-    Speichern	Sie	die	übergebenen	Werte	für	δ	und	φ	im	Vektor	u	und	ermitteln	Sie	dar-
-    aus	mit	der	Inversen	von	D	die	Weginkremente	der	beiden	Räder	im	Vektor	u rl .	Be-
-    setzen	Sie	damit	die	Kovarianzmatrix	Q rl 	und	bestimmen	Sie	daraus	mit	D	die	Kova-
-    rianzmatrix	der	Eingangsgrößen	Q. */
-
-    /* ppt 7 page 25 */
-
-    u(1) = delta;
-    u(2) = phi;
+    u << delta << phi;
 
     // Rückrechnung von delta und phi auf Wegstrecken der beiden Räder
-    u_rl = D.i() * u;
+    u_rl << D.i()*u;
+     // Varianzinkrement der Räder proportional zu Radwegen und abhängig von ks vorgeben
+    Q_rl(1,1) = u_rl(1) * ks;
+    Q_rl(2,2) = u_rl(2) * ks;
+     // Varianzinkrement für delta und phi berechnen
 
-    // Varianzinkrement der Räder proportional zu Radwegen und abhängig von ks vorgeben
-    Q_rl << u_rl(1) * ks << u_rl(2) * ks;
+    Q << (D * Q_rl * D.t());
 
-    // Varianzinkrement für delta und phi berechnen
-    Q = D * Q_rl * D.t();
+    A << 1 << 0 << (-delta * sin(theta + phi/2.0)) <<
+    0 << 1 << (delta *cos(theta + phi/2.0)) <<
+    0 << 0 << 1;
 
-    // System- und Eingangsmatrix für aktuellen Schritt bestimmen
-    /* slice page 23*/
+     // System- und Eingangsmatrix für aktuellen Schritt bestimmen
+    B << cos(theta + phi/2.0) << -delta/2.0 *sin(theta + phi/2.0) <<
+    sin (theta + phi/2.0) << delta/2.0 * cos(theta + phi/2.0 ) <<
+    0 << 1;
 
-    A << 1 << 0 << -delta * sin(theta + (phi/2))
-      << 0 << 1 << delta * cos(theta + (phi/2))
-      << 0 << 0 << 1;
-    B << cos(theta + (phi/2)) << -delta / 2 * sin(theta + (phi/2))
-      << sin(theta + (phi/2)) << delta / 2 * cos(theta + (phi/2))
-      << 0 << 1;
+
     // Prädiktion der Kovarianzmatrix
-
     P = A * P * A.t() + B * Q * B.t();
 
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 
     // Ausgabe der Kovarianzmatrix
-    // cout << setw(12) << setprecision(5) << P << endl;
+    cout << setw(12) << setprecision(5) << P << endl;
 }
 
 /// Die folgende Methode ist erst für Übungsaufgabe 8 relevant
-#if 0
+
 bool KalmanFilter::Correction(double& x, double& y, double& theta)
 {
     double PhiR;                // Normalenwinkel einer erkannten Wand relativ zum Roboter
@@ -156,35 +133,44 @@ bool KalmanFilter::Correction(double& x, double& y, double& theta)
         return false;
     }
 
-    /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
+    //********************* Fügen Sie ab hier eigenen Quellcode ein **********************
 
     // Globale Koordinaten der gefundenen Kontur bestimmen für Suche in Karte
-    Phi = ;
-    d = ;
+    Phi = (theta + PhiR) * M_PI/180;
+    d = dR + x * cos(Phi) + y * sin(Phi);
+    if(d < 0){
+        d = fabs(d);
+        Phi += M_PI;
+    }
 
     // Messmatrix abhängig von der Ausrichtung der Kontur festlegen
+    H << cos(Phi) << sin(Phi) << 0 << 0 << 0 << 1;
 
     // Kovarianzmatrix der Innovation bestimmen
-    S = ;
+    S = R + H * P * H.t();
 
     // Suchen nach der aktuell gefundenen Geraden in der Karte durch Aufruf der Methode search() aus WallMap
-
+    map.search(Phi, d, 1, S);
     // Bestimmung der Messdaten für den Korrekturschritt
-    y_(1) = ;
-    y_(2) = ;
+    y_ << d - dR << Phi - PhiR;
 
     // Alternative Bestimmung der Messdaten, falls gemessene Kontur zwischen Roboter und Koordinatenursprung liegt
     // Dies kann aufgrund einer zu großer Abweichung (> 0.5 rad) zwischen gemessenem und prädiziertem theta erkannt
+    if(y_(2) > 0.5)
+        y_ << d + dR << Phi - PhiR + M_PI;
 
     // Kalman Gain für aktuellen Schritt berechnen
-    K = ;
+    K = P * H.t() * (H*P*H.t() + R).i();
+    cout << "Kalman Gain:\n " << K << endl;
     // Zustand mit Messung korrigieren; vorher Roboterzustand in Vektor x_ speichern
-    x_ = ;
-    // Kovarianzmatrix korrigieren
-    P =;
+    x_ << x << y << theta;
+    x_ = x_ + K * (y_- H * x_);
 
-    /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
+    // Kovarianzmatrix korrigieren
+    P = (E - K * H) * P;
+
+    //******************** Ende des zusätzlich eingefügten Quellcodes ********************
 
     return true;
 }
-#endif
+

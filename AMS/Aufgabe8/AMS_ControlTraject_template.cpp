@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     const double T = 0.25; // feste Zeitdauer zwischen zwei Wegpunkten in Sekunden
     double v, w;           // aktuelle Bahn- und Winkelgeschwindigkeit
     double delta, phi;     // im aktuellen Schritt zurückgelegte Distanz und überstrichener Drehwinkel
-   // double vx, vy;         // aktuelle x- und y-Komponenten der Bahngeschwindigkeit in Schritt i
+    double vx, vy;         // aktuelle x- und y-Komponenten der Bahngeschwindigkeit in Schritt i
     double x, y;           // aktuelle Position in Schritt i
     double theta;          // aktueller Ist-Winkel in Schritt i
     double v_s=0, w_s=0;   // Stellgrößen für Bahn- und Winkelgeschwindigkeit
@@ -30,22 +30,19 @@ int main(int argc, char **argv)
     double a1, a2;         // Zwischengrößen für Regelung im Schritt i
     double e_x, e_y;       // Fehler zwischen Soll- und Ist-koordinaten
     double e_vx, e_vy;     // Fehler zwischen Soll- und Ist-Geschwindigkeiten
-    const double kI=6.0;   // Regelparameter für Geschwindigkeitsfehler (entspricht P-Anteil)
-    const double kII=3.5;  // Regelparameter für Positionsfehler (entspricht I-Anteil)
+    const double kI=5.0;   // Regelparameter für Geschwindigkeitsfehler (entspricht P-Anteil)
+    const double kII=1.0;  // Regelparameter für Positionsfehler (entspricht I-Anteil)
     string file;           // Datei mit Punkten der zu befahrenden Trajektorie
     double dt;             // Zeitdauer für das Durchlaufen der aktuellen Schleife
     ptime tref;            // Objekt der Klasse ptime zur Messung von dt
 
-    /* user variables */
-    //double ds;             // Abstand zwischen zwei Punkten
-    int zaehler = 0;
-
+    KalmanFilter kf(&robot);
+    int counter = 0;
     // Roboter initialisieren
 	if( !(robot.read_config(argc, argv) && robot.connect()) ) {
 		robot.log.notice("Call with -h to see the available options.");
 		return -1;
 	}
-	KalmanFilter kalman(&robot);
 
 	// Pfad zu Datei mit vorgegebener Trajektorie
 	file = "AMS_Trajekt.txt";
@@ -64,17 +61,13 @@ int main(int argc, char **argv)
 
     /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
     // Winkel vom 1. zum 2. Punkt der Trajektorie berechnen
-    theta = atan2((y_s1 - y_s), (x_s1 - x_s));
-    // cout << theta << endl;
+    theta = atan2(y_s1 - y_s, x_s1 - x_s);
     // Soll-Startgeschwindigkeiten ermitteln
-
     vx_s1 = (x_s1 - x_s) / T;
     vy_s1 = (y_s1 - y_s) / T;
 
-    // cout << "vx_s1: " << vx_s1 << endl;
-    // cout << "vy_s1: " << vy_s1 << endl;
-
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
+
     while( infile >> x_s >> y_s ) { // Schleife über alle Punkte der Trajektorie
 
         tref = microsec_clock::local_time(); // Referenzzeit zum Messen der Schleifendurchlaufzeit dt
@@ -82,38 +75,32 @@ int main(int argc, char **argv)
         robot.wait_for_new_data(); // Neue Daten aus Proxies einlesen
 
         /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
-        //  Aktuelle Bahn- und Winkelgeschwindigkeit auslesen und daraus das Weg- und Winkelinkrement ermitteln
+        //  Aktuelle Bahn- und Winkelgeschwindigkeit auslesen und daraus das Weg- und Winkelimkrement ermitteln
         v = robot.get_v();
         w = robot.get_w();
         delta = v * T;
-        phi = w * T;
-        // cout << "phi: " << phi << endl;
+        phi = w *T;
 
         // Berechnung der aktuellen Koordinaten mittels des nicht-holonomen Bewegungsmodells
-        x = x_s1 + delta*cos(theta+phi/2);
-        y = y_s1 + delta*sin(theta+phi/2);
-        theta = theta + phi;
+        x += delta * cos( theta + (phi / 2));
+        y += delta * sin( theta + (phi / 2));
+        theta += phi;
 
         // Aktuelle x- und y-Komponente der Bahngeschwindigkeit ermitteln
-        //   ds = sqrt(pow(x_s, 2) + pow(x_s1, 2));
-        //   vx = ds / T;
-
-        //  ds = sqrt(pow(y_s, 2) + pow(y_s1, 2));
-        //  vy = ds / T;
+        vx = v * cos(theta);
+        vy = v * sin(theta);
 
         // Soll-Geschwindigkeiten und -Beschleunigungen für aktuellen Schritt bestimmen
-        vx_s = (x_s - x_s1) / T;
-        vy_s = (y_s - y_s1) / T;
-        // cout << "vx_s: " << vx_s << endl;
-        // cout << "vy_s: " << vy_s << endl;
+        vx_s = ( x_s - x_s1 ) / T;
+        vy_s = ( y_s - y_s1 ) / T;
         ax_s = (vx_s - vx_s1) / T;
         ay_s = (vy_s - vy_s1) / T;
 
         // Aktuelle Fehler ermitteln
-        e_x = x_s - x;
-        e_y = y_s - y;
-        e_vx = vx_s - v * cos(theta);
-        e_vy = vy_s - v * sin(theta);
+        e_x =  x_s - x;
+        e_y =  y_s - y;
+        e_vx = vx_s - vx;
+        e_vy = vy_s - vy;
 
         // Bestimmung und Setzen der Sollgeschwindigkeiten (Stellgrößen)
         ax = ax_s + kI * e_vx + kII * e_x;
@@ -130,9 +117,7 @@ int main(int argc, char **argv)
         // Warten um insgesamt die Abtastzeit T zwischen zwei aufeinanderfolgenden Schritten
         // Dabei Abbruch, falls Berechnungszeit pro Schleifendurchlauf Abtastzeit überschreitet
         dt = (double)(microsec_clock::local_time()-tref).total_milliseconds()/1000;
-
-        if( dt > T )
-        {
+        if( dt > T ) {
             printf("Fehler! Abtastzeit zu kurz: dt=%.3lf T=%.3lf\n", dt, T);
             robot.stop(); // stoppen
             while(1);     // warten
@@ -145,18 +130,17 @@ int main(int argc, char **argv)
         vx_s1 = vx_s;
         vy_s1 = vy_s;
 
-
-        kalman.PredictCov(theta, delta, phi);
-        zaehler++;
-        if (zaehler == 5)
-        {
-            kalman.PlotEllipse(x, y);
-            zaehler = 0;
+        kf.PredictCov(theta,delta,phi);
+        kf.Correction(x_s1, y_s1, theta);
+        if ( counter == 5 ){
+            kf.PlotEllipse(x, y);
+            counter = 0;
         }
+        counter++;
     }
 
     robot.stop(); // stoppen
 
-  //  while(1); // Endlosschleife
+    while(1); // Endlosschleife
     return 0;
 }

@@ -37,8 +37,8 @@
 		<Unit filename="AMS_KalmanFilter_template.cpp" />
 		<Unit filename="AMS_Robot.cpp" />
 		<Unit filename="AMS_Robot.hpp" />
-		<Unit filename="AMS_WallMap.cpp" />
 		<Unit filename="AMS_WallMap.hpp" />
+		<Unit filename="AMS_WallMap_template.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
