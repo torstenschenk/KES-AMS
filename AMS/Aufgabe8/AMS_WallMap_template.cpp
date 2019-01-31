@@ -37,16 +37,38 @@ bool WallMap::search(int& phi, double& dist, double rsq_max, Matrix S) {
     /********************* Fügen Sie ab hier eigenen Quellcode ein **********************/
 
     // Invertieren der Kovarianzmatrix
+    S_inv = S.i();
 
     // Initialisiseren von rsq_temp mit rsq_max
+    rsq_temp = rsq_max;
 
     // Schleife über alle gespeicherten Konturen
     //   Darin jeweils Berechnung der aktuellen Innovation nue und des Abstands rsq mittels Mahalanobis-Metrik
-    //   und speichern des geringstenAbstandes sowie des zugehörigen Indizes in rsq_temp und i_temp
+    //   und speichern des geringsten Abstandes sowie des zugehörigen Indizes in rsq_temp und i_temp
+    for (i = 0; i< Walls.size(); ++i)
+    {
+        nue << normalize((Walls[i].phi * M_PI/180) - phi) << Walls[i].dist - dist;
+
+        rsq << nue.t() * S_inv * nue;
+        if (rsq(1) < rsq_temp)
+        {
+            rsq_temp = rsq(1);
+            i_temp = i;
+        }
+    }
 
     // Rücksprung mit false, falls keine Übereinstimmung mit Kartenkontur gefunden wurde
+    if (i_temp == -1)
+        return false;
 
     // Setzen der Rückgabeparameter phi und dist und Rücksprung mit true
+    else
+    {
+        phi = Walls[i_temp].phi;
+        dist = Walls[i_temp].dist;
+
+        return true;
+    }
 
     /******************** Ende des zusätzlich eingefügten Quellcodes ********************/
 }
